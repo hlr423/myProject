@@ -1,0 +1,202 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/footerPage.scss";
+@import "./module/table.scss";
+@import "./module/popup.scss";
+@import "./module/input.scss";
+@import "./module/combotree.scss";
+@import "./module/tableOperationBtn";
+@import "./module/tab.scss";
+@import "./module/radio.scss";
+@import "./module/inputFile.scss";
+@import "./module/select.scss";
+@import "./module/searchWrapper.scss";
+/*====================整体table====================*/
+.body-wrapper{
+  .table-wrapper{
+    padding: 0;
+    position: relative;
+    .export{
+      position: absolute;
+      right: 0;
+      top: 16px;
+      display: inline-block;
+      width: 90px;
+      height: 30px;
+      border-radius: 5px;
+      background-color: #3cbbff;
+      z-index: 1;
+      color: #fff;
+      text-align: center;
+      line-height: 30px;
+      cursor: pointer;
+      i{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-image: url('../images/btn.png');
+        background-position: -24px 0px;
+        background-repeat: no-repeat;
+        position: relative;
+        right: 3px;
+        vertical-align: middle;
+
+      }
+    }
+  }
+}
+#tab{
+  height: 100%;
+}
+a {
+  &.td-out,
+  &.td-back,
+  &.td-detail {
+    cursor: pointer;
+    color: #59aFFf;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &.td-noPass,
+  &.td-state-no {
+    color: #ff6430;
+  }
+  &.td-pass,
+  &.td-state-yes {
+    color: #50c589;
+  }
+  &.td-approval{
+    color: #ff9933;
+  }
+  // 维修故障描述
+  &.td-describe{
+    color: #59aFFf;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    &:hover{
+      text-decoration: underline;
+      >div{
+        display: block;
+      }
+    }
+    >div{
+      z-index: 999;
+      width: 160px;
+      height: 160px;
+      display: none;
+      position: absolute;
+      padding: 5px;
+      left: 50%;
+      bottom: 50%;
+      margin-bottom: 20px;
+      margin-left: -83px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 40px #ccc;
+      &:before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-top: 12px solid #fff;
+        position: absolute;
+        left: 50%;
+        bottom:-10px;
+        margin-left: -6px;
+      }
+
+    }
+  }
+}
+
+/*====================出车记录+还车记录====================*/
+.back-wrapper,
+.out-wrapper {
+  .content {
+    .item {
+      display: flex;
+      justify-content: flex-start;
+      height: 50px;
+      > span {
+        display: inline-block;
+        border: 1px solid #e9e9e9;
+        line-height: 50px;
+        text-align: center;
+        margin-left: -1px;
+        margin-bottom: -1px;
+        &:nth-of-type(1) {
+          width: 100px;
+          margin-left: 0;
+        }
+        &:nth-of-type(2) {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
+
+/*====================还车记录====================*/
+.back-wrapper {
+  .back-cost{
+    margin-top: 20px;
+  }
+  .cost-item {
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+    > span {
+      display: inline-block;
+      width: 33.34%;
+      border: 1px solid #e9e9e9;
+      line-height: 50px;
+      text-align: center;
+      margin-left: -1px;
+      margin-bottom: -1px;
+      >span{
+        //margin-left: 5px;
+      }
+      &:nth-of-type(1) {
+        width: 100px;
+        margin-left: 0;
+      }
+      &:nth-of-type(2) {
+        flex: 1;
+      }
+      &.cost-img{
+        display: inline-block;
+        color: #59aFFf;
+        cursor: pointer;
+        position: relative;
+        i{
+          width: 14px;
+          height: 14px;
+          display: inline-block;
+          vertical-align: middle;
+          background-image:url('../images/filePic.png');
+          margin-right: 3px;
+          margin-bottom: 2px;
+        }
+      }
+
+
+    }
+  }
+}
+
+/*====================图片弹窗====================*/
+
+.picture-wrapper{
+  width: 600px;
+  height: 500px;
+  .content{
+    max-height: 450px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

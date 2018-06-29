@@ -1,0 +1,137 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/input.scss";
+@import "./module/select.scss";
+@import "./module/combotree.scss";
+@import "./module/datePicker.scss";
+
+// =====================搜索===================
+.search-wrapper {
+    display: flex;
+    &>select {
+        margin-right: 10px;
+        width: 160px;
+        &:nth-child(3) {
+            width: 160px;
+        }
+        &:nth-child(4) {
+            width: 100px;
+        }
+        &:nth-child(5) {
+            width: 100px;
+        }
+    }
+    &>input{
+        width: 160px;
+    }
+    .financialAnalysis {
+        margin-left: 10px;
+        color: #fff;
+        width: 60px;
+        height: 30px;
+        border: none;
+        border-radius: 20px;
+        background-color: #59afff;
+        cursor: pointer;
+        outline: none;
+    }
+}
+
+.chose-time {
+    @extend %chose-time;
+}
+// =================图表=======================
+.echart-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 32px;
+    &>div {
+        width: 49%;
+        height: 380px;
+        margin-bottom: 20px;
+        background-color: #f0f6fe;
+        .echart-title {
+            width: 100%;
+            height: 50px;
+            padding-left: 20px;
+            line-height: 50px;
+            color: #333;
+            font-size: 16px;
+            border-bottom: 1px solid #fff;
+        }
+        &>div {
+            display: flex;
+            height: calc(100% - 50px);
+        }
+    }
+}
+.echart {
+    flex: 1;
+    height: 100%;
+}
+.detail {
+    width: 260px;
+    margin: 50px 0;
+    border-left: 1px solid #cee1fc;
+}
+
+.echart-span0 {
+    color: #ff7575;
+}
+.echart-span1 {
+    color: #42edc6;
+}
+
+.detail {
+    padding-left: 30px;
+    &>span {
+        font-size: 14px;
+        color: #333;
+    }
+    &>p {
+        font-size: 14px;
+        margin-bottom: 20px;
+        span {
+                font-size: 36px;
+            }
+        &:nth-of-type(1) {
+            color: #ff7575;
+        }
+        &:nth-of-type(2) {
+            color: #14c9d4;
+        }
+    }
+    .down {
+        color: #48cf76;
+        i {
+            background-position-x: 0;
+        }
+    }
+    .up {
+        color: #ff8257;
+        i {
+            background-position-x: -21px;
+        }
+    }
+    i {
+        display: inline-block;
+        width: 21px;
+        height: 26px;
+        background-image: url('../images/blicon.png');
+        background-repeat: no-repeat;
+        animation: blAnimation 1s infinite;
+    }
+}
+@keyframes blAnimation {
+    0% {  
+        transform: translate(0px, 0px);  
+    }  
+    50% {  
+        transform: translate(0px, -5px);  
+    }  
+    100% {  
+        transform: translate(0px, 1px);  
+    }  
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>统计报表/车辆统计</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+
+    <link rel="stylesheet" href="../css/carStatistics.css">
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="search-nav">
+            <select id="select-area" class=" part-factory  easyui-combotrees ">
+                <option value="0">全部车辆类型</option>
+                <option value="1">车辆类型1</option>
+                <option value="2">车辆类型2</option>
+                <option value="3">车辆类型3</option>
+            </select>
+
+            <select class="easyui-validatebox part-factory stationValue">
+                <option value="0">全部厂站</option>
+                <option value="1">厂站1</option>
+                <option value="2">厂站2</option>
+                <option value="3">厂站3</option>
+            </select>
+
+            <!-- date -->
+            <div class="title">
+                <input type="text" class="data-year1  chose-time" placeholder="请选择年份">
+                <select class="data">
+                    <option value="0" selected>年</option>
+                    <option value="1">季度</option>
+                    <option value="2">月</option>
+                </select>
+                <input type="text" class="data-year data-show chose-time" placeholder="请选择年份">
+                <select class="data-quarter">
+                    <option value="0">春季</option>
+                    <option value="1">夏季</option>
+                    <option value="2">秋季</option>
+                    <option value="3">冬季</option>
+                </select>
+                <input type="text" class="data-month chose-time" placeholder="请选择月份">
+            </div>
+            <input type="text" class="input-search" placeholder=" 搜索厂站" maxlength="50">
+            <div class="order-btn btn">搜索</div>
+        </div>
+        <div class="person-statistics">
+            <!-- 里程统计1 -->
+            <div class="work-time">
+                <div class="title">
+                    <span>里程统计</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-mileage"></div>
+                </div>
+            </div>
+            <!-- 油耗分析2 -->
+            <div class="work-time">
+                <div class="title">
+                    <span>油耗分析</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-oilAnalyse" class="echarts-wrapper"></div>
+                </div>
+            </div>
+            <!-- 油费统计 3-->
+            <div class="work-time">
+                <div class="title">
+                    <span>油费统计</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-oilFee" class="echarts-wrapper"></div>
+                    <div class="work-time-text">
+
+                        <p>总油费</p>
+                        <p class="allfee">
+                            <span>185,512</span>元 </p>
+
+                        <div>
+                            <p class="text-p">通勤车
+                                <br>
+                                <span>
+                                    41345
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">吸污车
+                                <br>
+                                <span>
+                                    22435
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">运渣车
+                                <br>
+                                <span>
+                                    31834
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">移动脱水库
+                                <br>
+                                <span>
+                                    4385
+                                </span>
+                                元
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 出车次数统计 4-->
+            <div class="work-time">
+                <div class="title">
+                    <div class="select-btn">
+                        <span>出车次数统计</span>
+                    </div>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-numberOfTrips"></div>
+                </div>
+            </div>
+            <!-- 保养费统计5 -->
+            <div class="work-time">
+                <div class="title">
+                    <span>保养费统计</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-maintenanceCosts"></div>
+                    <div class="work-time-text">
+
+                        <p>总保养费</p>
+                        <p class="allfee">
+                            <span>185,512</span>元 </p>
+
+                        <div>
+                            <p class="text-p">通勤车
+                                <br>
+                                <span>
+                                    41345
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">吸污车
+                                <br>
+                                <span>
+                                    22435
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">运渣车
+                                <br>
+                                <span>
+                                    31834
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">移动脱水库
+                                <br>
+                                <span>
+                                    4385
+                                </span>
+                                元
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 保养次数统计 6-->
+            <div class="work-time">
+                <div class="title">
+                    <span>保养次数统计</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-maintenanceNumber"></div>
+                </div>
+            </div>
+            <!-- 维修费统计 7-->
+            <div class="work-time">
+                <div class="title">
+
+                    <div class="select-btn">
+                        <span>维修费统计</span>
+                    </div>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-repairCosts"></div>
+                    <div class="work-time-text">
+
+                        <p>总维修费</p>
+                        <p class="allfee">
+                            <span>185,512</span>元 </p>
+
+                        <div>
+                            <p class="text-p">通勤车
+                                <br>
+                                <span>
+                                    41345
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">吸污车
+                                <br>
+                                <span>
+                                    22435
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">运渣车
+                                <br>
+                                <span>
+                                    31834
+                                </span>
+                                元
+                            </p>
+                            <p class="text-p">移动脱水库
+                                <br>
+                                <span>
+                                    4385
+                                </span>
+                                元
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 维修次数统计 8-->
+            <div class="work-time">
+                <div class="title">
+                    <span>维修次数统计</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-repairNumber"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/laydate/laydate.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/echarts-liquidfill.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/carStatistics.js"></script>
+    <script src="../js/refresh.js"></script>
+</body>
+
+</html>

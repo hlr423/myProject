@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>统计报表/成本统计</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+
+    <link rel="stylesheet" href="../css/costStatistics.css">
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="search-nav">
+            <select id="select-area" class=" part-factory  easyui-combotrees ">
+                <option value="0">全部区域</option>
+                <option value="1">区域1</option>
+                <option value="2">区域2</option>
+                <option value="3">区域3</option>
+            </select>
+
+            <select class="easyui-validatebox part-factory stationValue">
+                <option value="0">全部厂站</option>
+                <option value="1">厂站1</option>
+                <option value="2">厂站2</option>
+                <option value="3">厂站3</option>
+            </select>
+
+            <!-- date -->
+            <div class="title">
+                <input type="text" class="data-year1  chose-time" placeholder="请选择年份">
+                <select class="data">
+                    <option value="0" selected>年</option>
+                    <option value="1">季度</option>
+                    <option value="2">月</option>
+                </select>
+                <input type="text" class="data-year data-show chose-time" placeholder="请选择年份">
+                <select class="data-quarter">
+                    <option value="0">春季</option>
+                    <option value="1">夏季</option>
+                    <option value="2">秋季</option>
+                    <option value="3">冬季</option>
+                </select>
+                <input type="text" class="data-month chose-time" placeholder="请选择月份">
+            </div>
+            <input type="text" class="input-search" placeholder=" 搜索厂站" maxlength="50">
+            <div class="order-btn btn">搜索</div>
+        </div>
+        <div class="person-statistics">
+            <!-- 耗电统计图  -->
+            <div class="work-time">
+                <div class="title">
+
+                    <div class="select-btn">
+                        <span>耗电统计</span>
+                        <div class="select-btn-1">
+                            <select class="easyui-validatebox part-factory ">
+                                <option value="0">全部处理量</option>
+                                <option value="1">处理量1</option>
+                                <option value="2">处理量2</option>
+                                <option value="3">处理量3</option>
+                            </select>
+                            <select class="easyui-validatebox part-factory ">
+                                <option value="0">全部设备</option>
+                                <option value="1">设备1</option>
+                                <option value="2">设备2</option>
+                                <option value="3">设备3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="work-time-text">
+                        <p>累计电耗(Kw): </p>
+                        <p>18545 </p>
+                    </div>
+                    <div id="echarts-wrapper-consumePower"></div>
+                </div>
+            </div>
+            <!-- 药耗统计图 -->
+            <div class="work-time">
+                <div class="title">
+                    <div class="select-btn">
+                        <span>药耗统计</span>
+                        <div class="select-btn-1">
+                            <select class=" easyui-validatebox part-factory ">
+                                <option value="0">全部处理量</option>
+                                <option value="1">处理量1</option>
+                                <option value="2">处理量2</option>
+                                <option value="3">处理量3</option>
+                            </select>
+                            <select  class="easyui-validatebox part-factory "  onclick="allDrugFun()">
+                                <option value="0">全部药剂</option>
+                                <option value="1">次氨酸钠</option>
+                                <option value="2">柠檬酸</option>
+                                <option value="3">除磷</option>
+                                <option value="4">碳源</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="work-time-text">
+                        <p>累计药耗(mg): </p>
+                        <p>185,512 </p>
+                        <div class="text-bs">
+                            <p><i></i>次氨酸钠</p>
+                            <p><i></i>柠檬酸</p>
+                            <p><i></i>除磷</p>
+                            <p><i></i>碳源</p>
+                        </div>
+                    </div>
+                    <div id="echarts-wrapper-drugPower"></div>
+                </div>
+            </div>
+            <!-- 厂站用水成本统计图-->
+            <div class="work-time">
+                <div class="title">
+                    <span>厂站用水成本统计</span>
+                </div>
+                <div>
+                    <div class="work-time-text">
+                        <p>累计成本(￥): </p>
+                        <p>185,512 </p>
+                    </div>
+                    <div id="echarts-wrapper-factoryWater"></div>
+                </div>
+            </div>
+             <!-- 人工成本统计图-->
+             <div class="work-time">
+                <div class="title">
+                    <span>人工成本统计</span>
+                </div>
+                <div>
+                    <div class="work-time-text">
+                        <p>累计成本(￥): </p>
+                        <p>185,512 </p>
+                    </div>
+                    <div id="echarts-wrapper-personCost"></div>
+                </div>
+            </div>
+            <!-- 费用统计 -->
+             <div class="work-time">
+                <div class="title">
+                    <span>费用统计</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-costStatistics"></div>
+                    <!-- <div id="allcount">
+                        <span>共计(￥)</span>
+                        <span>1234567</span>
+                    </div> -->
+                    <div class="work-time-text">
+                       <div class="bt">
+                           <i></i>
+                           <div>
+                            <p>加油费</p>
+                            <p>￥<span>40000</span></p>
+                           </div>
+                       </div>
+                       <div class="bt">
+                           <i></i>
+                           <div>
+                            <p>维修费</p>
+                            <p>￥<span>80000</span></p>
+                           </div>
+                       </div>
+                       <div class="bt">
+                           <i></i>
+                           <div>
+                            <p>保养费</p>
+                            <p>￥<span>80000</span></p>
+                           </div>
+                       </div>
+                       <div class="bt">
+                           <i></i>
+                           <div>
+                            <p>过路费</p>
+                            <p>￥<span>40000</span></p>
+                           </div>
+                       </div>
+                       <div class="bt">
+                           <i></i>
+                           <div>
+                            <p>通信费</p>
+                            <p>￥<span>80000</span></p>
+                           </div>
+                       </div>
+                       <div class="bt">
+                           <i></i>
+                           <div>
+                            <p>其他</p>
+                            <p>￥<span>80000</span></p>
+                           </div>
+                       </div>
+                       <!--  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/laydate/laydate.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/echarts-liquidfill.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/costStatistics.js"></script>
+     <script src="../js/refresh.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/input.scss";
+@import "./module/select.scss";
+@import "./module/searchWrapper.scss";
+/*====================整体item====================*/
+.body-wrapper{
+  height: auto;
+}
+.car-title{
+  width: 100%;
+  border-bottom: 1px solid #e9e9e9;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  i{
+    display: inline-block;
+    width: 4px;
+    height: 14px;
+    vertical-align: middle;
+    border-radius: 2px;
+    background-color: #51c589;
+  }
+}
+.car-item{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  .item{
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    width: 278px;
+    height: 200px;
+    &:hover{
+      box-shadow: 0 0 40px #ccc;
+      cursor: pointer;
+    }
+    >div{
+      flex: 1;
+      position: relative;
+      padding: 10px 20px;
+      background-color: #f2f2f2;
+      img{
+        margin-top: 16px;
+        width: 95%;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      i{
+        display: inline-block;
+        width: 86px;
+        height: 66px;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+        background-image: url('../images/car-use.png');
+      }
+    }
+    >span{
+      height: 50px;
+      line-height: 50px;
+      color: #fff;
+      background-color: #c2c2c2;
+      text-align: center;
+    }
+    &.car-wait{
+      >div{
+        i{
+          background-image: url('../images/car-wait.png');
+        }
+      }
+    }
+    &.car-disable{
+      >div{
+        i{
+          background-image: url('../images/car-disable.png');
+        }
+      }
+    }
+  }
+
+
+}

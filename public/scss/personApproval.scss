@@ -1,0 +1,226 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+
+@import "./module/popup.scss";
+@import "./module/table.scss";
+@import "./module/footerPage.scss";
+@import "./module/tab.scss";
+@import "./module/searchWrapper.scss";
+@import "./module/select.scss";
+@import "./module/input.scss";
+@import "./module/tableOperationBtn.scss";
+@import "./module/inforWrapper.scss";
+@import "./module/datePicker.scss";
+@import "./module/textarea.scss";
+@import "./module/combotree.scss";
+
+/*====================整体====================*/
+.panel-body{
+  display: flex;
+  flex-direction: column;
+}
+.combo-p{ //  调整combotree
+  height: auto;
+}
+.table-my,
+.table-Over,
+.table-wait{
+  flex: 1;
+}
+.approval-tab{
+  .search-wrapper{
+    input{
+      width: 180px;
+    }
+    select{
+      width:180px;
+    }
+  }
+}
+.table-operation{
+  justify-content: space-around;
+  .table-pass{
+    color: #51c589;
+  }
+  .table-noPass{
+    color: #ff6430;
+  }
+}
+a{
+  &.table-pass{
+    color: #51c589;
+  }
+  &.table-noPass{
+    color: #ff6430;
+  }
+  &.table-passIng{
+    color: #FF9933;
+  }
+}
+.approval-go{
+  border:1px solid #dcdcdc;
+}
+
+/*====================发起审批====================*/
+.approval-go-tab{
+  display: block;
+  >p{
+    margin-bottom: 20px;
+  }
+}
+.approval-go{
+  display:inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 180px;
+  height: 120px;
+  border: 1px solid #dcdcdc;
+  margin-right:20px;
+  >div{
+    width: 60px;
+    height: 60px; 
+    border-radius:10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    img{
+      display:inline-block;
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      margin-top: 6px;
+      &:after{
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+        overflow: hidden;
+    }
+    }
+    &.approval-leave{
+      background-color: #ff7f40;
+      
+    }
+    &.approval-work{
+      background-color: #3b99fa;
+    }
+  }
+  
+}
+/*====================请假弹窗+加班====================*/
+.work-popup,
+.leave-popup{
+  width: 500px;
+  textarea,select,input[type=text]{
+    width: 300px;
+  }
+  .chose-time{ 
+    @extend %chose-time;
+    width: 300px !important;
+  }
+  .content-item{
+    label{
+      vertical-align: top;
+    }
+    .leave-person{
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      &:nth-last-of-type(1){
+        &:before{
+          display: none;
+        }
+      }
+      &:before{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        margin-top: -30px;
+        right: -10px;
+        width: 0;
+        height: 0;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-left: 16px solid #e6e6e6;
+      }
+      >div{
+        display:inline-block;
+        text-align: center;
+        >span{
+          display:inline-block;
+          color: #fff;
+          width: 50px;
+          height: 50px;
+          border-radius:50%;
+          background-color: #4da9ed;
+          line-height: 50px;
+          font-size:12px;
+        }
+        >div{
+          width: 80px;
+          height: 24px;
+          font-size: 12px;
+          line-height: 24px;
+          color:#59afff;
+          background-color: #e6f4ff;
+          text-align: center;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+/*====================我已审批+我发起的====================*/
+.my-popup,
+.over-popup{
+  // width: 900px;
+  a{
+    &.detail-pass{
+      color:#51c589;
+    }
+    &.detail-passing{
+      color:#FF9933;
+    }
+    &.detail-nopass{
+      color:#ff6430;
+    }
+  }
+  .content-item{
+    label{
+      vertical-align: top;
+    }
+    >div{
+      display: inline-block;
+    }
+  }
+}
+
+/*====================待我审批====================*/
+.wait-job-popup,
+.wait-equip-popup,
+.wait-car-popup,
+.wait-work-popup{
+  .content-item{
+    label{
+      vertical-align: top;
+    }
+    >div{
+      display:inline-block;
+    }
+  }
+  .footer{
+    .submit:nth-of-type(1){
+      background-color: #fff;
+      color: #59afff;
+      border: 1px solid #59afff;
+      margin-right: 50px;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}

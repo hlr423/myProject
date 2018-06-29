@@ -1,0 +1,203 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/select.scss";
+@import "./module/prompt.scss";
+@import "./module/inputFile.scss";
+@import "./module/popup.scss";
+@import "./module/input.scss";
+@import "./module/datePicker.scss";
+@import "./module/publicHidden.scss";
+
+/*==============================================*/ 
+.body-wrapper {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.chose-time {
+    @extend %chose-time;
+}
+//====================个人信息====================//
+.search-nav {
+    padding-bottom: 20px;
+ 
+    input::-webkit-input-placeholder {
+        text-align: center;
+    }
+    .input-search {
+        background-color: #f2f2f2;
+        border: none;
+        width: 140px;
+        border-radius: 30px;
+        margin-left: 10px;
+    }
+    .title {
+        margin-left: 10px;
+        display: inline-block;
+        >select {
+            width: 120px;
+            &:not(:nth-of-type(1)) {
+                display: none;
+            }
+            &.data-show {
+                display: inline-block;
+            }
+        }
+        >input[type=text] {
+            width: 120px !important;
+            display: none;
+            vertical-align: top;
+            &.data-show {
+                display: inline-block;
+            }
+        }
+    }
+    .part-factory {
+        width: 10%;
+        &:nth-child(1){
+            margin-right: 10px;
+        }
+    }
+}
+
+//=================车辆统计=======================//
+.person-statistics {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .work-time {
+        margin-left: 15px;
+        width: 32%;
+        margin-top: -2%;
+        >div:nth-of-type(1) {
+            position: relative;
+            top: 18%;
+            border-bottom: 1px solid white;
+            span {
+                display: block;
+                height: 50px;
+                line-height: 50px;
+                padding-left: 10px;
+                font-size: 18px;
+                // font-weight: 550;
+            }
+        }
+        >div:nth-of-type(2) {
+            background-color: #f0f6fe;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-around; //padding-left: 50px;
+        }
+    } 
+    #echarts-wrapper-oilFee, //油费统计
+    #echarts-wrapper-maintenanceCosts,//保养费统计
+    #echarts-wrapper-repairCosts//维修费统计 
+    {
+        display: inline-block;
+        width: 50%;
+        height: 250px; //border: 1px solid red;
+    }
+   
+    #echarts-wrapper-mileage, // 里程统计1
+    #echarts-wrapper-oilAnalyse,// 油耗分析2
+    #echarts-wrapper-numberOfTrips,//出车次数统计
+    #echarts-wrapper-maintenanceNumber,//保养次数统计
+    #echarts-wrapper-repairNumber {//维修次数统计
+        display: inline-block;
+        width: 80%;
+        height: 250px; //border: 1px solid red;
+    }
+    .work-time-text {
+        text-align: left;
+        margin-top: 10%;
+       width: 300px;
+       font-weight: bolder;
+       p:nth-child(2){
+           font-size: 18px;
+       }
+       .text-p{
+           width: 40%;
+           padding: 5px;
+           display: inline-block;
+          
+       }
+       .text-p:nth-child(1){
+            color: #42c0c2;
+       }
+       .text-p:nth-child(2){
+            color: #9f85e3;
+            font-size: 14px;
+       }
+       .text-p:nth-child(3){
+        color: #fac34a;
+       }
+       .text-p:nth-child(4){
+            color: #42b4df;
+       }
+    }
+}
+
+
+// =======================图表中的选择框=============//
+.select-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.select-btn-1 {
+    display: flex;
+    flex-direction: row;
+    width: 60;
+    .part-factory {
+        // display: block;
+        margin-top: 10px;
+        margin-right: 15px;
+        width: 120px;
+        display: inline-block;
+        background-color: #fff;
+        border: 1px solid gainsboro;
+    }
+}
+
+// =====================按钮的样式=====================//
+.title {
+    >select {
+        width: 120px;
+        &:not(:nth-of-type(1)) {
+            display: none;
+        }
+        &.data-show {
+            display: inline-block;
+        }
+    }
+    >input[type=text] {
+        width: 120px !important;
+        display: none;
+        vertical-align: top;
+        &.data-show {
+            display: inline-block;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-left: 10px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    background-color: #59afff;
+    border-radius: 20px;
+    vertical-align: top;
+    border: none;
+    outline: 0;
+    transition: all .5s;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background-color: #4da1f0;
+    }
+}
+

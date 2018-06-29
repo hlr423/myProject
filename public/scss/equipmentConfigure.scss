@@ -1,0 +1,321 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/table.scss";
+@import "./module/footerPage.scss";
+@import "./module/popup.scss";
+
+@import "./module/datePicker.scss";
+@import "./module/inputFile.scss";
+@import "./module/select.scss";
+@import "./module/inforWrapper.scss";
+@import "./module/searchWrapper.scss";
+@import "./module/input.scss";
+@import "./module/button.scss";
+@import "./module/tableOperationBtn.scss";
+@import "./module/combotree.scss";
+@import "./module/radio.scss";
+@import "./module/checkbox.scss";
+
+
+
+.datagrid-td-rownumber{ //修改新建表格第一列td
+  width: 34px;
+}
+/*====================操作框====================*/
+.operation-wrapper{
+  .new-btn{
+    @extend %newAddBtn
+  }
+}
+
+/*====================整体table====================*/
+
+.table-operation{
+  .table-edit{
+    @extend %table-edit
+  }
+  .table-delete{
+    @extend  %table-delete
+  }
+}
+a{
+  &.td-detail{
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+
+/*====================弹窗====================*/
+// 新建弹窗
+
+.newAdd-wrapper{
+  width: 750px;
+  .content{
+    max-height: 510px;
+  }
+  .content-title{
+    text-align: center;
+    >div{
+      display: inline-block;
+      text-align: center;
+      >span{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid #dcdcdc;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        span{
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: #eee;
+          color: #666;
+          line-height: 36px;
+          margin-top: 2px;
+          i{
+            display: inline-block;
+            width: 24px;
+            height: 18px;
+            vertical-align: middle;
+            background-image: url('../images/init.png');
+            background-repeat: no-repeat;
+          }
+        }
+        &.green{
+          border: 1px solid #48cf76;
+          span{
+            color: #fff;
+            background-color: #48cf76;
+          }
+        }
+      }
+    }
+    .line{
+      display: inline-block;
+      width: 160px;
+      height: 1px;
+      background-color: #dcdcdc;
+      margin: 0 10px;
+      margin-bottom: 44px;
+      &.line-green{
+        background-color: #48cf76;
+      }
+    }
+  }
+
+  .content-step{
+    overflow: hidden;
+    &:not(:nth-of-type(1)){
+      height: 0;
+    }
+  }
+
+  .content-step:nth-of-type(2){
+    input[type=text]{
+      width: 220px;
+    }
+    .content-item{
+      label:nth-of-type(2){
+        margin-left: 28px;
+      }
+      p{
+        margin-bottom: 10px;
+      }
+    }
+    .table-div-checked,
+    .table-div{
+      height: 280px;
+    }
+    .table-div-checked{
+      display: none;
+    }
+    
+  }
+
+  .content-step:nth-of-type(3){
+    .content-item{
+      label:nth-of-type(2){
+        margin-left: 28px;
+      }
+      select{
+        width: 220px;
+      }
+    }
+    .content-checkbox{
+      p{
+        margin-bottom: 10px;
+      }
+    }
+  }
+  span{
+    &.checkedData,
+    &.station-allData{
+      color: #59afff;
+      &:hover{
+        cursor: pointer;
+        color: #2fabed;
+        text-decoration: underline;
+      }
+    }
+    &.station-checkedData{
+      &:hover{
+        text-decoration: underline;
+        color: #2fabed;
+        cursor: pointer;
+      }
+    }
+    &.station-checkAll{
+      display: inline-block;
+      margin-left: 20px;
+    }
+    &.data-checked{
+      color:#59afff;
+      &:hover{
+        color: #2fabed;
+      }
+    }
+    &.equip-checkedData,
+    &.allData{
+      cursor: pointer;
+      &:hover{
+        color: #2fabed;
+        text-decoration: underline;
+      }
+    }
+  }
+  a{
+    &.checkbox-wrapper{
+      vertical-align: middle;
+    }
+  }
+  .footer{
+    .submit{
+      display: none;
+      &.newAdd-prev{
+        background:none;
+        color: #59aFFf;
+        border: 1px solid #59afff;
+        margin-right: 50px;
+        &:hover{
+          background-color: #2fabed;
+          color: #fff;
+        }
+      }
+      &.submit-show{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// 编辑弹窗
+.edit-wrapper{
+  .chose-time{
+    @extend %chose-time;
+    width: 250px !important;
+  }
+  .content-item>div{
+    display: inline-block;
+  }
+  .content-item-img{
+    display: inline-block;
+    height: 30px;
+    width: 270px;
+    vertical-align: middle;
+    overflow: hidden;
+  }
+  .content-img{
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    //border: 1px solid blue;
+    height: 30px;
+    &:hover{
+      i{
+        display: inline-block;
+      }
+    }
+    i{
+      display: none;
+      width: 10px;
+      height: 10px;
+      cursor: pointer;
+      background-image: url('../images/popupIcon.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      position: absolute;
+      right: 8px;
+    }
+    img{
+      vertical-align: top;
+      width: 20px;
+      height: 20px;
+      margin-top: 5px;
+    }
+  }
+}
+
+// 厂站列表
+.station-item-checked,
+.station-item{
+  max-height: 280px;
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  //display: flex;
+  //justify-content: flex-start;
+  //flex-wrap: wrap;
+  //overflow-y: auto;
+  .station-items{
+    display: inline-block;
+    text-align: center;
+    width: 33.45%;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #dcdcdc;
+    margin-right: -1px;
+    margin-top: -1px;
+    &:nth-last-of-type(1),
+    &:nth-last-of-type(2),
+    &:nth-last-of-type(3){
+      margin-bottom: -1px;
+    }
+  }
+}
+
+.station-item{
+    height:300px;overflow:scroll   
+}
+.station-item-checked{
+  display: none;
+}
+// 详情弹窗
+.detail-wrapper{
+  width: 370px;
+  .content{
+    .station-item{
+      max-height: none;
+      height: 100%;
+    }
+  }
+}
+
+// 图片弹窗
+.img-wrapper{
+  width: 600px;
+  height: 500px;
+  .content{
+    max-height: 450px;
+    img{
+      width: 400px;
+      height: 400px;
+      margin-left: 70px;
+    }
+  }
+}

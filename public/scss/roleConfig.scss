@@ -1,0 +1,136 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/select.scss';
+@import './module/button.scss';
+@import './module/searchWrapper.scss';
+@import './module/table.scss';
+@import './module/popup.scss';
+@import './module/prompt.scss';
+@import './module/footerPage.scss';
+@import './module/tableOperationBtn.scss';
+@import './module/inforWrapper.scss';
+@import './module/checkbox.scss';
+@import './module/radio.scss';
+.new-popup {
+    width: 640px;
+    input[type=text],
+    select {
+        width: 350px;
+    }
+    // display: block;
+}
+
+.edit-popup {
+    width: 640px;
+    display: none;  // 
+}
+
+.edit-role-name-popup {
+    width: 510px;
+}
+
+.detail-popup {
+    width: 640px;
+}
+
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.table-edit-role,
+.table-edit-pow {
+    @extend %table-edit;
+}
+
+.table-delete {
+    @extend %table-delete;
+}
+
+.detail {
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.datagrid-cell.datagrid-cell-c2-name {
+    margin: 0 auto;
+}
+
+.datagrid-cell.datagrid-cell-c2-detail {
+    margin: 0 auto;
+}
+
+.radio-wrapper:nth-of-type(2) {
+    margin-left: 185px;
+}
+
+.chose-type {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.power {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: #666;
+    thead {
+        tr {
+            th {
+                height: 50px;
+                background-color: #f6f6f6;
+                border: 1px solid #eee;
+                font-weight: 300;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                height: 50px;
+                padding: 5px 0;
+                border: 1px solid #eee;
+                &:first-child {
+                    width: 60px;                 
+                    text-align: center;
+                }
+                &:nth-of-type(2) {
+                    width: 200px;
+                    // padding-left: 20px;
+                    text-align: center;
+                }
+            }
+            &:hover {
+                background-color: #f1faf6;
+            }
+        }
+    }
+}
+
+.repate-name {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-left: 5px;
+    i {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        margin-top: 4px;
+        margin-right: 5px;
+        vertical-align: top;
+        background-image: url('../images/!.png');
+    }
+    span {
+        color: #ff6d50;
+    }
+}
+
+.persons-popup {
+    .content {
+        height: 450px;
+    }
+}

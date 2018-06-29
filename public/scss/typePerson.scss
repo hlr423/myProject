@@ -1,0 +1,110 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/select.scss';
+@import './module/combotree.scss';
+@import './module/button.scss';
+@import './module/searchWrapper.scss';
+@import './module/table.scss';
+@import './module/popup.scss';
+@import './module/prompt.scss';
+@import './module/footerPage.scss';
+@import './module/tableOperationBtn.scss';
+@import './module/inforWrapper.scss';
+@import './module/checkbox.scss';
+
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.table-edit {
+    @extend %table-edit;
+}
+.table-delete {
+    @extend %table-delete;
+}
+
+.datagrid-btable .checkbox-wrapper input[type=checkbox] {
+    cursor: default;
+}
+
+.new-popup {
+    width: 640px;
+    input[type=text], select {
+        width: 400px;
+    }
+    input[type=text] {
+        background-color: #f2f2f2;
+    }
+    .content {
+        position: relative;
+    }
+}
+.edit-popup {
+    width: 640px;
+}
+
+.person-img {
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.popup .content .content-item label {
+    width: 55px;
+}
+
+.new-table, .edit-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    text-align: center;
+    color: #666;
+    thead {
+        tr {
+            th {
+                height: 50px;
+                background-color: #f6f6f6;
+                border: 1px solid #eee;
+                font-weight: 300;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                height: 50px;
+                padding: 5px 0;
+                border: 1px solid #eee;
+            }
+            &:hover {
+                background-color: #f1faf6;
+            }
+        }
+    }
+}
+
+.small-pic {
+    width: 35px;
+    height: 35px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    text-align: center;
+    overflow: hidden;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

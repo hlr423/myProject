@@ -1,0 +1,13 @@
+/*多行文本样式*/
+textarea{
+  width: 250px;
+  height: 60px;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  resize:none;
+  padding:10px 0 0 10px;
+  color: #666;
+  &::placeholder{
+    color: #ccc;
+  }
+}

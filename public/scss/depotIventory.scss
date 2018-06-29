@@ -1,0 +1,209 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/popup.scss";
+@import "./module/table.scss";
+@import "./module/footerPage.scss";
+
+@import "./module/input.scss";
+
+// 总体表格
+.table-wrapper{
+  td{
+    input{
+      width: 100%;
+    }
+  }
+}
+.scan-submit,
+.table-submit{
+  margin: 0 auto;
+  text-align: center;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  color: #fff;
+  line-height: 30px;
+  background-color: #59afff;
+  border-radius: 20px;
+  vertical-align: top;
+  border: none;
+  outline: 0;
+  transition: all .5s;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+.datagrid-cell{
+  overflow: visible;
+}
+a{
+  // 表格二维码
+  &.td-picture{
+    display: inline-block;
+    color: #59aFFf;
+    cursor: pointer;
+    position: relative;
+    &:hover{
+      text-decoration: underline;
+      >div{
+        display: block;
+      }
+    }
+    i{
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      background-image:url('../images/twoCodeIcon.png');
+      margin-right: 3px;
+      margin-bottom: 2px;
+    }
+    >div{
+      z-index: 999;
+      width: 210px;
+      height: 210px;
+      display: none;
+      position: absolute;
+      padding: 5px;
+      left: 50%;
+      top: 18px;
+      margin-left: -110px;
+      margin-top: 50%;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 40px #ccc;
+      &:before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 12px solid #fff;
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -6px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.datagrid-btable{
+  tr:nth-last-of-type(1),
+  tr:nth-last-of-type(2),
+  tr:nth-last-of-type(3){
+    .td-driveCard,
+    .td-picture{
+      >div{
+        top: auto;
+        margin-top: auto;
+        bottom:18px;
+        margin-bottom: 50%;
+        &:before{
+          border-bottom: 0px solid #fff;
+          border-top: 12px solid #fff;
+          top: auto;
+          bottom:-10px;
+        }
+      }
+    }
+  }
+  tr:nth-of-type(1),
+  tr:nth-of-type(2),
+  tr:nth-of-type(3){
+    .td-driveCard,
+    .td-picture{
+      >div{
+        bottom: auto;
+        margin-bottom: auto;
+        top:18px;
+        margin-top: 50%;
+        &:before{
+          border-top: 0px solid #fff;
+          border-bottom: 12px solid #fff;
+          bottom: auto;
+          top:-10px;
+        }
+      }
+    }
+  }
+}
+.scan{
+  margin: 30px auto;
+  text-align: center;
+  .scan-submit{
+    width: 100px;
+  }
+  >img{
+    display: inline-block;
+    margin-right: 70px;
+    vertical-align: middle;
+  }
+ >div{
+   display: inline-block;
+   vertical-align: middle;
+   text-align: left;
+   >p{
+     color: #59aFFf;
+     margin: 20px 0;
+   }
+   input{
+     width: 350px;
+     margin-right: 20px;
+   }
+ }
+}
+
+/*====================盘点成功弹窗===================*/
+
+.success-wrapper {
+  //display: block;
+  text-align: center;
+  width: 400px;
+  .content {
+    height: 150px;
+    padding-top: 40px;
+    i {
+      display: block;
+      width: 50px;
+      height: 42px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      background-image: url('../images/success.png');
+      background-size: 100% 100%;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+  .footer {
+    .submit:nth-of-type(1) {
+      margin-right: 20px;
+      border: 1px solid #59aFFf;
+      background-color: #fff;
+      color: #59aFFf;
+    }
+    .submit{
+      &:hover{
+        color: #fff;
+        background-color: #2fabed;
+      }
+    }
+  }
+}
+.inventory-prompt-wrapper{
+  .content{
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+  span{
+    display: inline-block;
+    text-align: left;
+    color: #ff6430;
+  }
+}

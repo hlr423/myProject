@@ -1,0 +1,188 @@
+/*搜索容器按钮样式*/
+
+.operation-wrapper {
+    color: #fff; 
+    user-select: none;
+    &>div {
+        display: inline-block;
+        width: 80px;
+        height: 34px;
+        margin-right: 10px;
+        text-align: center;
+        line-height: 34px;
+        vertical-align: top;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: backgroundColor linear .5s;
+        cursor: pointer;
+        i {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 3px;
+            background-repeat: no-repeat;
+            background-image: url('../images/btn.png');
+            vertical-align: middle;
+        }
+    }
+}
+
+%readyBtn {
+    background-color: #51c589;
+    border: 1px solid #51c589;
+    width: 100px;
+    i {
+        background-image: url('../images/redyBtn.png');
+        background-position: -2px 0;
+        vertical-align: inherit;
+        margin-right: 2px;
+    }
+}
+
+%newAddBtn {
+    background-color: #51c589;
+    border: 1px solid #51c589;
+    i {
+        background-position: 0 0;
+    }
+    &:hover {
+        background-color: #49bb7f;
+        border: 1px solid #49bb7f;
+    }
+}
+
+%exportBtn {
+    background-color: #3cbbff;
+    border: 1px solid #3cbbff;
+    i {
+        background-position: -24px 0;
+    }
+    &:hover {
+        background-color: #2fabed;
+        border: 1px solid #2fabed;
+    }
+}
+
+%importBtn {
+    background-color: #7d9fff;
+    border: 1px solid #7d9fff;
+    i {
+        background-position: -48px 0;
+    }
+    &:hover {
+        background-color: #6d8fef;
+        border: 1px solid #6d8fef;
+    }
+}
+
+%downloadBtn {
+    width: 100px;
+    background-color: #fdc456;
+    border: 1px solid #fdc456;
+    i {
+        background-position: -71px 0;
+    }
+    &:hover {
+        background-color: #efb74c;
+        border: 1px solid #efb74c;
+    }
+}
+
+%allDelBtn {
+    width: 100px;
+    background-color: #fb6e53;
+    border: 1px solid #fb6e53;
+    i {
+        background-position: -96px 0;
+    }
+    &:hover {
+        background-color: #eb6047;
+        border: 1px solid #eb6047;
+    }
+}
+
+%overtimeDelBtn {
+    width: 150px;
+    background-color: #fb6e53;
+    border: 1px solid #fb6e53;
+    i {
+        background-position: -96px 0;
+    }
+    &:hover {
+        background-color: #eb6047;
+        border: 1px solid #eb6047;
+    }
+}
+
+%carOutBtn {
+    background-color: #51c589;
+    border: 1px solid #51c589;
+    i {
+        background-position: -96px 0;
+    }
+    &:hover {
+        background-color: #49bb7f;
+        border: 1px solid #49bb7f;
+    }
+}
+
+%depotOutBtn {
+    background-color: #51c589;
+    border: 1px solid #51c589;
+    i {
+        background-position: -120px 0;
+    }
+    &:hover {
+        background-color: #49bb7f;
+        border: 1px solid #49bb7f;
+    }
+}
+
+%depotIntoBtn {
+    background-color: #51c589;
+    border: 1px solid #51c589;
+    i {
+        background-position: -144px 0;
+    }
+    &:hover {
+        background-color: #49bb7f;
+        border: 1px solid #49bb7f;
+    }
+}
+
+%repairBtn {
+    background-color: #51c589;
+    border: 1px solid #51c589;
+    i {
+        background-position: -168px 0;
+    }
+    &:hover {
+        background-color: #49bb7f;
+        border: 1px solid #49bb7f;
+    }
+}
+
+%keepBtn {
+    background-color: #51c589;
+    border: 1px solid #51c589;
+    i {
+        background-position: -208px 0;
+    }
+    &:hover {
+        background-color: #49bb7f;
+        border: 1px solid #49bb7f;
+    }
+}
+
+%twoCodeBtn {
+    width: 100px;
+    background-color: #fdc456;
+    border: 1px solid #fdc456;
+    i {
+        background-position: -166px 0;
+    }
+    &:hover {
+        background-color: #efb74c;
+        border: 1px solid #efb74c;
+    }
+}

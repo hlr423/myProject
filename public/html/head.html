@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>头部</title>
+    <link rel="stylesheet" href="../css/head.css">
+</head>
+
+<body>
+    <div class="head">
+        <p>乡镇污水处理Aisacent人工智能系统运管平台</p>
+        <div>
+            <ul>
+                <li>
+                    <span class="headImg">
+                        <img src="../images/head.png" alt="">
+                    </span>
+                </li>
+                <li>
+                    <span class="welcome">欢迎您，admin！</span>
+                </li>
+                <!-- <li>|</li>
+                <li>
+                    <span>
+                        <a id="test">个人中心</a>
+                    </span>
+                </li> -->
+            </ul>
+            <ul>
+                <li class="headMessage">
+                    <a>
+                        <i></i>
+                    </a>
+                    <div class="point"></div>
+                </li>
+                <li class="headExplain">
+                    <a>
+                        <i></i>
+                    </a>
+                </li>
+                <li class="headClose" state="0">
+                    <i></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            // console.log(window.parent.view_frame.document)
+            // console.log($(window.parent.view_frame.document))
+
+            // 登录信息
+            $('.welcome').on('mouseover', function () {
+                var $body = $('body', window.parent.view_frame.document)
+                var loginInfo = '<div class="login-info">';
+                loginInfo += '<span class="normal">正常</span>';
+                loginInfo += '<p>';
+                loginInfo += '<span>上次登录时间</span>';
+                loginInfo += '<span>2017-09-10 14:24:45</span>';
+                loginInfo += '</p>';
+                loginInfo += '<p>';
+                loginInfo += '<span>上次登录地点</span>';
+                loginInfo += '<span>四川成都</span>';
+                loginInfo += '</p>';
+                loginInfo += '</div>';
+                var $loginInfo = $('.login-info', window.parent.view_frame.document)
+                if ($loginInfo.length == 0) {
+                    $body.append(loginInfo);
+                }
+            })
+            $('.welcome').on('mouseout', function () {
+                var $body = $('body', window.parent.view_frame.document)
+                var $loginInfo = $('.login-info', window.parent.view_frame.document)
+                $loginInfo.remove();
+            })
+
+
+            // 消息提示框
+            $('.headMessage').on('click', function () {
+                var $body = $('body', window.parent.view_frame.document)
+                console.log($body)
+                var systemInformation = '<div class="top-inf">';
+                systemInformation += '<p>你有一条新的系统通知</p>';
+                systemInformation += '<a>查看</a>';
+                systemInformation += '</div>';
+                var $topInf = $('.top-inf', window.parent.view_frame.document)
+                if ($('.point').length == 1) {
+                    if ($topInf.length == 0) {
+                        $body.append(systemInformation)
+                    } else {
+                        $topInf.remove();
+                    }
+                }
+                // $(window.parent.frames["menu"].document).find('#aaa').hide()
+            })
+
+            // 公司信息
+            $('.headExplain').on('mouseover', function () {
+                var $body = $('body', window.parent.view_frame.document)
+                var companyDetail = '<div class="top-company">';
+                companyDetail += '<p>版权所有©四川亚欧瑞智科技有限公司</p>';
+                companyDetail += '<p>技术支持:四川亚欧瑞智科技有限公司</p>';
+                companyDetail += '<p>400-028-9537</p>';
+                companyDetail += '</div>';
+                var $companyDetail = $('.top-company', window.parent.view_frame.document)
+                if ($companyDetail.length == 0) {
+                    $body.append(companyDetail)
+                }
+            })
+            
+            $('.headExplain').on('mouseout', function () {
+                var $body = $('body', window.parent.view_frame.document)
+                var $companyDetail = $('.top-company', window.parent.view_frame.document)
+                $companyDetail.remove();
+            });
+
+            // 退出框
+            $('.headClose').on('click', function () {
+                var state = $(this).attr('state');
+                var $body = $('body', window.parent.view_frame.document);
+                if (state == 0) {
+                    $(this).attr('state', '1');
+                    var shade = '<div class="shadeAll"></div>';
+                    var closeWrapper = '<div class="close-wrapper">';
+                    closeWrapper += '<p><img src="../dist/images/delete-icon.png" alt="">确认退出？</p>';
+                    closeWrapper += '<div><a class="close-wrapper-sure">退出</a>';
+                    closeWrapper += '<a class="close-wrapper-cancel">取消</a></div>';
+                    $body.append(shade).append(closeWrapper);
+                    $body.find('.close-wrapper').css('display','block');
+                }
+                $body.on('click','.close-wrapper-sure',function (event) {
+                    event.stopPropagation();
+                    alert('确认退出')
+                });
+                $body.on('click','.close-wrapper-cancel',function (event) {
+                    event.stopPropagation();
+                    var $shade = $body.find('.shadeAll');
+                    var $headClose = $('.headClose',window.parent.head.document);
+                    $(this).parents('.close-wrapper').remove();
+                    $shade.remove();
+                    $headClose.attr('state','0');
+                    alert('取消退出')
+                });
+
+            });
+
+            function showWarming(station, equip, state) {
+                
+                var $body = $('body', window.parent.view_frame.document);
+                var messageNode = '<div class="allMessage"><div class="title">';
+                messageNode += '<span>故障消息</span><a class="close-popup"><i class="close-icon"></i></a>';
+                messageNode += '</div><div class="content"><p></p></div></div>';
+                $body.append(messageNode);
+                var $allMessage = $('.allMessage', window.parent.view_frame.document);
+                var $title = $allMessage.find('.title');
+                var $content = $allMessage.find('.content');
+                $title.find('.close-icon').on('click', function () {
+                    var $this = $(this);
+                    var $parent = $this.parents('.allMessage');
+                    $parent.fadeOut().css('bottom', '-110px');  // 当前消失
+                });
+                $allMessage.animate({ //弹出动画
+                    bottom: '20px'
+                }, 1000);
+                var context = station + "-" + equip + "-" + state;
+                console.log($content.text())
+                $content.each(function (index, node) {
+                    if ($(node).text() == '') {
+                        $(node).find('p').text(context);
+                    } else {
+                        console.log(2)
+                    }
+                })
+
+                $content.find('p').on('click', function () {
+                    alert('跳转')
+                })
+            }
+        });
+        // 监听f5局部刷新内容frame
+        document.onkeydown = function (e) {
+            e = window.event || e;
+            var keycode = e.keyCode || e.which;
+            if (keycode == 116) {
+                if (window.event) {// ie 
+                    e.preventDefault();
+                    window.parent.frames["view_frame"].location.reload();
+                } else {// firefox  
+                    e.preventDefault();
+                    window.parent.frames["view_frame"].location.reload();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

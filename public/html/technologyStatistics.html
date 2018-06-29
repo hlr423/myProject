@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>统计报表/工艺统计</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/technologyStatistics.css">
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="search-nav">
+            <select id="select-area" class=" part-factory  easyui-combotrees ">
+                <option value="0">全部区域</option>
+                <option value="1">区域1</option>
+                <option value="2">区域2</option>
+                <option value="3">区域3</option>
+            </select>
+
+            <select class="easyui-validatebox part-factory stationValue">
+                <option value="0">全部厂站</option>
+                <option value="1">厂站1</option>
+                <option value="2">厂站2</option>
+                <option value="3">厂站3</option>
+            </select>
+
+            <!-- date -->
+            <div class="title">
+                <input type="text" class="data-year1  chose-time" placeholder="请选择年份">
+                <select class="data">
+                    <option value="0" selected>年</option>
+                    <option value="1">季度</option>
+                    <option value="2">月</option>
+                </select>
+                <input type="text" class="data-year data-show chose-time" placeholder="请选择年份">
+                <select class="data-quarter">
+                    <option value="0">春季</option>
+                    <option value="1">夏季</option>
+                    <option value="2">秋季</option>
+                    <option value="3">冬季</option>
+                </select>
+                <input type="text" class="data-month chose-time" placeholder="请选择月份">
+            </div>
+            <input type="text" class="input-search" placeholder=" 搜索厂站" maxlength="50">
+            <div class="order-btn btn">搜索</div>
+            <div class=" order-btn btn-export"> <i></i>导出</div>
+        </div>
+        <!--工艺统计的数据选择-->
+        <div class="add-data">
+            <div class="item">
+                <a class="check-all-wrapper">
+                    <i class="check-box"></i>
+                    <input type="checkbox" name="" value="no"  class="check-data">
+                    <label for="btn-checkbox">数据1</label>
+                </a>
+                <select name="" id="" class="chose-place">
+                    <option value="0">请选择位置</option>
+                    <option value="1">成都</option>
+                </select>
+                <select name="" id="" class="chose-eq">
+                    <option value="0">请选择设备</option>
+                    <option value="1">设备1</option>
+                </select>
+
+                <div class="delete-btn">
+                    <i></i>删除
+                </div>
+            </div>
+            <div class="item">
+                <a class="check-all-wrapper">
+                    <i class="check-box"></i>
+                    <input type="checkbox" name="" value="no"  class="check-data">
+                    <label for="btn-checkbox">数据1</label>
+                </a>
+                <select name="" id="" class="chose-place">
+                    <option value="0">请选择位置</option>
+                </select>
+                <select name="" id="" class="chose-eq">
+                    <option value="0">请选择设备</option>
+                    <option value="1">123</option>
+                </select>
+
+                <div class="delete-btn">
+                    <i></i>删除
+                </div>
+            </div>
+            <div class="add-btn">
+                <i></i>
+                <span>添加数据</span>
+            </div>
+        </div>
+        <div class="echart-btn">生成报表</div>
+        <div id="echartWrapper">
+
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/laydate/laydate.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/echarts-liquidfill.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/technologyStatistics.js"></script>
+    <script src="../js/refresh.js"></script>
+    
+</body>
+
+</html>

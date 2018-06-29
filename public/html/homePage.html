@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <link rel="stylesheet" href="../css/homePage.css">
+</head>
+
+<body>
+<div class="content">
+    <div class="info-wrapper">
+        <div class="site-info">
+            <div class="site-number1">
+                <i></i>
+                <div class="station-data">
+                    <p>简阳区域污水处理厂</p>
+                    <p>
+                        <span>38</span>厂站
+                    </p>
+                </div>
+                <div class="show-date">
+                    <p>当前达标率</p>
+                    <p>89.2%</p>
+                </div>
+            </div>
+            <div class="site-number2">
+                <div>
+                    <i class="green"></i>
+                    <p>达标:
+                        <span>36</span>个</p>
+                </div>
+                <div>
+                    <i class="yellow"></i>
+                    <p>超标:
+                        <span>1</span>个</p>
+                </div>
+                <div>
+                    <i class="red"></i>
+                    <p>故障:
+                        <span>1</span>个</p>
+                </div>
+                <div class="site-class">
+                    <i class="site-class-iv"></i>
+                    <span>地表IV类</span>
+                </div>
+            </div>
+        </div>
+        <div class="site-water">
+            <div class="water-wrapper">
+                <div id="water-echarts" class="echarts-wrapper"></div>
+                <span>实时处理量</span>
+            </div>
+            <ul class="list">
+                <li>
+                    <div>
+                        <p>当月处理水量(m³)</p>
+                        <span class="red">
+                            1500000.00
+                        </span>
+                    </div>
+
+                </li>
+                <li>
+                    <div>
+                        <p>第一季度处理水量(m³)</p>
+                        <span class="red">4500000.00</span>
+                    </div>
+
+                </li>
+                <li>
+                    <div>
+                        <p>2018年处理水量(m³)</p>
+                        <span class="red">18000000.00</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="site-power">
+            <div class="power-wrapper">
+                <div class="echarts-wrapper">
+                    <img src="../images/data-kw.png" alt="">
+                    <p>1090<span>KW</span></p>
+                </div>
+                <span>实时设备运行功率</span>
+            </div>
+            <ul class="list">
+                        <li>
+                            <div>
+                                <p>当月能耗(KW)</p>
+                                <span class="blue">32700.00</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>第1季度能耗(KW)</p>
+                                <span class="blue">98100.00</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>2018年能耗(KW)</p>
+                                <span class="blue">392400.00</span>
+                            </div>
+                        </li>
+                    </ul>
+        </div>
+    </div>
+    <div class="info-wrapper2">
+        <div class="map" id="allmap"></div>
+        <div class="info-data">
+            <div class="data">
+                <div class="data-title">
+                    <p>简阳区域厂站减排数据</p>
+                    <ul>
+                        <li class="title-cod active">COD</li>
+                        <li class="title-ad">氨氮</li>
+                        <li class="title-p">总磷</li>
+                    </ul>
+                </div>
+                <div class="data-content">
+                    <div class="content-chart discharge-wrapper">
+                        <div class="cod-data">
+                            <p>COD日减排总量</p>
+                            <span><span>8.5</span>T</span>
+                        </div>
+                    </div>
+                    <div class="content-data">
+                        <ul class="list">
+                            <li>
+                                <div>
+                                    <p>COD月减排量(T)</p>
+                                    <span class="sky-blue">255.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>COD季度减排量(T)</p>
+                                    <span class="sky-blue">765.00</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>COD年减排量(T)</p>
+                                    <span class="sky-blue">3102.50</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="data">
+                <div class="data-title">
+                    <p>简阳区域区域厂站实时药耗</p>
+                    <div class="data-show" state="0">
+                        <img src="../images/leader-sanjiao.png" alt="">
+                    </div>
+                </div>
+                <div class="data-content">
+                    <div class="content-chart drug-wrapper">
+                        <div class="echarts-wrapper">
+                            <img src="../images/leader-cost.png" alt="">
+                            <p>1854512<span>mg</span></p>
+                        </div>
+                        <span>实时药耗</span>
+                    </div>
+                    <div class="content-data">
+                        <ul class="list">
+                            <li>
+                                <div>
+                                    <p>当月药耗(mg)</p>
+                                    <span class="green">6300000</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>第一季度药耗(mg)</p>
+                                    <span class="green">18900000</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <p>2018年药耗(mg)</p>
+                                    <span class="green">76650000</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/echarts.js"></script>
+<script src="../js/echarts-liquidfill.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=GiIaCe6wmTFjiYAzqa7OzpGm9WLwPvCu"></script>
+<script src="../js/homePage.js"></script>
+<script src="../js/refresh.js"></script>
+</body>
+</html>

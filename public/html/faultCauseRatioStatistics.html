@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>统计报表/故障原因统计</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/faultCauseRatioStatistics.css">
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="search-nav">
+            <select id="select-area" class=" part-factory  easyui-combotrees ">
+                <option value="0">全部区域</option>
+                <option value="1">区域1</option>
+                <option value="2">区域2</option>
+                <option value="3">区域3</option>
+            </select>
+
+            <select class="easyui-validatebox part-factory stationValue">
+                <option value="0">全部厂站</option>
+                <option value="1">厂站1</option>
+                <option value="2">厂站2</option>
+                <option value="3">厂站3</option>
+            </select>
+
+            <!-- date -->
+            <div class="title">
+                <input type="text" class="data-year1  chose-time" placeholder="请选择年份">
+                <select class="data">
+                    <option value="0" selected>年</option>
+                    <option value="1">季度</option>
+                    <option value="2">月</option>
+                </select>
+                <input type="text" class="data-year data-show chose-time" placeholder="请选择年份">
+                <select class="data-quarter">
+                    <option value="0">春季</option>
+                    <option value="1">夏季</option>
+                    <option value="2">秋季</option>
+                    <option value="3">冬季</option>
+                </select>
+                <input type="text" class="data-month chose-time" placeholder="请选择月份">
+            </div>
+            <input type="text" class="input-search" placeholder=" 搜索厂站" maxlength="50">
+            <div class="order-btn btn">搜索</div>
+        </div>
+        <div class="person-statistics">    
+            <!--故障原因类型-->
+            <div class="work-time">
+                <div class="title">
+                    <span>故障原因类型</span>
+                </div>
+                <div>
+                    <div id="echarts-wrapper-earlyWarning" class="echarts-wrapper"></div>
+                    <div id="echarts-wrapper-giveAlarm" class="echarts-wrapper"></div>
+                    <div id="echarts-wrapper-fault" class="echarts-wrapper"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/laydate/laydate.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/echarts-liquidfill.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/faultCauseRatioStatistics.js"></script>
+    <script src="../js/refresh.js"></script>
+</body>
+
+</html>

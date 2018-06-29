@@ -1,0 +1,72 @@
+/*选项卡样式*/
+
+.tabs-header{ //头部boder
+  border: none;
+}
+.tabs-header, .tabs-tool{
+  background-color: #fff; // 修改标签背景色
+}
+.tabs-title{ //设置标签字体
+  font-size: 16px;
+}
+.tabs{    //标签间距
+  border: none;
+  background-color: #fff; // 标签背景色
+  padding-left: 0;
+  li{
+    margin-right: 50px;
+    border-bottom: 1px solid #fff;
+  }
+}
+.tabs li a.tabs-inner{  // 标签
+  border: none;
+  border-bottom: 2px solid #fff;
+  background: none;
+  color: #666;
+}
+
+.tabs li.tabs-selected a.tabs-inner{ //选中时的li标签 下的a标签
+  border: none;
+  border-bottom: 2px solid #59aFFf;
+  color: #59aFFf;
+  font-weight: normal;
+  background: none;
+}
+.tabs-selected{   // 选中时的li标签
+  border-bottom: 2px solid #59aFFf;
+}
+
+.tabs li:not(.tabs-selected) a.tabs-inner:hover{ //鼠标移入标签
+  background: none;
+  color: #59aFFf;
+  border-bottom: 2px solid #59aFFf;
+}
+.tabs li a.tabs-close{  // 删除标签icon
+  display: none;
+}
+.tabs-with-icon{     //调整最后一个标签间距
+  padding-left: 0;
+}
+.tabs-closable{
+  padding: 0;
+}
+
+//内容框==========================GO
+.tabs-panels{
+  border: none;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  height: calc(100% - 52px);
+}
+.panel-body{
+  font-size: 14px;
+}
+.easyui-tabs {
+  height: 100%;
+}
+.tabs-container{
+  overflow: visible;
+}
+.panel,.panel-body{
+  height: 100%;
+}

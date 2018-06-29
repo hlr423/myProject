@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/tabIndex.css">
+</head>
+
+<body>
+    <div id="tt" class="easyui-tabs" style="width: 500px;height: 200px">
+        <div title="基础信息信息" style="padding:20px;">
+            tab11
+        </div>
+        <div title="通信信息通信信息" data-options="closable:true" style="overflow:auto;padding:20px;">
+            tab22
+        </div>
+        <div title="运维信息" data-options="iconCls:'icon-reload',closable:true" style="padding:20px;">
+            tab33
+        </div>
+    </div>
+
+    <div id="dd">
+        <textarea name="" id=""></textarea>
+        <div class="inputFile">
+            <input type="file">
+            <span>
+                <i></i>上传文件</span>
+            <span class="inputFile-text">请选择文件...</span>
+        </div>
+    </div>
+
+    <!--单选-->
+    <div class="radio-test">
+        <a class="radio-wrapper radio-checked">
+            <i></i>
+            <input type="radio" name="ceshi" checked="checked">
+        </a>
+        <a class="radio-wrapper">
+            <i></i>
+            <input type="radio" name="ceshi">
+        </a>
+    </div>
+    <!--复选-->
+    <div class="detail-table">
+        <a class="checkbox-all-wrapper" style="display: block">
+            <i></i>
+            <input type="checkbox" name="ceshi" class="check-all">
+        </a>
+        全选
+        <a class="checkbox-wrapper">
+            <i></i>
+            <input type="checkbox" name="ceshi" class="check-row">
+        </a>
+        <a class="checkbox-wrapper">
+            <i></i>
+            <input type="checkbox" name="ceshi" class="check-row">
+        </a>
+        <a class="checkbox-wrapper checkbox-wrapper-not">
+            <i></i>
+            <input type="checkbox" name="ceshi" class="check-row" disabled>
+        </a>
+    </div>
+
+    <div class="body-wrapper">
+        <div class="search-wrapper">
+            <input type="text" placeholder="请输入部门名称">
+            <div class="search-btn">搜索</div>
+        </div>
+        <div class="operation-wrapper">
+            <div class="new-btn">
+                <i></i>
+                <span>新建</span>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <table class="easyui-datagrid" id="dg">
+                <tbody>
+                    <tr>
+                        <td>一级</td>
+                        <td>天翔公司</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>公司二</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>天翔公司</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>公司二</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>天翔公司</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>公司二</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>天翔公司</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>公司二</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>公司二</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="page" class="easyui-pagination"></div>
+    </div>
+    <button class="qqqq">1111</button>
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script>
+        $('.qqqq').on('click', function () {
+            $.ajax({
+                    type:'get',
+                    url:'http://192.168.2.105:8080/girls?',
+                    dataType:'jsonp',
+                    jsonp: 'callback', // 回调函数，后台get接收的变量名，默认 就callback
+                    // jsonpCallback: 'abc',    回调函数名，默认是一长串，jquery自动生成的，在请求url中可以看到
+                                            // 改不改无所谓，改短一点也只是 查看请求url的时候清晰一点而已
+                    success:function(data){
+                        console.log(data);   // zhangsan 123456
+                    },
+                    error:function(err){
+                        console.log(err);
+                    }
+                });
+        $.ajaxSettings.async = false; 
+        $.getJSON("http://192.168.2.105:8080/girls?jsoncallback=?",function(json) { alert(json)});　 
+  
+    
+    })
+    
+
+        
+
+
+
+        $(function () {
+            $('#tt').tabs({
+                plain: true,
+                tabHeight: 50
+            });
+            $('#dg').datagrid({
+                fit: true,
+                fitColumns: true,
+                rownumbers: true,
+                singleSelect: true,
+                columns: [
+                    [{
+                            field: 'name',
+                            title: '级数',
+                        },
+                        {
+                            field: 'name',
+                            title: '组织机构名称',
+                        },
+                        {
+                            field: 'operate',
+                            title: '操作',
+                            width: '200',
+                            formatter: function (value, rec) {
+                                return '<div class="table-operation"><a class="table-edit""><i></i>编辑</a> ' +
+                                    '<a class="table-delete""><i></i>删除</a>' +
+                                    '<a class="table-newAdd""><i></i>新建</a>' +
+                                    '</div>';
+                            }
+                        }
+                    ]
+                ]
+            });
+        });
+        common.commonRadio('.radio-test')
+        common.commonCheckbox('.detail-table', true)
+        common.checkboxAll('.detail-table')
+    </script>
+</body>
+
+</html>

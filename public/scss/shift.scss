@@ -1,0 +1,97 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/combotree.scss';
+@import './module/select.scss';
+@import './module/button.scss';
+@import './module/searchWrapper.scss';
+@import './module/table.scss';
+@import './module/popup.scss';
+@import './module/prompt.scss';
+@import './module/footerPage.scss';
+@import './module/tableOperationBtn.scss';
+@import './module/inforWrapper.scss';
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.table-edit {
+    @extend %table-edit;
+}
+
+.table-delete {
+    @extend %table-delete;
+}
+
+.table-use {
+    @extend %table-use;
+}
+
+.table-used {
+    @extend %table-used;
+}
+
+.detail {
+    color: #59afff;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.new-popup, .edit-popup {
+    width: 800px;
+    table {
+        width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        table-layout: fixed;
+        border-collapse: collapse;
+        text-align: center;
+        color: #666;
+        thead {
+            tr {
+                th {
+                    height: 50px;
+                    background-color: #f6f6f6;
+                    border: 1px solid #eee;
+                    font-weight: 300;
+                }
+            }
+        }
+        tbody {
+            tr {
+                td {
+                    height: 50px;
+                    padding: 5px 0;
+                    border: 1px solid #eee;
+                    &:first-child {
+                        width: 200px;
+                        padding-left: 20px;
+                        text-align: left;
+                    }
+                }
+                &:hover {
+                    background-color: #f1faf6;
+                }
+            }
+        }
+        input {
+            width: 80px;
+            padding-left: 4px;
+        }
+    }
+}
+
+.new-popup .content .content-item label {
+    width: 69px;
+}
+
+.new-total, .edit-total {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.detail-popup {
+    width: 640px;
+}

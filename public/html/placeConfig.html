@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>位置初始化</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/placeConfig.css">
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="search-wrapper">
+            <select id="client" class="easyui-combotrees cbt">
+            </select>
+            <input type="text" placeholder="请输入部门名称" maxlength="50">
+            <div class="search-btn">搜索</div>
+        </div>
+        <div class="operation-wrapper">
+            <div class="new-btn">
+                <i></i>
+                <span>新建</span>
+            </div>
+        </div>
+        <div class="table-wrapper">
+            <table class="easyui-treegrid" id="dg">
+                <!-- <tbody>
+                    <tr>
+                        <td>一级</td>
+                        <td>进水口</td>
+                    </tr>
+                    <tr>
+                        <td>一级</td>
+                        <td>出水口</td>
+                    </tr>
+                    <tr>
+                        <td>二级</td>
+                        <td>调节池口</td>
+                    </tr>
+                </tbody> -->
+            </table>
+        </div>
+    </div>
+    <div class="shade"></div>
+    <!-- 新建框 -->
+    <div class="popup new-popup">
+        <div class="title">
+            <span>新建</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form id="newForm" method="post">
+                <div class="content-item">
+                    <label>位置名称*</label>
+                    <input class="easyui-validatebox" type="text" placeholder="请输入位置名称（默认一级）" data-options="required:true" maxlength="50" />
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="submit new-submit">提交</div>
+        </div>
+    </div>
+    <!-- 编辑框 -->
+    <div class="popup edit-popup">
+        <div class="title">
+            <span>编辑</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form id="editForm" method="post">
+                <div class="content-item">
+                    <label>位置名称*</label>
+                    <input class="easyui-validatebox" type="text" placeholder="请输入位置名称" data-options="required:true" maxlength="50" />
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="submit edit-submit">提交</div>
+        </div>
+    </div>
+    <!-- 添加子类型 -->
+    <div class="popup add-popup">
+        <div class="title">
+            <span>添加子类型</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form id="addForm" method="post">
+                <div class="content-item">
+                    <label>位置名称*</label>
+                    <input class="easyui-validatebox" type="text" placeholder="请输入位置名称" data-options="required:true" maxlength="50" />
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="submit add-submit">提交</div>
+        </div>
+    </div>
+    <!-- 删除框 -->
+    <div class="infor-wrapper delete-wrapper">
+        <p>
+            <i></i>
+            是否确认删除?
+        </p>
+        <div>
+            <a class="delete-confirm">删除</a>
+            <a class="infor-cancel">取消</a>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/refresh.js"></script>
+    <script src="../js/placeConfig.js"></script>
+</body>
+
+</html>

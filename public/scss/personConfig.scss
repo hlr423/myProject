@@ -1,0 +1,91 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/select.scss';
+@import './module/checkbox.scss';
+@import './module/combotree.scss';
+@import './module/button.scss';
+@import './module/searchWrapper.scss';
+@import './module/table.scss';
+@import './module/popup.scss';
+@import './module/prompt.scss';
+@import './module/radio.scss';
+@import './module/footerPage.scss';
+@import './module/tableOperationBtn.scss';
+@import './module/inforWrapper.scss';
+
+
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.new-chose-gender, .edit-chose-gender {
+    display: inline-flex;
+    width: 250px;
+    .radio-wrapper:nth-child(2) {
+        margin-left: 96px;
+    }
+}
+.table-account, .table-region {
+    @extend %table-new-add;
+}
+.table-init {
+    @extend %table-init;
+}
+
+.table-edit {
+    @extend %table-edit;
+}
+.table-delete {
+    @extend %table-delete;
+}
+
+.state {
+    &.green {
+        color: #50c589;
+    }
+    &.red {
+        color: #ff6d50;
+    }
+    &.gray {
+        color: #999;
+    }
+}
+
+.region-popup {
+    width: 640px;
+}
+
+#treeTable1 {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+    color: #666;
+    thead {
+        tr {
+            th {
+                height: 50px;
+                background-color: #f6f6f6;
+                border: 1px solid #eee;
+                font-weight: 300;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                width: 236px;
+                height: 50px;
+                padding: 5px 0;
+                border: 1px solid #eee;
+                text-align: center;
+                &:first-child {
+                    width: 100px;
+                }
+            }
+            &:hover {
+                background-color: #f1faf6;
+            }
+        }
+    }
+}

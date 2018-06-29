@@ -1,0 +1,19 @@
+/*下拉列表样式*/
+select {
+    width: 250px;
+    height: 30px;
+    padding-left: 8px;
+    padding-right: 14px;
+    color: #666;
+    font-size: 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    appearance: none;
+    background: url('../images/page-down.png') no-repeat scroll right 9px center transparent;
+    cursor: pointer;
+}
+// ie11中默认隐藏三角
+select::-ms-expand {
+    display: none;
+}
+

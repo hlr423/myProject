@@ -1,0 +1,40 @@
+@import './module/global.scss';
+@import './module/popup.scss';
+@import './module/table.scss';
+@import './module/input.scss';
+@import './module/select.scss';
+@import './module/button.scss';
+@import './module/footerPage.scss';
+@import './module/searchWrapper.scss';
+@import "./module/table.scss";
+@import "./module/textarea.scss";
+@import "./module/inputFile.scss";
+// @import "./module/checkbox.scss";
+@import "./module/tableOperationBtn.scss";
+@import "./module/radio.scss";
+@import "./module/tab.scss";
+
+// 修改字体
+.datagrid-cell, .datagrid-cell-group, .datagrid-header-rownumber, .datagrid-cell-rownumber{
+  font-size: 14px;
+}
+
+.table-edit{
+  @extend  %table-edit
+}
+.table-delete{
+  @extend  %table-delete
+}
+.table-newAdd{
+  @extend  %table-new-add
+}
+.datagrid-btable{
+  tr{
+    td:last-child{
+      >div{
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  }
+}

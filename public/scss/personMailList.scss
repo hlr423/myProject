@@ -1,0 +1,116 @@
+@import './module/global.scss';
+@import './module/prompt.scss';
+@import "./module/table.scss";
+@import "./module/footerPage.scss";
+@import './module/popup.scss';
+@import './module/input.scss';
+@import "./module/combotree.scss";
+@import "./module/tableOperationBtn";
+@import "./module/tab.scss";
+@import './module/searchWrapper.scss';
+@import './module/button.scss';
+@import "./module/select.scss";
+/*================================================*/
+
+.body-wrapper {
+    padding-top: 20px;
+}
+
+.operation-wrapper {
+    padding-bottom: 20px;
+}
+
+.search-wrapper {
+    margin-bottom: 20px;
+}
+
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.table-operation {
+    .table-edit {
+        @extend %table-edit
+    }
+    .table-delete {
+        @extend %table-delete
+    }
+}
+
+.body-wrapper {
+    .table-wrapper {
+        height: 300px;
+        padding: 0;
+        position: relative;
+        .export {
+            position: absolute;
+            right: 0;
+            top: 16px;
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #3cbbff;
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            i {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background-image: url('../images/btn.png');
+                background-position: -24px 0px;
+                background-repeat: no-repeat;
+                position: relative;
+                right: 3px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+/*============弹框的表格样式==========*/
+.newAdd-wrapper {
+    .table-wrapper {
+        padding: 0;
+        position: relative;
+        .export {
+            position: absolute;
+            right: 0;
+            top: 16px;
+            display: inline-block;
+            width: 90px;
+            height: 30px;
+            border-radius: 5px;
+            background-color: #3cbbff;
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            i {
+                display: inline-block;
+                width: 14px;
+                height: 14px;
+                background-image: url('../images/btn.png');
+                background-position: -24px 0px;
+                background-repeat: no-repeat;
+                position: relative;
+                right: 3px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
+/*========删除模态框的样式===============*/ 
+#Delete{
+    width: 300px;
+}
+.delete-module{
+        height: 60px;
+        line-height: 60px;
+        p{
+            text-align: center;
+        }
+}

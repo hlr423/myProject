@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页详情</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/homePageDetail.css">
+</head>
+
+<body>
+    <div class="body-content">
+        <div class="items">
+            <div class="item station-item first-item">
+                <div class="item-title station-title">
+                    <div class="station-data">
+                        <i></i>
+                        <div>
+                            <h3>平窝乡污水处理厂</h3>
+                            <p>
+                                <span>1000</span>m²/d</p>
+                            <p>简阳市大白乡7社</p>
+                        </div>
+                    </div>
+                    <div class="station-operation">
+                        <p>
+                            <i class="station-serach"></i>筛选厂站</p>
+                        <div>
+                            <div class="technologyStateBtn">工艺运行状态</div>
+                            <div class="videoBtn">视频监控</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content station-content">
+                    <div>
+                        <img src="../images/homePageYuanGreen.png" alt="">
+                        <p>2654</p>
+                        <span>达标天数</span>
+                    </div>
+                    <div>
+                        <img src="../images/homePageYuanPurple.png" alt="">
+                        <p>155</p>
+                        <span>处理水量(万吨)</span>
+                    </div>
+                    <div>
+                        <img src="../images/homePageYuanPurple.png" alt="">
+                        <p>25</p>
+                        <span>污泥处理量(吨)</span>
+                    </div>
+                    <div>
+                        <img src="../images/homePageYuanPurple.png" alt="">
+                        <p>6</p>
+                        <span>吨水成本(元)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item out-water-item">
+                <div class="item-title">
+                    <p>出水</p>
+                </div>
+                <div class="content out-water-content">
+                    <div>
+                        <img src="../images/leader-cost.png" alt="">
+                        <p>
+                            <span>18524</span>吨</p>
+                        <span>实时出水</span>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <div>
+                                <p>当月出水(吨)</p>
+                                <span class="green">
+                                    6300000
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>第一季度出水(吨)</p>
+                                <span class="green">18900000</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>2018年出水(吨)</p>
+                                <span class="green">766542115</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title enter-water-title">
+                    <p>实时进出水量</p>
+                    <ul>
+                        <li class="li-checked">COD</li>
+                        <li>SS</li>
+                        <li>TP</li>
+                        <li>TN</li>
+                    </ul>
+                </div>
+                <div class="content" id="enterWater"></div>
+            </div>
+        </div>
+        <div class="items">
+            <div class="item first-item">
+                <div class="item-title trend-title">
+                    <p>趋势分析</p>
+                    <ul>
+                        <li class="li-checked">COD</li>
+                        <li>SS</li>
+                        <li>TP</li>
+                        <li>TN</li>
+                    </ul>
+                </div>
+                <div class="content" id="trend"></div>
+            </div>
+            <div class="item drug-item">
+                <div class="item-title drug-title">
+                    <p>实时药耗</p>
+                    <ul>
+                        <li class="li-checked">次氯酸钠</li>
+                        <li>柠檬酸</li>
+                        <li>除磷</li>
+                        <li>碳源</li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <div id="drug"></div>
+                    <div>
+                        <img src="../images/homePageYuanBlue.png" alt="">
+                        <p>
+                            <span>18524</span>d</p>
+                        <span>累计药耗</span>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title">
+                    <p>实时电耗</p>
+                </div>
+                <div class="content" id="electric"></div>
+            </div>
+        </div>
+        <div class="items">
+            <div class="item job-item first-item">
+                <div class="item-title job-title">
+                    <p>智能工单</p>
+                    <ul>
+                        <li class="li-checked">处理中(
+                            <span>6</span> )</li>
+                        <li>待处理(
+                            <span>2</span> )</li>
+                        <li>已完成(
+                            <span>1236</span> )</li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <ul class="job-list list-show">
+                        <li>
+                            <span>工单1</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>工单2</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>工单3</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>工单4</span>张江龙/何文德</li>
+                        <li>
+                            <span>工单5</span>张江龙/何文德</li>
+                        <li>
+                            <span>工单6</span>张江龙</li>
+                        <li>
+                            <span>工单7</span>张江龙</li>
+                    </ul>
+                    <ul class="job-list">
+                        <li>
+                            <span>待处理工单1</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>待处理工单2</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>待处理工单3</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>待处理工单4</span>张江龙/何文德</li>
+                        <li>
+                            <span>待处理工单5</span>张江龙/何文德</li>
+                        <li>
+                            <span>待处理工单6</span>张江龙</li>
+                        <li>
+                            <span>待处理工单7</span>张江龙</li>
+                    </ul>
+                    <ul class="job-list">
+                        <li>
+                            <span>工单1</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>工单2</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>工单3</span>张江龙/何文德/彭昌富</li>
+                        <li>
+                            <span>工单4</span>张江龙/何文德</li>
+                        <li>
+                            <span>工单5</span>张江龙/何文德</li>
+                        <li>
+                            <span>工单6</span>张江龙</li>
+                        <li>
+                            <span>工单7</span>张江龙</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item information-item">
+                <div class="item-title information-title">
+                    <p>实时信息</p>
+                    <ul>
+                        <li class="li-checked">预警信息(
+                            <span>6</span> )</li>
+                        <li>告警信息(
+                            <span>1</span> )</li>
+                        <li>故障信息(
+                            <span>0</span> )</li>
+                    </ul>
+                </div>
+                <div class="content">
+                    <ul class="information-list list-show">
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv2">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                    </ul>
+                    <ul class="information-list">
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>告警调节池超声波位计1</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计1</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计1</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv2">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                    </ul>
+                    <ul class="information-list">
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv2">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv1">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                        <li>
+                            <span class="lv3">7.10 15:21:02</span>
+                            <span>调节池超声波位计</span>
+                            <span>COD超标</span>
+                            <span>张江龙-处理中</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item-title water-title">
+                    <p>实时水量</p>
+                    <ul>
+                        <li class="li-checked">当天处理</li>
+                        <li>调节池</li>
+                        <li>膜池</li>
+                        <li>DO</li>
+                        <li>ORP</li>
+                        <li>MLSS</li>
+                    </ul>
+                </div>
+                <div class="content" id="water"></div>
+            </div>
+        </div>
+    </div>
+    <div class="shade"></div>
+    <div class="popup station-popup">
+        <div class="title">
+            <span>厂站列表</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <input class="station-comboTree" data-options="required:true,prompt:'请选择区域'">
+            <form class="station-form" method="post">
+                <div class="station-wrapper">
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                </div>
+                <div class="station-wrapper">
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                </div>
+                <div class="station-wrapper">
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                </div>
+                <div class="station-wrapper">
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                </div>
+                <div class="station-wrapper">
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                    <div class="station-name">
+                        平窝乡污水处理厂
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="submit station-submit">提交</div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/homePageDetail.js"></script>
+    <script src="../js/refresh.js"></script>
+</body>
+
+</html>

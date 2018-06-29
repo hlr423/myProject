@@ -1,0 +1,95 @@
+/*表格内操作框按钮样式*/
+
+.table-operation {
+    width: 100%;
+    height: auto;
+    color: #59aFFf;
+    display: flex;
+    justify-content: space-between;
+    a {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+        i {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-repeat: no-repeat;
+            background-image: url('../images/operation.png');
+            margin-right: 3px;
+            position: relative;
+            top: 3px;
+        }
+    }
+}
+
+%table-approval{
+    i{
+        background-position: -72px;
+    }
+}
+
+%table-edit {
+    i {
+        background-position: -24px;
+    }
+}
+
+%table-delete {
+    i {
+        background-position: -48px;
+    }
+}
+
+%table-new-add {
+    i {
+        background-position: 0px;
+    }
+}
+
+%table-init {
+    color: #50c589;
+    i {
+        background-position: -94px;
+    }
+}
+
+%table-carOut {
+    color: #50c589;
+    i {
+        background-position: -119px;
+    }
+}
+
+%table-carReplace {
+    color: #50c589;
+    i {
+        background-position: -93px;
+    }
+}
+
+%table-carBack {
+    color: #50c589;
+    i {
+        background-position: -119px;
+    }
+}
+
+%table-used {
+    color: #999 !important;
+    i {
+        background-image: url('../images/qy.png') !important;
+    }
+}
+%table-use {
+    color: #50c589;
+    i {
+        background-image: url('../images/qy.png') !important;
+    }
+}
+%table-prepare {
+    i {
+        background-position: -144px;
+    }
+}

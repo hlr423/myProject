@@ -1,0 +1,25 @@
+/*搜索容器样式*/
+.search-wrapper {
+    width: 100%;
+    margin-bottom: 30px;
+    .search-btn {
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        margin-left: 10px;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        background-color: #59afff;
+        border-radius: 20px;
+        vertical-align: top;
+        border: none;
+        outline: 0;
+        transition: all .5s;
+        cursor: pointer;
+        user-select: none;
+        &:hover {
+            background-color: #4da1f0;
+        }
+    }
+}

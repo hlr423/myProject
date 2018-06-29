@@ -1,0 +1,148 @@
+[{
+	"id":1,
+	"parentId":0,
+	"name":"C",
+    "size":"",
+    "level": "一级",
+	"date":"02/19/2010",
+	"children":[{
+		"id":2,
+		"parentId":1,
+		"name":"Program Files",
+        "size":"120 MB",
+        "level": "二级",
+		"date":"03/20/2010",
+		"children":[{
+			"id":21,
+			"parentId":2,
+			"name":"Java",
+            "size":"",
+            "level": "三级",
+			"date":"01/13/2010",
+			"state":"closed",
+			"children":[{
+				"id":211,
+				"parentId":21,
+				"name":"java.exe",
+                "size":"142 KB",
+                "level": "四级",
+				"date":"01/13/2010"
+			},{
+				"id":212,
+				"parentId":21,
+				"name":"jawt.dll",
+                "size":"5 KB",
+                "level": "四级",
+				"date":"01/13/2010"
+			}]
+		},{
+			"id":22,
+			"parentId":2,
+			"name":"MySQL",
+            "size":"",
+            "level": "二级",
+			"date":"01/13/2010",
+			"state":"closed",
+			"children":[{
+				"id":221,
+				"parentId":22,
+				"name":"my.ini",
+                "size":"10 KB",
+                "level": "三级",
+				"date":"02/26/2009"
+			},{
+				"id":222,
+				"parentId":22,
+				"name":"my-huge.ini",
+                "size":"5 KB",
+                "level": "三级",
+				"date":"02/26/2009"
+			},{
+				"id":223,
+				"parentId":22,
+				"name":"my-large.ini",
+                "size":"5 KB",
+                "level": "三级",
+				"date":"02/26/2009"
+			}]
+		}]
+	},{
+		"id":3,
+		"parentId":1,
+		"name":"eclipse",
+        "size":"",
+        "level": "二级",
+		"date":"01/20/2010",
+		"children":[{
+			"id":31,
+			"parentId":3,
+			"name":"eclipse.exe",
+            "size":"56 KB",
+            "level": "三级",
+			"date":"05/19/2009"
+		},{
+			"id":32,
+			"parentId":3,
+			"name":"eclipse.ini",
+            "size":"1 KB",
+            "level": "三级",
+			"date":"04/20/2010"
+		},{
+			"id":33,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		},{
+			"id":34,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		},{
+			"id":35,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		},{
+			"id":36,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		},{
+			"id":37,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		},{
+			"id":38,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		},{
+			"id":39,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		},{
+			"id":40,
+			"parentId":3,
+			"name":"notice.html",
+            "size":"7 KB",
+            "level": "三级",
+			"date":"03/17/2005"
+		}]
+	}]
+}]

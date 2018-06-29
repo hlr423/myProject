@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水质分析</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/waterAnalysis.css">
+</head>
+
+<body>
+
+    <div class="information">
+        <ul>
+            <li>
+                <a href="">
+                    <i></i>返回首页
+                </a>
+            </li>
+            <li>五星乡污水处理厂</li>
+            <li>连续达标2654天</li>
+            <li>设计水量:1000吨</li>
+            <li>实际处理水量:1500吨</li>
+            <li>累计处理水量:152664吨</li>
+        </ul>
+        <a href="" class="to-image">二维工艺图</a>
+    </div>
+    <div class="content">
+        <form action="">
+            <div class="search-wrapper">
+                <input type="text" placeholder="请选择开始时间" id="startTime" class="chose-time">
+                <span class="line">-</span>
+                <input type="text" placeholder="请选择结束时间" id="endTime" class="chose-time">
+                <input type="button" value="统计" class="statistics">
+            </div>
+
+        </form>
+
+        <div id="echart"></div>
+        <div class="table-wrapper">
+            <table class="easyui-datagrid" id="dg">
+                <tr>
+                    <td></td>
+                    <td>曲线1</td>
+                    <td>进水COD</td>
+                    <td>28.52</td>
+                    <td>96.2</td>
+                    <td>62.36</td>
+                    <td>显示</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>曲线2</td>
+                    <td>进水COD</td>
+                    <td>28.52</td>
+                    <td>96.2</td>
+                    <td>62.36</td>
+                    <td>显示</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>曲线3</td>
+                    <td>进水COD</td>
+                    <td>28.52</td>
+                    <td>96.2</td>
+                    <td>62.36</td>
+                    <td>显示</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/laydate/laydate.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/echarts.js"></script>
+    <!-- <script src="../js/common.js"></script> -->
+    <script src="../js/refresh.js"></script>
+    <script src="../js/waterAnalysis.js"></script>
+
+</body>
+
+</html>

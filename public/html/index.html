@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/module/idCardStyle.css">
+
+    <style>
+        /* body {
+            background-color: rebeccapurple;
+        } */
+    </style>
+</head>
+
+<body>
+ 
+    <div class="shade"></div>
+    <!-- 重复登录 -->
+    <div class="account-prompt-wrapper">
+        <p>
+            <img src="../dist/images/delete-icon.png" alt="">当前账号正在使用，是否本人操作？</p>
+        <div>
+            <a class="is-self">是</a>
+            <a class="no-self">否</a>
+        </div>
+    </div>
+    <div class="identify">
+        <form action="">
+            <div>
+                <input type="text" placeholder="请输入验证码" name="identifyCode">
+                <a class="get-code" state="0">获取验证码</a>
+            </div>
+        </form>
+        <div>
+            <a class="identify-return">返回</a>
+            <a class="to-login">继续登录</a>
+        </div>
+    </div>
+    <!--  确认退出模块-->
+    <div class="close-wrapper">
+        <p>
+            <!-- <img src="'+window.location.host+basePath()+'/front/public/images/delete-icon.png" alt="">确认退出？</p> -->
+        <p>确认退出？</p>
+        <div>
+            <a class="close-wrapper-sure">退出</a>
+            <a class="close-wrapper-cancel">取消</a>
+        </div>
+    </div>
+        <script>
+            // $(function () {
+            // $('#tt').tabs({
+            //     width: '100%',
+            //     fit: true,
+            //     tabHeight: 50
+            // });
+            // $('#tt').panel({
+            //     height: 500
+            // });
+
+            // $('#dg').datagrid({
+            //     fit: true,
+            //     fitColumns: true,
+            //     rownumbers: true,
+            //     singleSelect: true,
+            //     columns: [
+            //         [{
+            //             field: 'level',
+            //             title: '级数',
+            //         },
+            //         {
+            //             field: 'name',
+            //             title: '组织机构名称',
+            //         },
+            //         {
+            //             field: 'operate',
+            //             title: '操作',
+            //             width: 200,
+            //             formatter: function (value, rec) {
+            //                 return '<span><a class="detail" onclick="showInfo();">详细</a>';
+            //             }
+            //         }
+            //         ]
+            //     ]
+            // });
+
+
+            // $('#page').pagination({
+            //     showRefresh: false, // 不显示刷新按钮
+            // });
+            // 第6232行修改样式
+            // 表单
+            // $('#ff').form({
+            //     onSubmit: function () {
+            //         var isValid = $(this).form('validate');
+
+            //         if (!isValid){
+            //             console.log(123)
+            //         }
+            //         return isValid;	// 返回false  
+            //     },
+            //     success: function (data) {
+            //         alert(data)
+            //     }
+            // });
+
+            //     $('.submit').on("click", function () {
+            //         $('#ff').form('submit', {
+            //             onSubmit: function () {
+            //                 return $(this).form('enableValidation').form('validate');
+            //             },
+            //             success: function (data) {
+            //                 alert(data)
+            //             }
+            //         });
+            //     })
+
+            //     $('.close-icon').on('click', function () {
+            //         $('.div1').fadeOut();
+            //     })
+            // })
+
+            // function showInfo() {
+            //     $('.div1').fadeIn();
+            //     $('#ff').form('reset')
+            // }
+
+            let clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+            let htmlDom = document.getElementsByTagName('html')[0];
+
+            htmlDom.style.fontSize = clientWidth / 10 + 'px';
+
+            window.addEventListener('resize', function () {
+                let clientWidth = document.documentElement.clientWidth || document.body.clientWidth;
+                htmlDom.style.fontSize = clientWidth / 10 + 'px';
+            })
+        </script>
+</body>
+
+</html>

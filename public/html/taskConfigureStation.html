@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务配置/厂站</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/taskConfigureStation.css">
+</head>
+<body>
+<div class="body-wrapper">
+    <div class="search-wrapper">
+        <input class="search-comboTree" value="01">
+        <input type="text" placeholder="搜索任务">
+        <div class="search-btn">搜索</div>
+    </div>
+    <div class="operation-wrapper">
+        <div class="new-btn">
+            <i></i>
+            <span>新建</span>
+        </div>
+    </div>
+    <div class="table-wrapper">
+        <table class="easyui-datagrid" id="dg">
+            <tbody>
+            <tr>
+               <td>运渣</td>
+               <td>500</td>
+               <td></td>
+               <td>运渣车</td>
+               <td>2</td>
+               <td>1</td>
+               <td>天</td>
+               <td>3</td>
+               <td></td>
+               <td></td>
+               <td></td>
+               <td></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div id="page" class="easyui-pagination"></div>
+</div>
+<div class="shade"></div>
+<!--新建弹窗-->
+<div class="popup newAdd-wrapper">
+    <div class="title">
+        <span>新建</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <form class="newAdd-form" method="post">
+            <div class="content-item">
+                <label for="task-type">*任务类型:</label>
+                <input class="task-type-comboTree" type="text" data-options="required:true,prompt:'请选择任务类型'">
+            </div>
+            <div class="content-item">
+                <label for="task-water">*设计处理水量:</label>
+                <input class="task-water-comboTree" type="text" data-options="required:true,prompt:'请选择处理水量'">
+            </div>
+            <div class="content-item">
+                <label for="task-maxCycle">*最大周期:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'positiveSupfour'" placeholder="最大周期" maxlength="10" />
+            </div>
+            <div class="content-item">
+                <label for="task-maxCycle">*最小周期:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'positiveSupfour'" placeholder="最大周期" maxlength="10" />
+            </div>
+            <div class="content-item">
+                <label for="task-cycle">*周期单位:</label>
+                <select name="" id="">
+                    <option value="0">天</option>
+                    <option value="1">小时</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="task-time">*所需时长:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'positiveSupfour'" placeholder="请输入时长(小时)" maxlength="10" />
+            </div>
+            <div class="content-item">
+                <label for="task-isCycle">*周期内完成:</label>
+                <div>
+                    <span>
+                        <a class="radio-wrapper radio-checked">
+                        <i></i>
+                        <input type="radio" name="isCycle" checked="checked">
+                        </a>是
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="isCycle">
+                        </a>否
+                    </span>
+                </div>
+            </div>
+            <div class="content-item">
+                <label for="task-isPhoto">*拍照:</label>
+                <div>
+                    <span>
+                        <a class="radio-wrapper radio-checked">
+                        <i></i>
+                        <input type="radio" name="photo" checked="checked">
+                        </a>是
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="photo">
+                        </a>否
+                    </span>
+                </div>
+            </div>
+            <div class="content-item">
+                <label for="task-isTest">*强检:</label>
+                <div>
+                    <span>
+                        <a class="radio-wrapper radio-checked">
+                        <i></i>
+                        <input type="radio" name="isTest" checked="checked">
+                        </a>是
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="isTest">
+                        </a>否
+                    </span>
+                </div>
+            </div>
+            <div class="content-item">
+                <label for="task-work">*所需工种:</label>
+            </div>
+            <div class="content-item">
+                <label for="task-work">*机修:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'numInt'" placeholder="请输入人数" maxlength="6" />
+            </div>
+            <div class="content-item">
+                <label for="task-work">*电工:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'numInt'" placeholder="请输入人数" maxlength="6" />
+            </div>
+            <div class="content-item">
+                <label for="task-work">*工艺:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'numInt'" placeholder="请输入人数" maxlength="6" />
+            </div>
+            <div class="content-item">
+                <label for="task-car">*所需车辆:</label>
+                <input class="task-car-comboTree" type="text" data-options="required:true,prompt:'请选择所需车辆'">
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="submit newAdd-submit">提交</div>
+    </div>
+</div>
+<!--编辑弹窗-->
+<div class="popup edit-wrapper">
+    <div class="title">
+        <span>编辑</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <form class="edit-form" method="post">
+            <div class="content-item">
+                <label for="task-type">*任务类型:</label>
+                <input class="edit-type-comboTree" type="text" data-options="required:true,prompt:'请选择任务类型'">
+            </div>
+            <div class="content-item">
+                <label for="task-water">*设计处理水量:</label>
+                <input class="edit-water-comboTree" type="text" data-options="required:true,prompt:'请选择处理水量'">
+            </div>
+            <div class="content-item">
+                <label for="task-maxCycle">*最大周期:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'positiveSupfour'" placeholder="最大周期" maxlength="10" />
+            </div>
+            <div class="content-item">
+                <label for="task-maxCycle">*最小周期:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'positiveSupfour'" placeholder="最大周期"  maxlength="10"/>
+            </div>
+            <div class="content-item">
+                <label for="task-cycle">*周期单位:</label>
+                <select name="" id="">
+                    <option value="0">天</option>
+                    <option value="1">小时</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="task-time">*所需时长:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'positiveSupfour'" placeholder="请输入时长(小时)" maxlength="10" />
+            </div>
+            <div class="content-item">
+                <label for="task-isCycle">*周期内完成:</label>
+                <div>
+                    <span>
+                        <a class="radio-wrapper radio-checked">
+                        <i></i>
+                        <input type="radio" name="isCycle" checked="checked">
+                        </a>是
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="isCycle">
+                        </a>否
+                    </span>
+                </div>
+            </div>
+            <div class="content-item">
+                <label for="task-isPhoto">*拍照:</label>
+                <div>
+                    <span>
+                        <a class="radio-wrapper radio-checked">
+                        <i></i>
+                        <input type="radio" name="photo" checked="checked">
+                        </a>是
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="photo">
+                        </a>否
+                    </span>
+                </div>
+            </div>
+            <div class="content-item">
+                <label for="task-isTest">*强检:</label>
+                <div>
+                    <span>
+                        <a class="radio-wrapper radio-checked">
+                        <i></i>
+                        <input type="radio" name="isTest" checked="checked">
+                        </a>是
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="isTest">
+                        </a>否
+                    </span>
+                </div>
+            </div>
+            <div class="content-item">
+                <label for="task-work">*所需工种:</label>
+            </div>
+            <div class="content-item">
+                <label for="task-work">*机修:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'numInt'" placeholder="请输入人数" maxlength="6" />
+            </div>
+            <div class="content-item">
+                <label for="task-work">*电工:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'numInt'" placeholder="请输入人数" maxlength="6" />
+            </div>
+            <div class="content-item">
+                <label for="task-work">*工艺:</label>
+                <input class="easyui-validatebox" type="text" data-options="required:true,validType:'numInt'" placeholder="请输入人数" maxlength="6" />
+            </div>
+            <div class="content-item">
+                <label for="task-car">*所需车辆:</label>
+                <input class="edit-car-comboTree" type="text" data-options="required:true,prompt:'请选择所需车辆'">
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="submit edit-submit">提交</div>
+    </div>
+</div>
+<!--新建提交成功弹窗-->
+<div class="popup newAdd-success">
+    <div class="content">
+        <i></i>
+        <span>提交成功！5s后自动关闭</span>
+    </div>
+    <div class="footer">
+        <div class="submit btn-close">关闭</div>
+        <div class="submit btn-add">继续添加</div>
+    </div>
+</div>
+<!--工种详情-->
+<div class="popup detail-wrapper">
+    <div class="title">
+        <span>工种详情</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <table class="detail-table">
+            <tr>
+                <td>类型</td>
+                <td>数量</td>
+            </tr>
+            <tr>
+                <td>机修</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>机修</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>机修</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- 删除框 -->
+<div class="infor-wrapper delete-wrapper">
+    <p>
+        <i></i>
+        是否确认删除?
+    </p>
+    <div>
+        <a class="delete-confirm">删除</a>
+        <a class="infor-cancel">取消</a>
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/jquery.easyui.min.js"></script>
+<script src="../js/easyui-lang-zh_CN.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/customPrompt.js"></script>
+<script src="../js/taskConfigureStation.js"></script>
+<script src="../js/refresh.js"></script>
+</body>
+</html>

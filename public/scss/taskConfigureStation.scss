@@ -1,0 +1,134 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/table.scss";
+@import "./module/popup.scss";
+@import "./module/footerPage.scss";
+@import "./module/searchWrapper.scss";
+@import "./module/input.scss";
+@import "./module/button.scss";
+@import "./module/tableOperationBtn.scss";
+@import "./module/inputFile.scss";
+@import "./module/combotree.scss";
+@import "./module/radio.scss";
+@import "./module/select";
+@import "./module/inforWrapper.scss";
+
+/*====================操作框====================*/
+.operation-wrapper{
+  .new-btn{
+    @extend %newAddBtn
+  }
+}
+
+/*====================整体table====================*/
+.table-operation{
+  .table-edit{
+    @extend %table-edit
+  }
+  .table-delete{
+    @extend  %table-delete
+  }
+}
+a{
+  &.td-detail{
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &.td-not,
+  &.td-finish{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    i{
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-image: url('../images/gou.png');
+      background-size: 100% 100%;
+    }
+  }
+  &.td-not{
+    i{
+      background-image: url('../images/cha.png');
+    }
+  }
+
+}
+
+/*====================弹窗====================*/
+// 新建，编辑
+.edit-wrapper,
+.newAdd-wrapper{
+  .content-item{
+    >div{
+      display: inline-block;
+      >span{
+        &:nth-of-type(1){
+          margin-right: 100px;
+        }
+      }
+    }
+  }
+  a{
+    &.radio-wrapper{
+      vertical-align: middle;
+    }
+  }
+}
+
+// 新建提交成功弹窗
+.newAdd-success{
+  //display: block;
+  text-align: center;
+  width: 400px;
+  .content{
+    height: 150px;
+    padding-top: 40px;
+    i{
+      display: block;
+      width: 50px;
+      height: 42px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      background-image: url('../images/success.png');
+      background-size: 100% 100%;
+    }
+    span{
+      font-size: 16px;
+    }
+  }
+  .footer{
+    .btn-close{
+      margin-right: 20px;
+      border: 1px solid #59aFFf;
+      background-color: #fff;
+      color: #59aFFf;
+    }
+  }
+}
+// 工种详情
+.detail-wrapper{
+  .content{
+    height: 225px;
+  }
+  .detail-table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    tr:not(:nth-of-type(1)){
+      padding: 5px;
+      background-color: #f2f2f2;
+      &:hover{
+        background-color: #f1faf6;
+      }
+    }
+    td{
+      height: 50px;
+      border: 1px solid #dcdcdc;
+    }
+  }
+}
+

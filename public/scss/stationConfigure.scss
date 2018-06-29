@@ -1,0 +1,199 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/footerPage.scss";
+@import "./module/table.scss";
+@import "./module/popup.scss";
+@import "./module/select.scss";
+@import "./module/input";
+@import "./module/searchWrapper.scss";
+@import "./module/button.scss";
+@import "./module/tableOperationBtn.scss";
+@import "./module/inputFile.scss";
+@import "./module/combotree.scss";
+@import "./module/inforWrapper.scss";
+/*====================操作框====================*/
+.operation-wrapper{
+  .new-btn{
+    @extend %newAddBtn
+  }
+}
+
+/*====================整体table====================*/
+.table-operation{
+  .table-edit{
+    @extend %table-edit
+  }
+  .table-delete{
+    @extend  %table-delete
+  }
+}
+a{
+  &.td-picture,
+  &.td-paper,
+  &.td-detail{
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+/*====================弹窗====================*/
+// 设计进水指标
+.index-wrapper{
+  .content{
+    table{
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      tr:first-child{
+        td:first-child{
+          width: 80px;
+        }
+      }
+      td{
+        border: 1px solid #dcdcdc;
+        height: 50px;
+        //width: 33%;
+      }
+    }
+  }
+}
+
+// 厂站照片
+.picture-wrapper{
+  width: 800px;
+  height: 550px;
+  .content{
+    overflow-y: visible;
+  }
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+  .gallery-top {
+    width: 705px;
+    height: 350px;
+    padding: 0;
+    .swiper-slide {
+      height: 350px;
+      padding: 10px 27px;
+      text-align: center;
+      img {
+        width: 650px;
+        height: 330px;
+      }
+    }
+  }
+  .gallery-thumbs {
+    padding: 30px 30px 0 30px;
+    .swiper-wrapper {
+      padding: 0 30px;
+    }
+    .swiper-slide {
+      width: 70px;
+      height: 70px;
+      text-align: center;
+    }
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 9px;
+    height: 16px;
+    right: 30px;
+    top: 63px;
+    margin-top: 0;
+    background-image: url('../images/next.png');
+    background-size: 9px 16px;
+  }
+  .swiper-button-prev {
+    left: 30px;
+    background-image: url('../images/prev.png');
+  }
+}
+
+// 厂站图纸
+.paper-wrapper{
+  width: 690px;
+  .content{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    >div{
+      text-align: center;
+      margin: 0 2px;
+      margin-bottom: 10px;
+      width: 120px;
+      height: 124px;
+      img{
+        width: 80px;
+        height: 80px;
+      }
+      >span{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      input[type=checkbox]{
+        width: auto;
+      }
+      @import "./module/checkbox.scss";
+
+    }
+  }
+}
+
+// 编辑弹窗
+.edit-wrapper{
+  .content-item-img{
+     display: inline-block;
+     height: 30px;
+     width: 270px;
+     vertical-align: middle;
+     overflow: hidden;
+   }
+  .content-img{
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    //border: 1px solid blue;
+    height: 30px;
+    &:hover{
+      i{
+        display: inline-block;
+      }
+    }
+    i{
+      display: none;
+      width: 10px;
+      height: 10px;
+      cursor: pointer;
+      background-image: url('../images/popupIcon.png');
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      position: absolute;
+      right: 8px;
+    }
+    img{
+      vertical-align: top;
+      width: 20px;
+      height: 20px;
+      margin-top: 5px;
+    }
+  }
+}
+
+.img-wrapper{
+  width: 600px;
+  height: 500px;
+  .content{
+    max-height: 450px;
+    img{
+      width: 400px;
+      height: 400px;
+      margin-left: 70px;
+    }
+  }
+}

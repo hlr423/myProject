@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+.div1 {
+    display: flex;
+}
+.menu {
+    width: 130px;
+    height: 100vh;
+}
+.cont {
+    flex: 1;
+    height: 100vh;
+}

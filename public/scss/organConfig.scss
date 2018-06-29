@@ -1,0 +1,85 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/button.scss';
+@import './module/combotree.scss';
+@import './module/searchWrapper.scss';
+@import './module/tableTree.scss';
+@import './module/footerPage.scss';
+@import './module/tableOperationBtn.scss';
+@import './module/popup.scss';
+@import './module/prompt.scss';
+@import './module/inforWrapper.scss';
+
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.table-edit {
+    @extend %table-edit;
+}
+.table-delete {
+    @extend %table-delete;
+}
+
+.datagrid-cell.datagrid-cell-c2-name {
+    margin-left: 20px;
+}
+
+.datagrid-cell.datagrid-cell-c2-detail,
+.datagrid-cell.datagrid-cell-c2-level {
+    margin: 0 auto;
+}
+
+.detail {
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.detail-container {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: #666;
+    thead {
+        tr {
+            th {
+                height: 50px;
+                background-color: #f6f6f6;
+                border: 1px solid #eee;
+                font-weight: 300;
+            }
+        }
+    }
+    tbody {
+        tr {
+            td {
+                height: 50px;
+                padding: 5px 0;
+                border: 1px solid #eee;
+            }
+            &:hover {
+                background-color: #f1faf6;
+            }
+        }
+    }
+}
+
+.img-btn {
+    background-color: #59aFFf;
+    &:hover {
+        background-color: #2fabed;
+    }
+}
+
+
+.echart-popup {
+    width: 100%;
+}
+
+#echart1 {
+    width: 100%;
+    height: 400px;   
+} 

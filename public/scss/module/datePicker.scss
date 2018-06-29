@@ -1,0 +1,32 @@
+/*日期选择器样式*/
+.laydate-theme-date {
+    border-radius: 10px!important;
+    .layui-laydate-header {
+        background-color: #eeeeee;
+        border-radius:10px 10px 0 0 !important ;
+    }
+    .layui-laydate-content {
+        .layui-this {
+            background-color: #59afff!important;
+            border-radius: 18px;
+        }
+        tbody {
+            td {
+                height: 36px;
+            }
+            td:hover {
+                border-radius: 18px;
+            }
+        }
+    }
+}
+.laydate-time-list {
+    .layui-this {
+        border-radius: 0 !important;
+    }
+}
+
+%chose-time {
+    width: 160px !important;
+    background: url(../images/rl.png) no-repeat scroll right 9px center transparent;
+}

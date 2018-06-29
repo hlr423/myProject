@@ -1,0 +1,106 @@
+ /*表格样式*/
+
+ //.datagrid-htable,
+ //.datagrid-btable,
+ //.datagrid-ftable {
+ //    width: 100%;
+ //    color: #666;
+ //    tr {
+ //        td:last-child {
+ //            >div {
+ //                margin: 0 auto;
+ //                text-align: center;
+ //            }
+ //        }
+ //    }
+ //}
+ //.datagrid-htable {
+ //    padding-right: 6px;
+ //}
+ //.datagrid-body {
+ //    overflow-y: scroll;
+ //}
+
+/* 修改th高度 */
+
+.datagrid-htable td {
+    height: 50px;
+    background-color: #f6f6f6;
+}
+
+// 修改td高度
+.datagrid-btable td {
+    height: 50px;
+}
+
+
+// /* 修改td移入特效 */
+
+.datagrid-row-over td {
+    background: #f1faf6;
+}
+
+
+// /* 修改th td边框的样式 */
+
+.datagrid-header td,
+.datagrid-body td,
+.datagrid-footer td {
+    border-style: solid;
+}
+
+// ===========================
+/* 修改table容器的宽度 */
+// .datagrid-header-inner {
+//     width: 100%;
+// }
+
+.panel-header,
+.panel-body {
+    border-color: #dcdcdc;
+}
+
+
+// /* 修改th的移入特效 */
+
+.datagrid-header td.datagrid-header-over {
+    background: #f6f6f6;
+    color: #666;
+    cursor: default;
+}
+
+// // 修改td点击后颜色
+.datagrid-row-selected {
+    background: #f2f2f2;
+    color: #666;
+}
+
+// // 修改th和第一个td的背景颜色
+.datagrid-header,
+.datagrid-td-rownumber {
+    background-color: #fff;
+    background: none;
+}
+
+// // 修改字体
+.datagrid-cell,
+.datagrid-cell-group,
+.datagrid-header-rownumber,
+.datagrid-cell-rownumber {
+    font-size: 14px;
+    color: #666;
+}
+
+.tree-title {
+    font-size: 14px;
+    color: #666;
+}
+
+.datagrid-header .datagrid-cell span {
+    font-size: 14px;
+    color: #666;
+}
+
+.datagrid-header-row {
+    text-align: center;
+}

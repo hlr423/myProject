@@ -1,0 +1,555 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/proImg/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100vh;
+    padding: 0 10px 10px 10px;
+    &>div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 33%;
+    }
+}
+
+.left {
+    padding: 20px 0 0 10px;
+}
+
+.center {
+    padding-top: 17px;
+}
+.right {
+    padding-top: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    width: 100%; 
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background: linear-gradient(to left, #446395, #446395) left top no-repeat, 
+                linear-gradient(to bottom, #446395, #446395) left top no-repeat, 
+                linear-gradient(to left, #446395, #446395) right top no-repeat,
+                linear-gradient(to bottom, #446395, #446395) right top no-repeat, 
+                linear-gradient(to left, #446395, #446395) left bottom no-repeat,
+                linear-gradient(to bottom, #446395, #446395) left bottom no-repeat,
+                linear-gradient(to left, #446395, #446395) right bottom no-repeat,
+                linear-gradient(to left, #446395, #446395) right bottom no-repeat;
+    background-size: 1px 10px, 10px 1px, 1px 10px, 10px 1px;  
+}
+
+.water {
+    flex: 0.55;
+    margin-bottom: 10px;
+}
+.energy {
+    flex: 0.44;
+}
+
+.echart {
+    width: 100%;
+    height: 275px;
+}
+#energy {
+    width: 100%;
+    height: 160px;
+}
+
+.cir {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 50%;
+    &.green {
+        background-color:  #5ed76e;
+    }
+    &.yellow {
+        background-color: #ff8257;
+    }
+}
+
+.title {
+    position: relative;
+    width: 320px;
+    height: 30px;
+    padding-left: 25px;
+    margin-left: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #5be8eb;
+    background-image: url('../images/proImg/titleBg.png');
+    overflow: hidden;
+    &:before {
+        content: '';
+        position: absolute;
+        background: #fff;
+        width: 25px;
+        height: 30px;
+        top: 0;
+        left: -35px;
+        opacity: 0.1;
+        transition: all 0.25s ease-out;
+        transform: skewX(-25deg);
+    }
+    &:hover:before {
+        left: 330px;
+    }
+}
+
+
+
+.title2 {
+    width: 410px;
+    height: 30px;
+    margin: 30px auto 30px auto;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    color: #5be8eb;
+    background-image: url('../images/proImg/title2Bg.png');
+}
+
+.water-data {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1%;
+    text-align: center;
+    &>div {
+        width: 32%;
+        height: 100px;
+        color: #5d9cec;
+        background-size: cover;
+        p {
+            position: relative;
+            padding-left: 55px;
+            font-size: 14px;
+            line-height: 41px;
+            text-align: left;
+            i {
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                width: 41px;
+                height: 41px;
+            }
+        }
+        span {
+            font-size: 32px;
+        }
+    }
+    .month {
+        background-image: url('../images/proImg/monthBg.png');
+        i {
+            background-image: url('../images/proImg/month.png');
+        }
+    }
+    .season {
+        background-image: url('../images/proImg/seasonBg.png');
+        i {
+            background-image: url('../images/proImg/season.png');
+        }
+    }
+    .year {
+        background-image: url('../images/proImg/yearBg.png');
+        i {
+            background-image: url('../images/proImg/year.png');
+        }
+    }
+}
+
+.energy-data {
+    background-image: url('../images/proImg/energyBg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 180px;
+    padding: 0 20px;
+    margin: 0 auto;
+    table {
+        width: 100%;
+        color: #5be8eb;
+        border-collapse: collapse;
+        text-align: center;
+        tr {
+            &:last-child {
+                td {
+                    font-size: 30px;
+                    border-top: 1px solid #324365;
+                }
+            }
+        }
+        td {
+            width: 33%;
+            height: 70px;
+            &:nth-child(2) {
+                border-left: 1px solid #324365;
+                border-right: 1px solid #324365;
+            }
+        }
+    }
+}
+
+.energy-title {
+    font-size: 14px;
+    color: #5be8eb;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.logo {
+    background-image: url('../images/proImg/title.png');
+    width: 571px;
+    height: 114px;
+    margin: 0 auto;
+}
+.chinaMap {
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+#chinaMap {
+    width: 100%;
+    height: 100%;    
+}
+
+.infor {
+    display: flex;
+    height: 408px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 8px;
+}
+
+.site-top {
+    display: flex;
+    justify-content: space-between;
+    &>div {
+        width: 49%;
+        height: 100px;
+        background-size: 100% 100%; 
+    }
+    .site-title {
+        font-size: 14px;
+        color: #35e1e4;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+    .weather {
+        background-image: url('../images/proImg/weather.png');
+    }
+    .site-num {
+        background-image: url('../images/proImg/siteBg.png');
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            text-align: center;
+            tr {
+                td {
+                    height: 34px;
+                    &:nth-child(1) {
+                        color: #01fb7f;
+                    }
+                    &:nth-child(2) {
+                        color: #fff100;
+                        border-left: 1px solid #324365;
+                        border-right: 1px solid #324365;
+                    }
+                    &:nth-child(3) {
+                        color: #ff3f3f;
+                    }
+                }
+                &:last-child {
+                    td {
+                        border-top: 1px solid #324365;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.site-info {
+    background-image: url('../images/proImg/siteInfoBg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 275px;
+    margin: 0 auto;
+    .info-title {
+        position: relative;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+        color: #fff;
+        &>div:not(.warn-icon) {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            &:nth-child(2) {
+                margin: 0 10px;
+            }
+        }
+        .active {
+            color: #34dde0;
+            &:after {
+                content: "";
+                position: absolute;
+                left: 25px;
+                bottom: 0;
+                width: 0;
+                height: 0;
+                border-left: solid 4px transparent;
+                border-right: solid 4px transparent;
+                border-bottom: solid 4px #7ae0f4;
+            }
+        }
+    }
+    .site-content {
+        width: 100%;
+        display: flex;
+    } 
+    .option {
+        flex: 1;
+        height: 225px;
+        color: #35e1e4;
+        font-size: 12px;
+        text-align: center;
+        overflow: hidden;
+        ul {
+            list-style: none;
+            height: 47px;
+            li {
+                float: left;
+                width: 25%;
+                height: 47px;
+                line-height: 47px;
+                padding: 0 2px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                border-bottom: 1px solid #354665;
+                i {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 14px;
+                    height: 13px;
+                    margin-right: 6px;
+                    margin-top: 17px;
+                }
+                .j1 {
+                    background-image: url('../images/proImg/ji1.png')
+                }
+                .j2 {
+                    background-image: url('../images/proImg/ji2.png')
+                }
+                .j3 {
+                    background-image: url('../images/proImg/ji3.png')
+                }
+            }
+            .padleft20 {
+                text-align: left;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+.weather-infor {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    i {
+        display: block;
+        width: 48px;
+        height: 36px;
+        margin: 16px 20px;
+        background-image: url("../images/proImg/weather1.png");
+        background-repeat: no-repeat;
+    }
+    p {
+        width: 100%;
+        height: auto;
+        margin: 6px 0; 
+        font-size: 12px;
+        color: #fff;
+        word-wrap:break-word;  
+        word-break:break-all;  
+        overflow: hidden;  
+    }
+    &>div {
+        margin: 0 auto;
+    }
+}
+
+.warn-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // padding: 0 12px;
+    text-align: center;
+    border-right: 1px solid #354665;
+    .level {
+        color: #35e1e4;
+    }
+    &>div {
+        // margin: 0 5px;
+        flex: 0.2;
+        i {
+            display: inline-block;
+            width: 14px;
+            height: 13px;
+        }
+        padding: 13px;
+    }
+    .j1 {
+        color: #ff3f3f;
+        i {
+            background-image: url('../images/proImg/ji1.png')
+        }
+    }
+    .j2 {
+        color: #fff100;
+        i {
+            background-image: url('../images/proImg/ji2.png')
+        }
+    }
+    .j3 {
+        color: #eb6100;
+        i {
+            background-image: url('../images/proImg/ji3.png')
+        }
+    }
+}
+
+.tree-data {
+    width: 100%;
+    height: 380px;
+    padding-top: 90px;
+    background-image: url('../images/proImg/tree1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    .day {
+        display: inline-block;
+        width: 212px;
+        height: 92px;
+        padding-top: 16px;
+        background-image: url('../images/proImg/tree3.png');
+        text-align: center;
+        color: #fff;
+        p {
+            text-shadow: 5px 1px 20px #628cf2;
+            &:nth-child(1) {
+                font-size: 14px;
+            }
+            &:nth-child(2) {
+                margin-top: 10px;
+                font-size: 12px;
+                &>span {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+.cnp {
+    width: 403px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-image: url('../images/proImg/treeBg.png');
+    margin: 0 auto;
+    color: #fff;
+    &>div {
+        position: relative;
+        display: inline-block;
+        padding: 0 20px;
+        cursor: pointer;
+    }
+    .active {
+        color: #5be8eb;
+        &:after {
+            content: "";
+            position: absolute;
+            left: 32px;
+            bottom: 0;
+            width: 0;
+            height: 0;
+            border-left: solid 4px transparent;
+            border-right: solid 4px transparent;
+            border-bottom: solid 4px #7ae0f4;
+        }
+    }
+}
+
+.reduce-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 8px 0 8px;
+    &>div {
+        width: 180px;
+        height: 150px;
+        padding-top: 45px;
+        text-align: center;
+        background-repeat: no-repeat;
+        color: #fff;
+        p {
+            text-shadow: 5px 1px 20px #628cf2;
+            &:nth-child(1) {
+                font-size: 14px;
+            }
+            &:nth-child(2) {
+                margin-top: 10px;
+                font-size: 12px;
+                &>span {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+    .month {
+        background-image: url('../images/proImg/monthCBg.png');
+    }
+    .season {
+        background-image: url('../images/proImg/seasonCBg.png');
+    }
+    .year {
+        background-image: url('../images/proImg/yearCBg.png');
+    }
+}
+
+.tree {
+    flex: 0.65;
+    margin-bottom: 10px;
+}
+.cost {
+    flex: 0.35;
+}

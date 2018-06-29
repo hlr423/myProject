@@ -1,0 +1,22 @@
+/*easyUI表格样式*/
+
+/* 修改分页容器背景颜色 */
+.datagrid-pager {
+    background: #fff;
+}
+/* 修改分页边框 */
+.datagrid .datagrid-pager {
+    border: none;
+}
+/* 选择每页多少条数据select样式 */
+.pagination-page-list {
+    width: 90px;
+    border-color: #dcdcdc;
+}
+/* 跳转到多少页input样式 */
+.pagination .pagination-num {
+    width: 50px;
+    border-color: #dcdcdc;
+    color: #666;
+    text-align: center;
+}

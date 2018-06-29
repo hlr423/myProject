@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul data-uid="ul">
+    </ul>
+
+    <script>
+        // assuming it exists (ul element)
+        let ul = document.querySelector(`[data-uid="ul"]`),
+            docfrag = document.createDocumentFragment();
+
+        const browserList = [
+            "Internet Explorer",
+            "Mozilla Firefox",
+            "Safari",
+            "Chrome",
+            "Opera"
+        ];
+
+        browserList.forEach((e) => {
+            let li = document.createElement("li");
+            li.textContent = e;
+            docfrag.appendChild(li);
+        });
+
+        ul.appendChild(docfrag);
+    </script>
+</body>
+
+</html>

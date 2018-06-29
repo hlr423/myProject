@@ -1,0 +1,402 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/footerPage.scss";
+
+@import "./module/table.scss";
+@import "./module/popup.scss";
+@import "./module/input.scss";
+@import "./module/tab.scss";
+@import "./module/inputFile.scss";
+@import "./module/select.scss";
+@import "./module/datePicker.scss";
+@import "./module/searchWrapper.scss";
+
+
+/*====================整体====================*/
+.panel-body{
+  display: flex;
+  flex-direction: column;
+}
+
+.search-wrapper{
+  .search-btn{
+    vertical-align: middle;
+  }
+}
+
+.table-depotHistory,
+.table-depotRepair,
+.table-depotInto,
+.table-depotOut{
+  flex: 1;
+}
+.content-title{
+  margin-bottom: 20px;
+  >select{
+    width: 180px;
+  }
+  >div{
+    display: inline-block;
+    &.search-wrapper{
+      width: auto;
+      padding: 0;
+      margin: 0;
+      input[type=text]{
+        width: 180px;
+      }
+    }
+  }
+}
+.chose-time{
+  @extend %chose-time;
+  width: 180px !important;
+}
+.body-wrapper{
+  position: relative;
+}
+.export{
+  position: absolute;
+  right: 30px;
+  top: 40px;
+  display: inline-block;
+  width: 90px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #3cbbff;
+  z-index: 1;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/btn.png');
+    background-position: -24px 0px;
+    background-repeat: no-repeat;
+    position: relative;
+    right: 3px;
+    vertical-align: middle;
+
+  }
+}
+
+
+/*====================整体table====================*/
+a {
+  &.inventory-lost-scan,
+  &.inventory-td-detail,
+  &.inventory-td-lost,
+  &.repair-td-detail,
+  &.out-td-detail,
+  &.td-into-detail{
+    cursor: pointer;
+    color: #59aFFf;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &.repair-detail-fault,
+  &.into-detail-fault{
+    color: #ff6430;
+  }
+  &.repair-detail-scrap,
+  &.into-detail-scrap{
+    color: #999;
+  }
+  &.repair-state-finish,
+  &.repair-detail-normal,
+  &.out-state-finish,
+  &.into-detail-normal{
+    color: #51c589;
+  }
+  // 二维码
+  &.inventory-lost-picture,
+  &.inventory-detail-picture,
+  &.repair-detail-picture,
+  &.repair-td-picture,
+  &.out-td-picture,
+  &.into-detail-picture{
+    display: inline-block;
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+      >div{
+        display: block;
+      }
+    }
+    i{
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      background-image:url('../images/twoCodeIcon.png');
+      margin-right: 3px;
+      margin-bottom: 2px;
+    }
+    >div{
+      z-index: 999;
+      width: 210px;
+      height: 210px;
+      display: none;
+      position: absolute;
+      padding: 5px;
+      left: 50%;
+      top: 0;
+      margin-top: 38px;
+      margin-left: -110px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 40px #ccc;
+      &:before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 12px solid #fff;
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -6px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.time-chart {
+  width: 100%;
+  height: 150px;
+  padding: 0 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: #eff4fa;
+  white-space: nowrap;
+  .content {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      margin-left: 20px;
+      width: 120px;
+      height: 127px;
+      padding-top: 25px;
+      &:first-child {
+          margin-left: 0;
+      }
+      &:last-child {
+          .line {
+              display: none;
+          }
+      }
+      .circle {
+          width: 50px;
+          height: 50px;
+          margin: 0 auto;
+          border-radius: 50%;
+          background-color: #59afff;
+          text-align: center;
+          color: #fff;
+          line-height: 50px;
+      }
+      p {
+          width: 100%;
+          margin-top: 10px;
+          font-size: 12px;
+          color: #59afff;
+          text-align: center;
+      }
+      .line {
+          position: absolute;
+          top: 48px;
+          right: -80px;
+          width: 115px;
+          height: 4px;
+          background-color: #bfddfb
+      }
+  }
+}
+.datagrid-btable{
+  td{
+    position: relative;
+  }
+  tr:nth-last-of-type(1),
+  tr:nth-last-of-type(2),
+  tr:nth-last-of-type(3){
+    .inventory-lost-picture,
+    .inventory-detail-picture,
+    .repair-detail-picture,
+    .repair-td-picture,
+    .out-td-picture,
+    .into-detail-picture{
+      >div{
+        top: auto;
+        margin-top: auto;
+        bottom:0;
+        margin-bottom: 38px;
+        &:before{
+          border-bottom: 0px solid #fff;
+          border-top: 12px solid #fff;
+          top: auto;
+          bottom:-10px;
+        }
+      }
+    }
+  }
+  tr:nth-of-type(1),
+  tr:nth-of-type(2),
+  tr:nth-of-type(3){
+    .inventory-lost-picture,
+    .inventory-detail-picture,
+    .repair-detail-picture,
+    .repair-td-picture,
+    .out-td-picture,
+    .into-detail-picture{
+      >div{
+        bottom: auto;
+        margin-bottom: auto;
+        top:0;
+        margin-top: 38px;
+        &:before{
+          border-top: 0px solid #fff;
+          border-bottom: 12px solid #fff;
+          bottom: auto;
+          top:-10px;
+        }
+      }
+    }
+  }
+}
+
+/*====================入库详情弹窗+出库详情+故障维修详情+盘点详情+盘点丢失====================*/
+.inventory-lost-wrapper,
+.inventory-detail-wrapper,
+.repair-detail-wrapper,
+.repair-td-detail,
+.out-detail-wrapper,
+.into-detail-wrapper{
+  width: 1000px;
+  .content{
+    max-height: 500px;
+    >form{
+      height: 420px;
+    }
+  }
+  .inventory-lost-picture,
+  .inventory-detail-picture,
+  .repair-detail-picture,
+  .out-detail-picture,
+  .into-detail-picture{
+    >div{
+      width: 160px;
+      height: 160px;
+      margin-top: 38px;
+      margin-left: -80px;
+    }
+  }
+  .datagrid-btable{
+    td{
+      position: relative;
+    }
+    tr:nth-last-of-type(1),
+    tr:nth-last-of-type(2),
+    tr:nth-last-of-type(3){
+      .inventory-lost-picture,
+      .inventory-detail-picture,
+      .repair-detail-picture,
+      .out-detail-picture,
+      .into-detail-picture{
+        >div{
+          margin-bottom: 44px;
+        }
+      }
+    }
+    tr:nth-of-type(1),
+    tr:nth-of-type(2),
+    tr:nth-of-type(3){
+      .inventory-lost-picture,
+      .inventory-detail-picture,
+      .repair-detail-picture,
+      .out-detail-picture,
+      .into-detail-picture{
+        >div{
+          margin-top: 44px;
+        }
+      }
+    }
+  }
+}
+
+.inventory-lost-wrapper{
+  .content{
+    input[type=text]{
+      width: 100%;
+    }
+  }
+}
+
+/*====================盘点扫码弹窗====================*/
+.inventory-scan-wrapper{
+  width: 700px;
+  .scan{
+    >div{
+      text-align:center;
+    }
+  }
+}
+
+/*====================丢失出库成功弹窗====================*/
+.lost-success-wrapper {
+  //display: block;
+  text-align: center;
+  width: 400px;
+  .content {
+    height: 150px;
+    padding-top: 40px;
+    i {
+
+      display: block;
+      width: 50px;
+      height: 42px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      background-image: url('../images/success.png');
+      background-size: 100% 100%;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+  .footer {
+    .btn-look {
+      margin-right: 20px;
+      border: 1px solid #59aFFf;
+      background-color: #fff;
+      color: #59aFFf;
+    }
+    .submit{
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}
+
+/*====================盘点丢失补领扫码弹窗====================*/
+
+.inventory-scan-wrapper{
+  width: 700px;
+  .content{
+    text-align: center;
+    padding: 50px 30px;
+    p{
+      color: #59aFFf;
+      margin: 20px 0;
+    }
+  }
+}
+

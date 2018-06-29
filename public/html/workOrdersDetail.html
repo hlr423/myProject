@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>工单管理/详情</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="../css/workOrdersDetail.css">
+</head>
+
+<body>
+
+    <div class="body-wrapper">
+        <div class="workOders-list">
+             <a class="back-list">返回列表</a>
+        </div>
+        <div class="workOders-data">
+            <div class="list">
+                <div class="title">
+                    <i></i>
+                    <div>
+                        <p>工单详情</p>
+                        <span>12345678</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <table>
+                        <tr>
+                            <td>工单状态</td>
+                            <td>处理中</td>
+                        </tr>
+                        <tr>
+                            <td>派发时间</td>
+                            <td>2017-12-06 12:54:65</td>
+                        </tr>
+                        <tr>
+                            <td>运维人员</td>
+                            <td>张江龙,张江龙,张江龙</td>
+                        </tr>
+                        <tr>
+                            <td>推荐运维时间</td>
+                            <td>2017-12-09</td>
+                        </tr>
+                        <tr>
+                            <td>操作</td>
+                            <td class="workOrders-urged">督办</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="workOders-goods">
+                <p class="table-title">
+                    <i></i>所需物质
+                    <span>0</span>
+                </p>
+                <div>
+                    <table class="easyui-datagrid" id="goodsTable">
+                        <tbody>
+                            <tr>
+                                <td>设备</td>
+                                <td>潜污泵</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="workOders-car">
+                <p class="table-title">
+                    <i></i>所需车辆
+                    <span>0</span>
+                </p>
+                <div>
+                    <table class="easyui-datagrid" id="carTable">
+                        <tbody>
+                            <tr>
+                                <td>婴儿车</td>
+                                <td>AE86</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="work-tab">
+            <div id="tab" class="easyui-tabs">
+                <div title="平窝乡污水处理厂" class="table-station1">
+                    <table class="easyui-datagrid" id="station1">
+                        <tbody>
+                            <tr>
+                                <td>设备</td>
+                                <td>维修</td>
+                                <td>潜污泵</td>
+                                <td>张江龙、渣渣龙</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>2017-12-11 12:21.08</td>
+                                <td>2017-12-11 12:21.08</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div title="推荐轨迹">
+                    <div class="trajectory-wrapper">
+                        百度地图
+                    </div>
+                </div>
+                <div title="实际轨迹">
+                    <div class="trajectory-wrapper">
+                        百度地图
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shade"></div>
+    <!--厂站操作说明弹窗-->
+    <div class="popup description-popup">
+        <div class="title">
+            <span>操作说明</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            操作说明/富文本传来
+        </div>
+    </div>
+    <!--厂站照片弹窗-->
+    <div class="popup picture-popup">
+        <div class="title">
+            <span>厂站照片</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <div class="swiper-container gallery-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="../images/imgDemo.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/imgDemo.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/imgDemo.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/imgDemo.png" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="../images/imgDemo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url('../images/imgDemo.png')"></div>
+                    <div class="swiper-slide" style="background-image:url(../images/imgDemo.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(../images/imgDemo.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(../images/imgDemo.png)"></div>
+                    <div class="swiper-slide" style="background-image:url(../images/imgDemo.png)"></div>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+    <!--厂站照片弹窗-->
+    <div class="popup music-popup">
+        <div class="title">
+            <span>音频</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <div class="music-table">
+                <table class="easyui-datagrid" id="musicTable">
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    <tr>
+                        <td>
+                            123123132
+                        </td>
+                       
+                    </tr>
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/swiper-3.4.2.min.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/workOrdersDetail.js"></script>
+    <script src="../js/refresh.js"></script>
+</body>
+
+</html>

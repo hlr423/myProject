@@ -1,0 +1,153 @@
+@import "./module/global.scss";
+@import "./module/searchWrapper.scss";
+@import "./module/input.scss";
+@import "./module/table.scss";
+@import "./module/footerPage.scss";
+@import "./module/tableOperationBtn.scss";
+@import "./module/popup.scss";
+@import "./module/inputFile.scss";
+@import "./module/combotree.scss";
+@import "./module/prompt.scss";
+@import "./module/radio.scss";
+
+/*====================整体table====================*/
+.table-operation{
+  justify-content: space-around;
+  a{
+    color: #59aFFf;
+    text-decoration: none;
+  }
+  .table-edit{
+    @extend %table-edit
+  }
+  .table-delete{
+    @extend  %table-delete
+  }
+}
+.datagrid-cell{
+  overflow: visible;
+}
+a{
+    &.td-picture,
+    &.td-paper,
+    &.td-detail{
+      color: #59aFFf;
+      cursor: pointer;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+// ================
+// a{
+//   &.td-driveCard,
+//   &.td-picture{
+//     display: inline-block;
+//     color: #59aFFf;
+//     cursor: pointer;
+//     position: relative;
+//     &:hover{
+//       text-decoration: underline;
+//       >div{
+//         display: block;
+//       }
+//     }
+//     i{
+//       width: 14px;
+//       height: 14px;
+//       display: inline-block;
+//       vertical-align: middle;
+//       background-image:url('../images/filePic.png');
+//       margin-right: 3px;
+//       margin-bottom: 2px;
+//     }
+//     >div{
+//       z-index: 9999999;
+//       width: 210px;
+//       height: 210px;
+//       display: none;
+//       position: absolute;
+//       padding: 5px;
+//       left: 50%;
+//       top: 3px;
+//       margin-left: -110px;
+//       margin-top: 50%;
+//       background-color: #fff;
+//       border-radius: 10px;
+//       box-shadow: 0 0 40px #ccc;
+//       &:before{
+//         content: '';
+//         width: 0;
+//         height: 0;
+//         border-left: 8px solid transparent;
+//         border-right: 8px solid transparent;
+//         border-bottom: 12px solid #fff;
+//         position: absolute;
+//         left: 50%;
+//         top: -10px;
+//         margin-left: -6px;
+//       }
+//       img{
+//         width: 100%;
+//         height: 100%;
+//       }
+//     }
+//   }
+//   &.td-normal{
+//     color: #51c589;
+//   }
+//   &.td-fault{
+//     color: #999;
+//   }
+// }
+/*====================弹窗====================*/
+// 编辑弹窗
+.edit-wrapper{
+  width: 500px;
+  .content{
+    height: 300px;
+  }
+  .content-item{
+    >i.edit-del{
+      display: inline-block;
+      position: relative;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-image: url('../images/delete-group.png');
+      cursor: pointer;
+      }
+    >div{
+      display: inline-block;
+      .radio-wrapper{
+        &:nth-of-type(2){
+          margin: 0 20px;
+        }
+        span{
+          position: relative;
+          bottom: 2px;
+        }
+      }
+    }
+    .edit-add{
+      width: 120px;
+      height: 30px;
+      text-align: center;
+      line-height: 30px;
+      color: #fff;
+      background-color: #49ce82;
+      border-radius: 20px;
+      cursor: pointer;
+      i{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-repeat: no-repeat;
+        background-image: url('../images/btn.png');
+        vertical-align: middle;
+      }
+    }
+    }
+
+}

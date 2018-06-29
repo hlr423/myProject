@@ -1,0 +1,236 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/select.scss";
+@import "./module/prompt.scss";
+@import "./module/inputFile.scss";
+@import "./module/popup.scss";
+@import "./module/input.scss";
+@import "./module/datePicker.scss";
+/*==============================================*/ 
+.body-wrapper {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.chose-time {
+    @extend %chose-time;
+}
+//====================厂站统计样式====================//
+.search-nav {
+    padding-bottom: 20px;
+    // select:nth-of-type(1){
+    //     display: none;
+    // }
+    input::-webkit-input-placeholder {
+        text-align: center;
+    }
+    .input-search {
+        background-color: #f2f2f2;
+        border: none;
+        width: 140px;
+        border-radius: 30px;
+        margin-left: 10px;
+    }
+    .title {
+        margin-left: 10px;
+        display: inline-block;
+        >select {
+            width: 120px;
+            &:not(:nth-of-type(1)) {
+                display: none;
+            }
+            &.data-show {
+                display: inline-block;
+            }
+        }
+        >input[type=text] {
+            width: 120px !important;
+            display: none;
+            vertical-align: top;
+            &.data-show {
+                display: inline-block;
+            }
+        }
+    }
+    .part-factory {
+        width: 7%;
+    }
+}
+
+//=================厂站统计图表样式=======================//
+.person-statistics {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .work-time {
+        margin-left: 15px;
+        width: 32%;
+        margin-top: -2%;
+        >div:nth-of-type(1) {
+            position: relative;
+            top: 18%;
+            border-bottom: 1px solid white;
+            span {
+                display: block;
+                height: 50px;
+                line-height: 50px;
+                padding-left: 10px;
+                font-size: 18px;
+            }
+        }
+        >div:nth-of-type(2) {
+            background-color: #f0f6fe;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-around; //padding-left: 50px;
+            ul {
+                display: inline-block;
+                width: 190px;
+                margin-top: 10%; // margin-left: 5%;
+                vertical-align: top;
+                li {
+                    list-style: none;
+                    font-size: 18px;
+                    >span {
+                        font-size: 36px;
+                        color: #30ba60;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    } 
+    .work-time:nth-child(4), .work-time:nth-child(5){
+        width: 48.5%;
+    }
+    // 故障原因占比统计
+    #echarts-wrapper-earlyWarning,
+    #echarts-wrapper-giveAlarm,
+    #echarts-wrapper-fault {
+        display: inline-block;
+        margin-top: 5%;
+        width: 50%;
+        height: 200px; //border: 1px solid red;
+    }
+    #echarts-wrapper-faultNumS,
+    #echarts-wrapper-equipmentStatistics{
+        display: inline-block;
+        margin-top: 5%;
+        width: 58%;
+        height: 200px;
+       }
+    .work-time-text {
+        font-size: 16px;
+        height: 100px;
+        text-align: center;
+       line-height: 90px;
+        width:22%;
+        margin: 30px 0 0 20px;
+        >p:nth-of-type(2) {
+            height:20px;
+            line-height:0px;         
+            font-size: 45px;  
+        }
+    }
+    .work-time:nth-child(1) .work-time-text:nth-of-type(2) {
+        width:40%;
+        p:nth-of-type(2){
+            color: #f33e40;
+        }       
+    }
+    .work-time:nth-child(2) .work-time-text:nth-of-type(2) {
+        width:40%;
+        p:nth-of-type(2){
+            color: #fad52a;
+        }       
+    }
+    .work-time:nth-child(3) .work-time-text:nth-of-type(2) {
+        width:40%;
+        p:nth-of-type(2){
+            color: #fe7a1d;
+        }       
+    }
+    .work-time:nth-child(4),.work-time:nth-child(5)  {
+        p:nth-of-type(2){
+            color: #B6A2DE;
+        } 
+        .work-time-text{
+            margin: 5% 0px;
+            height: 150px;
+            // width: 190px;
+                // background-color: rebeccapurple;
+                // &{
+                //     border-right: 2px solid gold;
+                // }
+        }      
+    }
+    .work-time-text-border{
+    border-right: 1px solid rgba(143, 158, 245,0.5);
+   } 
+}
+
+// =======================图表中的选择框=============//
+.select-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.select-btn-1 {
+    display: flex;
+    flex-direction: row;
+    width: 60;
+    .part-factory {
+        // display: block;
+        margin-top: 10px;
+        margin-right: 15px;
+        width: 120px;
+        display: inline-block;
+        background-color: #fff;
+        border: 1px solid gainsboro;
+    }
+}
+// =====================按钮的样式=====================//
+.title {
+    >select {
+        width: 120px;
+        &:not(:nth-of-type(1)) {
+            display: none;
+        }
+        &.data-show {
+            display: inline-block;
+        }
+    }
+    >input[type=text] {
+        width: 120px !important;
+        display: none;
+        vertical-align: top;
+        &.data-show {
+            display: inline-block;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-left: 10px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    background-color: #59afff;
+    border-radius: 20px;
+    vertical-align: top;
+    border: none;
+    outline: 0;
+    transition: all .5s;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background-color: #4da1f0;
+    }
+}
+
+
+

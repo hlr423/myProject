@@ -1,0 +1,167 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/footerPage.scss";
+@import "./module/table.scss";
+@import "./module/popup.scss";
+@import "./module/input.scss";
+@import "./module/combotree.scss";
+@import "./module/tableOperationBtn";
+@import "./module/tab.scss";
+@import "./module/radio.scss";
+@import "./module/inputFile.scss";
+@import "./module/select.scss";
+
+
+/*====================整体table====================*/
+
+
+.table-operation {
+  justify-content: space-around;
+  .table-carOut {
+    @extend %table-carOut
+  }
+  .table-carReplace {
+    @extend %table-carReplace
+  }
+  .table-carBack{
+    @extend %table-carBack
+  }
+}
+
+a {
+  &.td-detail {
+    cursor: pointer;
+    color: #59aFFf;
+  }
+  &.td-state-no {
+    color: #ff6430;
+  }
+  &.td-state-yes {
+    color: #50c589;
+  }
+}
+/*====================出车二维码+还车二维码====================*/
+
+.backCode-wrapper,
+.outCode-wrapper {
+  .content {
+    text-align: center;
+    > div {
+      padding: 20px 0;
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+    p {
+      color: #50c589;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+/*====================出车成功弹窗+更换车辆成功弹窗+还车====================*/
+.carReplace-success,
+.carBack-success,
+.carOut-success {
+  //display: block;
+  text-align: center;
+  width: 400px;
+  .content {
+    height: 150px;
+    padding-top: 40px;
+    i {
+      display: block;
+      width: 50px;
+      height: 42px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      background-image: url('../images/success.png');
+      background-size: 100% 100%;
+    }
+    span {
+      font-size: 16px;
+    }
+  }
+  .footer {
+    .btn-look {
+      margin-right: 20px;
+      border: 1px solid #59aFFf;
+      background-color: #fff;
+      color: #59aFFf;
+    }
+    .submit{
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}
+
+/*====================还车信息填写====================*/
+
+.carBack-wrapper{
+  .content-item:nth-of-type(2){
+    >div{
+      display: inline-block;
+      >span{
+        &:nth-of-type(1){
+          margin-right: 100px;
+        }
+      }
+    }
+  }
+  .back-cost{
+    border: 1px solid #e9e9e9;
+    margin-top: 10px;
+    width: 100%;
+    .content-item{
+      border: 1px solid #e9e9e9;
+      padding-left: 5px;
+    }
+    .oil-input{
+      width: 120px;
+      &:nth-of-type(1){
+        margin-right: 5px;
+      }
+    }
+    .back-cost-del{
+      display: inline-block;
+      width: 50px;
+      height: 28px;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 28px;
+      cursor: pointer;
+      color: #ff6430;
+      border: 1px solid #ff6430;
+      margin-left: 200px;
+    }
+    .carBack-picture{
+      >span:nth-of-type(1){
+        color: #59aFFf;
+        border: 1px solid #59aFFf;
+      }
+    }
+  }
+  .carBack-add{
+    margin-top: 20px;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #59aFFf;
+    border: 1px solid #59aFFf;
+    border-radius: 5px;
+    cursor: pointer;
+    i{
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-repeat: no-repeat;
+      background-image: url('../images/add12px.png');
+      vertical-align: middle;
+    }
+  }
+
+}

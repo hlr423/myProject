@@ -1,0 +1,277 @@
+@import './module/global.scss';
+@import './module/prompt.scss';
+@import './module/select.scss';
+body {
+    /* margin-top: 40px; */
+    text-align: center;
+    font-size: 14px;
+    font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+}
+
+.dib {
+    display: inline-block;
+}
+
+.fr {
+    float: right;
+}
+
+.body-wrapper {
+    height: auto;
+    min-height: 100vh;
+}
+
+.calendarWrapper {
+    display: flex;
+    justify-content: center; // margin: 0 auto;
+    // flex-direction: column;
+    .rightSidePanel {
+        width: 350px;
+        padding: 30px;
+        background-color: #59afff;
+        .h_calendar_alm {
+            // 内容框
+            border: none;
+        }
+        .alm_date {
+            // 头部
+            background: none;
+            color: #fff;
+            font-size: 18px;
+            height: auto;
+            line-height: 30px;
+        }
+        .today_date {
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: #ffbb00;
+            box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.2);
+            color: #fff;
+        }
+        .alm_content {
+            margin: 50px 0;
+            border: none;
+            background: none;
+            padding: 0;
+            p {
+                color: #fff;
+            }
+        }
+        .today_icon {
+            // 今日标签
+            left: auto;
+            right: 0;
+        }
+    }
+    .shift-data {
+        padding: 30px 0;
+        padding-left: 20px;
+        font-size: 18px;
+        text-align: left;
+        color: #fff;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+
+#calendar {
+    position: relative;
+    flex: 1;
+    max-width: 1100px;
+    .fc-header {
+        // 头部
+        .fc-header-center {
+            width: 50px;
+            text-align: left;
+            >span {
+                &:nth-last-of-type(1) {
+                    border-radius: 0;
+                    border-right: 1px solid #4fa0e3;
+                }
+            }
+        }
+        .fc-header-left {
+            width: 140px;
+            max-width: 140px;
+        }
+        .fc-button-prev,
+        .fc-button-next {
+            padding: 0;
+            i {
+                display: inline-block;
+                width: 16px;
+                height: 20px;
+                margin-top: 6px;
+                background-image: url('../images/person-prev.png');
+                background-size: 100% 100%;
+            }
+        }
+        .fc-button-next {
+            margin-left: 8px;
+            padding-right: 20px;
+            margin-right: 20px;
+            i {
+                background-image: url('../images/person-next.png');
+            }
+        }
+        tr {
+            display: flex;
+            background-color: #3881bf;
+            border-bottom: 1px solid #4fa0e3;
+            td {
+                height: 50px;
+            }
+            span {
+                height: 30px;
+                line-height: 30px;
+                border: none;
+                background: none;
+                color: #fff;
+                text-shadow: none;
+                box-shadow: none;
+                margin: 0;
+                top: 10px;
+            }
+            select {
+                width: 66px;
+                font-size: 20px;
+                vertical-align: middle;
+                border: none;
+                padding: 0;
+                margin-top: 10px;
+                color: #fff;
+                background: transparent;
+                cursor: default;
+                &:nth-of-type(1) {
+                    margin-left: 30px;
+                }
+            }
+            .mr15 {
+                margin-right: 0;
+            }
+        }
+    }
+    .fc-day {
+        // height: 110px;
+        padding: 5px;
+    }
+    .td-active {
+				// border: 1px solid #ffbb00;
+				background-color: #d4e7fb;
+		}
+		.fc-widget-content{
+			border: 1px solid #d4e7fb;
+		}
+		.fc-border-separate{ // 头部周几table
+			border-collapse: collapse;
+		}
+    .fc-first.fc-last {
+        background-color: #3881bf;
+        .fc-day-header {
+            // 头部周几
+            height: 34px;
+						line-height: 34px;
+						border: 1px solid #4fa0e3;
+						// border: none;
+						// border: 1px sold #4fa0e3;
+						border-top:0px;
+            color: #fff;
+        }
+    }
+    .fc-day {
+        .fc-day-number,
+        .fc-day-cnDate {
+            color: #59afff;
+        }
+    }
+    .fc-sun,
+    .fc-sat {
+        // 周六周日
+        .fc-day-number,
+        .fc-day-cnDate {
+            color: #b975f4;
+        }
+    }
+    .fc-state-highlight {
+        // 当天
+        background-color: #ffbb00;
+        .fc-day-number,
+        .fc-day-cnDate {
+            color: #fff;
+        }
+    }
+    .fc-day {
+        //具体日子
+        text-align: center;
+        .fc-day-number {
+            margin-bottom: 10px;
+        }
+    }
+    .fc-day-content {
+        // 事件框
+        margin-top: 5px;
+    }
+    .fc-event-container {
+        //事件容器
+        text-align: center;
+        .fc-event {
+            // 时间内容content
+            .fc-content {
+                display: inline-block;
+            }
+        }
+		}
+		.fc-other-month{ //其它月样式
+			.fc-day-cnTerm,
+			.fc-day-cnDate,
+			.fc-day-number{
+				color:#dcdcdc;
+			}
+		}
+
+
+    .work-time {
+        //工时
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+        min-width: 400px;
+        height: 50px;
+        line-height: 50px;
+        top: 0;
+        left: 230px;
+        color: #fff;
+    }
+    .work-exportBtn { // 导出按钮
+        position: absolute;
+        width: 80px;
+        height: 30px;
+        right: 30px;
+        line-height: 30px;
+        border-radius: 5px;
+        text-align: center;
+        vertical-align: top;
+        top: 10px;
+        color: #fff;
+        background-color: #4fa0e3;
+        border: 1px solid #4fa0e3;
+        i {
+						display: inline-block;
+            width: 14px;
+            height: 14px;
+            margin-right: 3px;
+            background-repeat: no-repeat;
+            background-image: url('../images/btn.png');
+            vertical-align: middle;
+            background-position: -24px 0;
+        }
+        &:hover {
+						cursor: pointer;
+            background-color: #2fabed;
+            border: 1px solid #2fabed;
+        }
+    }
+}

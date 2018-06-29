@@ -1,0 +1,30 @@
+/*多选样式*/
+.checkbox-wrapper-not,
+.checkbox-all-wrapper,
+.checkbox-wrapper{
+  position: relative;
+  i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/chose.png');
+    background-position-x: -24px;
+  }
+  input[type=checkbox]{
+    cursor: pointer;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    opacity:0;
+  }
+}
+.checkbox-wrapper-checked{
+  i{
+    background-position-x: -48px;
+  }
+}
+.checkbox-wrapper-not{
+  i{
+    background-position-x: 14px;
+  }
+}

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>天翔乡镇污水人工智能(AI)综合运营管理平台</title>
+    <link rel="stylesheet" href="../css/screenIndex.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="left">
+            <div class="wrapper water">
+                <div class="title">简阳区域厂站污水处理水量</div>
+                <div class="echart" id="water"></div>
+                <p class="title2">简阳区域厂站月、季度、年污水处理总量</p>
+                <div class="water-data">
+                    <div class="month">
+                        <p>
+                            <i></i>月处理水量(m³)
+                        </p>
+                        <span>1500000</span>
+                    </div>
+                    <div class="season">
+                        <p>
+                            <i></i>季度处理水量(m³)
+                        </p>
+                        <span>4500000</span>
+                    </div>
+                    <div class="year">
+                        <p>
+                            <i></i>年处理水量(m³)
+                        </p>
+                        <span>18000000</span>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper energy">
+                <div class="title">简阳区域厂站实时设备运行功率</div>
+                <div id="energy"></div>
+                <div class="energy-data">
+                    <div class="energy-title">简阳区域厂站月、季度、年能耗</div>
+                    <table>
+                        <tr>
+                            <td>本月能耗(kW)</td>
+                            <td>本季度能耗(kW)</td>
+                            <td>本年度能耗(kW)</td>
+                        </tr>
+                        <tr>
+                            <td>32700.00</td>
+                            <td>98100.00</td>
+                            <td>392400.00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="logo"></div>
+            <div class="wrapper chinaMap">
+                <div id="chinaMap"></div>
+            </div>
+            <div class="wrapper infor">
+                <div class="site-top">
+                    <div class="weather">
+                        <div class="site-title">简阳市天气环境概况</div>
+                        <div class="weather-infor">
+                            <i></i>
+                            <div>
+                                <p>(今日)多云转晴,8/0°C,</p>
+                                <p>北风<3级</p>
+                                <p>空气优 PM2.5 71</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="site-num">
+                        <div class="site-title">简阳区域厂站运行情况</div>
+                        <table>
+                            <tr>
+                                <td>达标</td>
+                                <td>故障</td>
+                                <td>超标</td>
+                            </tr>
+                            <tr>
+                                <td>36</td>
+                                <td>1</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="site-info">
+                    <div class="info-title">
+                        <div class="active">预警信息
+                            <span>(6)</span>
+                        </div>
+                        <div>告警信息
+                            <span>(1)</span>
+                        </div>
+                        <div>故障信息
+                            <span>(1)</span>
+                        </div>
+                        
+                    </div>
+                    <div class="site-content">
+                        <div class="warn-icon">
+                            <div class="level">
+                                等级
+                            </div>
+                            <div class="j1">
+                                <i></i>
+                                <p>1级</p> 
+                            </div>
+                            <div class="j2">
+                                <i></i>
+                                <p>2级</p>
+                            </div>
+                            <div class="j3">
+                                <i></i>
+                                <p>3级</p>
+                            </div>
+                        </div>
+                        <div class="option">
+                            <ul>
+                                <li class="padleft20">
+                                    <i class="j1"></i>
+                                    <span title="2018.1.10  13:55:12">2018.1.10 13:55:12</span>
+                                </li>
+                                <li title="三星镇污水处理厂">三星镇污水处理厂</li>
+                                <li title="SS检测仪">SS检测仪</li>
+                                <li title="SS水质超标">SS水质超标</li>
+                                <li class="padleft20">
+                                    <i class="j1"></i>
+                                    <span title="2018.1.10  15:25:32">2018.1.10 15:25:32</span>
+                                </li>
+                                <li title="青龙镇污水处理厂">青龙镇污水处理厂</li>
+                                <li title="COD检测仪">COD检测仪</li>
+                                <li title="COD水质超标">COD水质超标</li>
+                                <li class="padleft20">
+                                    <i class="j1"></i>
+                                    <span title="2018.1.10  16:25:36">2018.1.10 16:25:36</span>
+                                </li>
+                                <li title="五星乡污水处理厂">五星乡污水处理厂</li>
+                                <li title="TP检测仪">TP检测仪</li>
+                                <li title="TP水质超标">TP水质超标</li>
+                                <li class="padleft20">
+                                    <i class="j1"></i>
+                                    <span title="2018.1.10  12:42:35">2018.1.10 12:42:35</span>
+                                </li>
+                                <li title="东溪乡污水处理厂">东溪乡污水处理厂</li>
+                                <li title="TN检测仪">TN检测仪</li>
+                                <li title="TN水质超标">TN水质超标</li>
+                                <li class="padleft20">
+                                    <i class="j1"></i>
+                                    <span title="2018.1.10  17:24:32">2018.1.10 17:24:32</span>
+                                </li>
+                                <li title="灵仙乡污水处理厂">灵仙乡污水处理厂</li>
+                                <li title="COD检测仪">COD检测仪</li>
+                                <li title="COD水质超标">COD水质超标</li>
+                                <li class="padleft20">
+                                    <i class="j1"></i>
+                                    <span title="2018.1.10  19:55:12">2018.1.10 19:55:12</span>
+                                </li>
+                                <li title="石盘镇污水处理厂">石盘镇污水处理厂</li>
+                                <li title="SS检测仪">SS检测仪</li>
+                                <li title="SS水质超标">SS水质超标</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="wrapper tree">
+                <div class="title">简阳区域厂站减排量数据比</div>
+                <div class="tree-data">
+                    <div class="day">
+                        <p>
+                            <span>COD</span>日减排量
+                        </p>
+                        <p>
+                            <span>8.5</span> T
+                        </p>
+                    </div>
+                </div>
+                <div class="cnp">
+                    <div class="active">COD</div>
+                    <div>氨氮</div>
+                    <div>总磷</div>
+                </div>
+                <div class="reduce-wrapper">
+                    <div class="month">
+                        <p>
+                            <span>COD</span>月减排量
+                        </p>
+                        <p>
+                            <span>255.00</span> T
+                        </p>
+                    </div>
+                    <div class="season">
+                        <p>
+                            <span>COD</span>季度减排量
+                        </p>
+                        <p>
+                            <span>765.00</span> T
+                        </p>
+                    </div>
+                    <div class="year">
+                        <p>
+                            <span>COD</span>年减排量
+                        </p>
+                        <p>
+                            <span>3060.00</span> T
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper cost">
+                <div class="title">简阳区域厂站吨水成本</div>
+                <div class="echart" id="cost"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/echarts.js"></script>
+    <script src="../js/china.js"></script>
+    <script src="../js/screenIndex.js"></script>
+    <script src="../js/refresh.js"></script>
+    
+</body>
+
+</html>

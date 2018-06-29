@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>工单管理</title>
+	<link rel="stylesheet" href="../css/easyui.css">
+	<link rel="stylesheet" href="../css/workOrders.css">
+</head>
+
+<body>
+	<div class="body-wrapper">
+		<div class="search-wrapper">
+			<select>
+				<option value="0">全部状态</option>
+				<option value="1">状态1</option>
+			</select>
+			<input type="text" placeholder="开始时间" class="chose-time">
+			<input type="text" placeholder="结束时间" class="chose-time">
+			<input type="text" placeholder="请输入工单编号">
+			<div class="search-btn">搜索</div>
+		</div>
+		<div class="operation-wrapper">
+			<div class="new-btn">
+				<i></i>
+				<span>手动派发</span>
+			</div>
+		</div>
+		<div class="table-wrapper">
+			<table class="easyui-datagrid" id="dg">
+				<tbody>
+					<tr>
+						<td>运维</td>
+						<td>1234566</td>
+						<td></td>
+						<td>2017-12-21 12:54:03</td>
+						<td>张三三、李斯、王武</td>
+						<td></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="shade"></div>
+	<!--新建弹窗-->
+	<div class="popup newAdd-popup">
+		<div class="title">
+			<span>新建</span>
+			<a class="close-popup">
+				<i class="close-icon"></i>
+			</a>
+		</div>
+		<div class="content">
+			<form class="newAdd-form" method="post">
+				<div class="content-item">
+					<label>*工单名称:</label>
+					<input class="easyui-validatebox" type="text" data-options="required:true" placeholder="请输入工单名称" maxlength="50" />
+				</div>
+				<div class="content-item">
+					<label>*运维时间:</label>
+					<input class="popup-chose-time" type="text" placeholder="请选择时间" />
+				</div>
+				<span class="task-title">
+					<i></i>任务派发（必填）</span>
+				<div class="task">
+					<i class="delete-task"></i>
+					<div class="content-item">
+						<label>*地址:</label>
+						<input class="newAdd-address-comboTree" data-options="required:true,prompt:'请选择区地址'">
+					</div>
+					<div class="content-item">
+						<label>*厂站名称:</label>
+						<select class="easyui-validatebox" data-options="required:true,validType:'selectValueRequired'">
+							<option value="0">请选择厂站</option>
+							<option value="1">类型1</option>
+						</select>
+					</div>
+					<div class="content-item">
+						<label>*设备:</label>
+						<select class="easyui-validatebox" data-options="required:true,validType:'selectValueRequired'">
+							<option value="0">请选择设备</option>
+							<option value="1">类型1</option>
+						</select>
+					</div>
+					<div class="content-item">
+						<label>*任务类型:</label>
+						<select class="easyui-validatebox" data-options="required:true,validType:'selectValueRequired'">
+							<option value="0">请选择任务类型</option>
+							<option value="1">类型1</option>
+						</select>
+					</div>
+					<div>
+						<div class="person-num">
+							<span>运维人员</span>
+							<span>已选
+								<span>6</span>人</span>
+							<a class="edit-person">
+								<i></i>编辑人员</a>
+						</div>
+						<div class="person">
+							<div>
+								<img src="../images/head-img.png" alt="" srcset="">
+								<div>
+									<p>张江龙</p>
+								</div>
+							</div>
+							<div>
+								<img src="../images/head-img.png" alt="" srcset="">
+								<div>
+									<p>张江龙</p>
+								</div>
+							</div>
+							<div>
+								<img src="../images/head-img.png" alt="" srcset="">
+								<div>
+									<p>张江</p>
+								</div>
+							</div>
+							<div>
+								<img src="../images/head-img.png" alt="" srcset="">
+								<div>
+									<p>张江龙龙龙龙</p>
+								</div>
+							</div>
+							<div>
+								<img src="../images/head-img.png" alt="" srcset="">
+								<div>
+									<p>张江</p>
+								</div>
+							</div>
+							<div>
+								<img src="../images/head-img.png" alt="" srcset="">
+								<div>
+									<p>张江龙</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="add-taskBtn">
+					<i></i>添加任务</div>
+			</form>
+		</div>
+		<div class="footer">
+			<div class="submit newAdd-submit">提交</div>
+		</div>
+	</div>
+	<!--编辑人员弹窗-->
+	<div class="popup edit-person-popup">
+		<div class="title">
+			<p>编辑人员</p>
+			<a class="return-popup">
+				<i class="return-icon"></i>
+			</a>
+		</div>
+		<div class="content">
+			<div class="content-person">
+				<span>
+					<a class="checkbox-wrapper">
+						<i></i>
+						<input type="checkbox" class="check-all">
+					</a>
+					机修
+				</span>
+				<p>共有
+					<span class="allPerson">0</span>人，已选
+					<span class="nowPerson">0</span>人
+				</p>
+				<div class="person">
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" name="" id="" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" name="" id="" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" name="" id="" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+				</div>
+			</div>
+			<div class="content-person">
+				<span>
+					<a class="checkbox-all-wrapper">
+						<i></i>
+						<input type="checkbox" class="check-all">
+					</a>
+					机修
+				</span>
+				<p>共有
+					<span class="allPerson">13</span>人，已选
+					<span class="nowPerson">0</span>人
+				</p>
+				<div class="person">
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" name="" id="" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" name="" id="" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" name="" id="" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+					<div>
+						<a class="checkbox-wrapper">
+							<i></i>
+							<input type="checkbox" name="" id="" class="check-row">
+						</a>
+						<img src="../images/head-img.png" alt=" " srcset=" ">
+						<p>张江龙龙</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="submit edit-person-submit">提交</div>
+		</div>
+
+	</div>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/jquery.easyui.min.js"></script>
+	<script src="../js/easyui-lang-zh_CN.js"></script>
+	<script src="../js/laydate/laydate.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/customPrompt.js"></script>
+	<script src="../js/refresh.js"></script>
+	<script src="../js/workOrders.js"></script>
+</body>
+
+</html>

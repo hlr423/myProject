@@ -1,0 +1,510 @@
+@import './module/global.scss';
+@import './module/prompt.scss';
+@import './module/popup.scss';
+@import './module/tab.scss';
+
+/*====================11111====================*/
+
+.body-wrapper {
+    padding: 0;
+}
+
+// 二级导航的样式
+.dimension-nav {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    border-bottom: 1px solid gainsboro;
+}
+
+.dimension-nav {
+    ul {
+        width: 100%;
+        li {
+            &:first-child {
+                cursor: pointer;
+                color: #8ec5ff;
+                span {
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+}
+
+.dimension-nav ul li {
+    float: left;
+    width: 70xp;
+    list-style: none;
+    margin-left: 18px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+/*============水质分析按钮==========*/
+
+.wave {
+    position: relative;
+    height: 60px;
+    width: 10%;
+    top: 0;
+    left: 90%;
+    cursor: pointer;
+    p {
+        position: absolute;
+        top: 50%;
+        margin-top: -20px;
+        left: 0%;
+        width: 150px;
+        background-color: #8ec5ff;
+        height: 40px;
+        border-radius: 40px;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+    }
+}
+
+// 清水管道按钮状态的表示
+.dimension-state {
+    margin-top: 10px;
+    margin-left: 10px;
+    ul {
+        width: 100%;
+        counter-reset: count;
+    }
+}
+
+.dimension-state ul li {
+    float: left;
+    width: 70xp;
+    list-style: none;
+    margin-left: 10px;
+    font-weight: 530;
+    font-size: 13px;
+}
+
+.dimension-state ul li>span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #3bfc7d;
+    margin-right: 5px;
+}
+
+.dimension-state ul li:nth-child(2)>span {
+    background-color: #c0c0c0;
+}
+
+.dimension-state ul li:last-child>span {
+    background-color: #ff5a5a;
+}
+
+.dimension-state ul li:first-child {
+    color: #3bfc7d;
+}
+
+.dimension-state ul li:last-child {
+    color: #ff5a5a;
+}
+
+.line-text {
+    clear: both;
+    font-size: 12px;
+    padding: 10px 0;
+    margin-left: 10px;
+    p {
+        vertical-align: middle;
+        text-align: left; // display: inline-block;
+    }
+    .line {
+        width: 80px;
+        height: 2px;
+        margin-bottom: 4px;
+        margin: 0 10px;
+        background-color: #3bfc7d;
+        display: inline-block;
+    }
+}
+
+// 管道表示
+.line-text p:nth-of-type(2) span:nth-child(1) {
+    background-color: #00a0e9;
+    margin-bottom: 4px;
+}
+
+.line-text p:nth-of-type(3) span:nth-child(1) {
+    background-color: #eac637;
+    margin-bottom: 4px;
+}
+
+.line-text p:nth-of-type(4) span:nth-child(1) {
+    background-color: #49d767;
+    margin-bottom: 4px;
+}
+
+.line-text p:nth-of-type(5) span:nth-child(1) {
+    background-color: #ce90e2;
+    margin-bottom: 4px;
+}
+
+.point {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #c0c0c0;
+    margin-right: 5px;
+}
+
+// 状态表示
+
+// 二维工艺图
+.TwoDimensionProcess {
+    position: relative;
+    top: -100px;
+    left: 60px;
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/Two-Dimensiona-Process1000.png");
+    background-size: 90% 100%;
+    background-repeat: no-repeat;
+}
+
+.btn-wrapper-span {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 12px;
+    margin-right: 20px;
+    color: #49d767;
+    height: 20px;
+    background-color: #000;
+    line-height: 20px;
+    i {
+        background-color: #49d767;
+    }
+}
+.btn-wrapper-span:hover{
+    cursor: pointer;
+}
+
+.btn-wrapper {
+    position: absolute;
+    top: 60px;
+    left: 20%;
+}
+/*=========按状态的改变*/
+.eer{
+    i{
+        background-color: red;
+    }
+    color: red;
+}
+.normal{
+    i{
+        background-color: #49d767;
+    }
+    color: #49d767;
+}
+.stop{
+    i{
+        background-color: #c0c0c0;
+    }
+   color: #c0c0c0;
+}
+/*==============================*/
+.TwoDimensionProcess .btn-wrapper:nth-child(2) {
+    position: absolute;
+    left: 13%;
+    top: 20%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(3) {
+    position: absolute;
+    left: 29%;
+    top: 20%;
+   
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(4) {
+    position: absolute;
+    left: 37%;
+    top: 22%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(5) {
+    position: absolute;
+    left: 61%;
+    top: 8%;
+    .btn-wrapper-span:last-child {
+        margin-left: -19px;
+    }
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(6) {
+    position: absolute;
+    left: 72%;
+    top: 7%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(7) {
+    position: absolute;
+    left: 74%;
+    top: 18%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(8) {
+    position: absolute;
+    left: 67%;
+    top: 25%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(9) {
+    position: absolute;
+    left: 61%;
+    top: 17%;
+}
+
+// 一下是two
+.TwoDimensionProcess .btn-wrapper:nth-child(10) {
+    position: absolute;
+    left: 14%;
+    top: 60%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(11) {
+    position: absolute;
+    left: 24%;
+    top: 58%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(12) {
+    position: absolute;
+    left: 30%;
+    top: 58.5%;
+    .btn-wrapper-span{
+        display: block;
+        &:last-child{
+            margin-top: 2px;
+            i {
+                background-color: #c0c0c0;
+            }
+            color: #c0c0c0;
+        }
+    }
+   
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(13) {
+    position: absolute;
+    left: -1%;
+    top: 70%;
+}
+
+.data-wrapper {
+    display: flex;
+    p {
+        width:80px;
+        height: 20px;
+        color: #3bfc7d;
+        font-size: 12px;
+        text-align: center;
+        line-height: 20px;
+        background-color: #434343;
+        margin: 1px 3px;
+    }
+}
+
+.data-wrapper:nth-child(2) {
+    margin-bottom: 5px;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(14) {
+    position: absolute;
+    left: 10%;
+    top: 79%;
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(15) {
+    position: absolute;
+    left: 29%;
+    top: 75%;
+}
+
+// 补的
+.TwoDimensionProcess .btn-wrapper:nth-child(16) {
+    position: absolute;
+    left: 77%;
+    top: -7%;
+    .btn-wrapper-span {
+        display: block;
+        margin-top: 55%;
+    }
+}
+
+.TwoDimensionProcess .btn-wrapper:nth-child(17) {
+    position: absolute;
+    left: 84%;
+    top: 23%;
+}
+
+// 提示文字样式
+.tag-text {
+    width: 35%;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: absolute;
+    left: 6%;
+    bottom: 28%;
+    a {
+        border-bottom: 1px solid gray;
+    }
+}
+
+#tag-text3 {
+    position: absolute;
+    left:50%;
+    bottom: -5%;
+}
+#tag-text2 {
+    position: absolute;
+    left: 5%;
+    bottom: -5%;
+}
+
+// two-TDP样式
+.two-TDP {
+    position: relative;
+    top: 52%;
+    left: 60%;
+    width:30%;
+    height: 200px;
+   
+}
+.two-TDP .btn-wrapper2:nth-child(1){
+    position: absolute;
+    display: flex;
+    left: 2%;
+    top: 0%
+}
+.two-TDP .btn-wrapper2:nth-child(2){
+    position: absolute;
+    left: 41%;
+    top: 0%
+}
+.two-TDP .btn-wrapper2:nth-child(3){
+    position: absolute;
+    left: 61%;
+    top: -47%;
+    .btn-wrapper-span{
+        display: block;
+        margin-top: 55%;
+    }
+   
+}
+.two-TDP .btn-wrapper2:nth-child(4){
+    position: absolute;
+    left: 80%;
+    top: 45%
+}
+.two-TDP .btn-wrapper2:nth-child(5){
+    position: absolute;
+    left: 49%;
+    top:35%
+}
+.two-TDP .btn-wrapper2:nth-child(6){
+    position: absolute;
+    left: 24%;
+    top:50%
+}
+.two-TDP .btn-wrapper2:nth-child(7){
+    position: absolute;
+    left: 3%;
+    top:30%
+    
+}
+
+// 提升汞的弹框
+.head-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .time-data {
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        background-color: #59afff;
+        text-align: center;
+        line-height: 30px;
+        border-radius: 30px;
+        color: white;
+    }
+}
+.tabs-panels{
+    padding-top: 0;
+}
+.content-c {
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    margin-top: 20px;
+}
+
+.content-circle {
+    position: relative;
+    top: 20%;
+    left: 20%;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    color: black;
+    border: 1px solid #59afff;
+    &:last-child {
+        margin-left: 10%;
+    }
+}
+.content-c .content-circle-left{
+    position: relative;
+   top: 20%;
+   left: 30%;
+}
+.controll-text .content-circle{
+    
+    &:first-child{
+        border: 1px solid #50C589;
+        background-color: #50C589;
+        color: white;
+        box-shadow: 0px 0px 20px 2px #50C589;
+    }
+    &:last-child {
+        color: #B0B0B0;
+        border: 1px solid #B0B0B0;
+    }
+}
+
+.content-circle:hover{
+    cursor: pointer;
+}
+.content-circle-text {
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    height: 60px;
+    p {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
+}
+.controll-text{
+    .content-circle-text p{
+        font-size: 20px;
+        line-height: 40px;
+    }
+}
+// 弹框的背景样式
+.shade{
+    background-color: rgba($color: #000000, $alpha: 0.5);
+}

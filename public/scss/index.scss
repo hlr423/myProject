@@ -1,0 +1,36 @@
+// @import './module/global.scss';
+// @import './module/popup.scss';
+// @import './module/table.scss';
+// @import './module/input.scss';
+// @import './module/select.scss';
+// @import './module/button.scss';
+// @import './module/footerPage.scss';
+// @import './module/searchWrapper.scss';
+
+// .div1 {
+//     width: 450px;
+// }
+
+// .new-btn {
+//     @extend %newAddBtn;
+// }
+
+// .detail {
+//     text-decoration: underline;
+//     cursor: pointer;
+// }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    width: 100%;
+    // height: 44px;
+    // font-size: 12px;
+    height: 1.173333rem;
+    font-size: .32rem;
+    background-color: red;
+}

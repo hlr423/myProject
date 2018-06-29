@@ -1,0 +1,204 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/select.scss';
+@import './module/prompt.scss';
+@import './module/checkbox.scss';
+@import './module/datePicker.scss';
+@import './module/combotree.scss';
+.body-wrapper {
+    height: 100%;
+}
+
+.search-wrapper {
+    display: flex;
+    select,
+    input {
+        margin-left: 10px;
+    }
+    span {
+        margin-left: 10px;
+        line-height: 30px;
+    }
+}
+
+.search-btn {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-left: 10px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    background-color: #59afff;
+    border-radius: 20px;
+    vertical-align: top;
+    border: none;
+    outline: 0;
+    transition: all .5s;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background-color: #4da1f0;
+    }
+}
+
+.export-btn {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    margin-left: auto;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: top;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: backgroundColor linear .5s;
+    cursor: pointer;
+    background-color: #3cbbff;
+    border: 1px solid #3cbbff;
+    color: #fff;
+    i {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        margin-right: 3px;
+        background-repeat: no-repeat;
+        background-image: url('../images/btn.png');
+        vertical-align: middle;
+        background-position: -24px 0;
+    }
+    &:hover {
+        background-color: #2fabed;
+        border: 1px solid #2fabed;
+    }
+}
+
+.add-data {
+    width: 100%;
+    margin-top: 30px;
+    border: 1px solid #f4f4f4;
+    .item {
+        display: flex;
+        height: 50px;
+        padding: 10px 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        &:last-child {
+            border-bottom: 0;
+        }
+        select {
+            width: 200px;
+            margin-right: 20px;
+            border-radius: 0;
+        }
+        &:hover {
+            background-color: #f4f3f2;
+        }
+    }
+}
+
+.delete-btn {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    margin-left: auto;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: top;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: backgroundColor linear .5s;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #fb6e53;
+    color: #fb6e53;
+    i {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 3px;
+        background-repeat: no-repeat;
+        background-image: url('../images/de.png');
+        vertical-align: middle;
+    }
+}
+
+.add-btn {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 12px;
+    color: #39bbff;
+    cursor: pointer;
+    &:hover {
+        background-color: #f4f3f2;
+    }
+    i {
+        position: relative;
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        background-repeat: no-repeat;
+        background-image: url('../images/operation.png');
+        margin-right: 3px;
+        top: 3px;
+        background-position: 0px;
+    }
+}
+
+.m10 {
+    margin-left: 5px;
+    margin-right: 10px;
+    line-height: 25px;
+}
+
+.checkbox-wrapper {
+    line-height: 29px;
+    input[type=checkbox] {
+        top: 7px;
+    }
+}
+
+.chose-time {
+    @extend %chose-time;
+}
+
+.echart-btn {
+    width: 100px;
+    height: 30px;
+    margin: 20px 0;
+    color: #fff;
+    background-color: #62a3da;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    &:hover {
+        background-color: #6d8fef;
+    }
+}
+
+#echartWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    >div {
+        width: 49%;
+        height: 350px;
+        margin-bottom: 10px;
+        padding: 0 20px;
+        background-color: #f6f4f3;
+        .echart-title {
+            height: 50px;
+            font-size: 14px;
+            color: #333;
+            line-height: 50px;
+            border-bottom: 1px solid #eee;
+        }
+        >div {
+            width: 100%;
+            height: calc(100% - 50px);
+        }
+    }
+}

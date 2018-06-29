@@ -1,0 +1,150 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/popup.scss";
+@import "./module/input.scss";
+@import "./module/select.scss";
+@import "./module/searchWrapper.scss";
+@import "./module/textarea.scss";
+/*=========================车辆信息=========================*/
+.car-repair-title{
+  border-bottom: 1px solid #e9e9e9;
+  padding-bottom: 10px;
+}
+.car-data{
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  height: 480px;
+  >div{
+    height: 100%;
+    &.list{
+      width: 60%;
+      padding: 30px;
+      color: #fff;
+      background-image: url('../images/car-list-background.png');;
+      background-size: 100% 100%;
+      .title{
+        margin-bottom: 20px;
+        i{
+          display: inline-block;
+          width: 60px;
+          height: 40px;
+          background-image: url('../images/carIcon.png');
+          background-size: 100% 100%;
+        }
+        div{
+          display: inline-block;
+          p{
+            font-size: 20px;
+          }
+        }
+      }
+      .content{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 62px;
+        >div{
+          text-align: center;
+          >div{
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            opacity: 0.3;
+            margin-bottom: 20px;
+            img{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    table{
+      display: inline-table;
+      vertical-align: top;
+      tr>td:nth-of-type(1){
+        width: 80px;
+      }
+      td{
+        height: 30px;
+      }
+    }
+
+    &.img{
+      flex: 1;
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.car-card{
+  color: #42e4ff;
+  &:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+/*=========================故障描述=========================*/
+
+.car-describe{
+  margin-top: 20px;
+  >span{
+    color: #ff6430;
+    vertical-align: top;
+    >span{
+      vertical-align: top;
+      color: #666;
+    }
+  }
+
+  .describe{
+    display: inline-block;
+    position: relative;
+    >textarea{
+      width: 700px;
+      height: 150px;
+    }
+    .describe-submit{
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      margin-left: 10px;
+      background-color: #59aFFf;
+      color: #fff;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 20px;
+      vertical-align: top;
+      border: none;
+      outline: 0;
+      transition: all .5s;
+      cursor: pointer;
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      &:hover{
+        background-color: #4da1f0;
+      }
+    }
+  }
+
+}
+
+/*====================图片弹窗====================*/
+
+.picture-wrapper{
+  width: 600px;
+  height: 500px;
+  .content{
+    max-height: 450px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

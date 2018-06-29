@@ -1,0 +1,66 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/select.scss';
+@import './module/combotree.scss';
+@import './module/button.scss';
+@import './module/searchWrapper.scss';
+@import './module/table.scss';
+@import './module/popup.scss';
+@import './module/prompt.scss';
+@import './module/footerPage.scss';
+@import './module/tableOperationBtn.scss';
+@import './module/inforWrapper.scss';
+@import './module/checkbox.scss';
+
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.table-edit {
+    @extend %table-edit;
+}
+.table-delete {
+    @extend %table-delete;
+}
+
+textarea {
+    width: 250px;
+    height: 90px;
+    padding: 9px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    resize: none;
+    color: #666;
+    &::-webkit-input-placeholder {
+        color: #ccc;
+    }
+}
+
+.content-item:last-child {
+    label {
+        vertical-align: top;
+    }
+}
+
+.new-key-radio, .edit-key-radio {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 250px;
+    &>div {
+        margin-bottom: 5px;
+    }
+    span {
+        margin-right: 5px;
+    }
+}
+.new-key-wrapper, .new-key-item, .edit-key-wrapper, .edit-key-item {
+    display: none;
+}
+.key-param {
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}

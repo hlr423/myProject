@@ -1,0 +1,455 @@
+@import './module/global.scss';
+@import './module/prompt.scss';
+@import "./headArea";
+@import './module/popup.scss';
+@import './module/combotree.scss';
+/*====================整体样式====================*/
+// 逆时针旋转动画
+@keyframes yuan1 {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+// 顺时针旋转动画
+@keyframes yuan2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.body-content {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    .items {
+        display: flex;
+        justify-content: flex-start;
+        height: 33.33%;
+        min-height: 260px;
+        color: #fff;
+        .item {
+            display: flex;
+            flex-direction: column;
+            width: 33.33%;
+            overflow: hidden;
+            background-color: #262e43;
+            border-right: 1px solid #272a33;
+            border-bottom: 1px solid #272a33;
+            &:last-child {
+                flex: 1;
+                border-right: none;
+            }
+        }
+        .content{
+            display:flex;
+            flex: 1;
+            padding: 20px;
+        }
+        &:last-child {
+            flex: 1;
+        }
+    }
+    .item-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        height: 50px;
+        background-color: #2b344c;
+        ul {
+            display: flex;
+            height: 40px;
+            justify-content: space-between;
+            color: #828690;
+            li {
+                list-style: none;
+                padding: 0 2px;
+                line-height: 40px;
+                &.li-checked {
+                    color: #fff;
+                    border-bottom: 1px solid #48cfa2;
+                }
+                &:not(:last-child) {
+                    margin-right: 12px;
+                }
+                &:hover {
+                    border-bottom: 1px solid #48cfa2;
+                    color: #fff;
+                    cursor: pointer;
+                    user-select: none;
+                }
+            }
+        }
+    }
+}
+
+/*====================厂站信息====================*/
+.station-item {
+    .station-title {
+        height: 120px;
+        min-height: 10px;
+        padding: 10px 20px;
+        >div {
+            height: 100%;
+            &.station-operation,
+            &.station-data {
+                display: flex;
+                justify-content: space-between;
+                height: 100%;
+            }
+            &.station-data{
+                min-width: 280px;
+                >i {
+                    display: inline-block;
+                    width: 100px;
+                    height: 90px;
+                    background-image: url('../images/newsitedetail.png');
+                    background-size: 100% 100%;
+                }
+                >div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    h3{
+                        font-size: 20px;
+                    }
+                }
+            }
+            &.station-operation {
+                //厂站操作
+                flex-direction: column;
+                >p {
+                    color: #828690;
+                    text-align: right;
+                    line-height: 18px;
+                    i {
+                        display: inline-block;
+                        cursor: pointer;
+                        width: 23px;
+                        height: 18px;
+                        vertical-align: middle;
+                        margin-right: 5px;
+                        background-image: url('../images/homePageS.png')
+                    }
+                }
+                .technologyStateBtn,
+                .videoBtn {
+                    display: inline-block;
+                    height: 30px;
+                    border-radius: 15px;
+                    padding: 0 10px;
+                    line-height: 30px;
+                    user-select: none;
+                    cursor: pointer;
+                    &.technologyStateBtn {
+                        background-color: #59afff;
+                        margin-right: 5px;
+                        &:hover {
+                            background-color: #0d6ec9;
+                        }
+                    }
+                    &.videoBtn {
+                        background-color: #e8af37;
+                        &:hover {
+                            background-color: #d9990e;
+                        }
+                    }
+                }
+            }
+           
+        }
+    }
+    .station-content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        >div{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 22%;
+            min-width: 96px;
+            min-height: 96px;
+            text-align: center;
+            &:not(:last-child){
+                padding: 5px;
+            }
+            span{
+                font-size: 12px;
+            }
+            img{
+                width: 100%;
+                height: auto;
+                position: absolute;
+                animation: yuan1 5s linear infinite;
+            }
+        }
+    }
+}
+
+/*====================出水====================*/
+.out-water-item{
+    .out-water-content{
+        >div{
+            flex: 1;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            font-size: 22px;
+            >p{
+                font-size: 14px;
+                span{
+                    font-size: 36px;
+                }
+            }
+            img{
+                width: 55%;
+                min-width: 150px;
+                height: auto;
+                position: absolute;
+                animation: yuan2 5s linear infinite;
+            }
+        }
+        .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 190px;
+            list-style: none;
+            overflow: hidden;
+            li {
+                display: flex;
+                height: 25%;
+                font-size: 14px;
+                align-items: center;
+                color: #fff;
+                &:first-child {
+                    height: 20%;
+                    font-size: 16px;
+                }
+                span {
+                    font-size: 26px;
+                    position: relative;
+                    &.green {
+                        color: #6ced91;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*====================实时药耗====================*/
+.drug-item{
+    .content{
+        display: flex;
+        >div{
+            &:nth-child(1){
+                flex: 1;
+            }
+            &:nth-child(2){
+                width: 30%;
+                min-width: 150px;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                font-size: 22px;
+                >p{
+                    font-size: 14px;
+                    span{
+                        font-size: 36px;
+                        margin-right: 5px;
+                    }
+                }
+                img{
+                    width: 90%;
+                    min-width: 150px;
+                    height: auto;
+                    position: absolute;
+                    animation: yuan2 5s linear infinite;
+                }
+            }
+        }
+    }
+}
+
+/*====================智能工单+实时信息共同样式===================*/
+.information-list,
+.job-list{
+    width: 100%;
+    position: relative;
+    display: none;
+    li{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 20%;
+        padding: 0 20px;
+        border-bottom: 1px solid #2b344c;
+        list-style: none;
+    }
+    &.list-show{
+        display: block;
+    }
+}
+
+/*====================智能工单===================*/
+.job-item{
+    .content{
+        padding: 0 !important;
+        overflow: hidden;
+    }
+    .job-list{
+        li{
+            span{
+                display: inline-block;
+                width: 30%;
+                min-width: 150px;
+            }
+        }
+    }
+}
+
+/*====================实时信息===================*/
+.information-item{
+    .content{
+        padding: 0 !important;
+        overflow: hidden;
+    }
+    .information-list{
+        li{
+            justify-content: space-between;
+            span{
+                &:first-child{
+                    &:before{
+                        content: '';
+                        display: inline-block;
+                        width: 20px;
+                        height: 16px;
+                        margin-right:5px;
+                    }
+                }
+                &.lv1{
+                    &:before{
+                        background-image: url('../images/homePageLv1.png');
+                        background-size: 100% 100%;
+                    }
+                }
+                &.lv2{
+                    &:before{
+                        background-image: url('../images/homePageLv2.png');
+                        background-size: 100% 100%;
+                    }
+                }
+                &.lv3{
+                    &:before{
+                        background-image: url('../images/homePageLv3.png');
+                        background-size: 100% 100%;
+                    }
+                }
+            }
+        }
+       
+    }
+}
+
+/*====================厂站列表===================*/
+.station-popup{
+    width: 650px;
+    .content{
+        height: 300px;
+    }
+    .station-form{
+        margin-top: 20px;
+    }
+    .station-wrapper{
+        display: flex;
+        justify-content: space-between;
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+    }
+    .station-name{
+        width: 170px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        border: 1px solid #dcdcdc;
+        border-radius: 6px;
+        cursor: pointer;
+        &.station-name-active{
+            color:#fff;
+            background-color: #48cf7d;
+            position: relative;
+            &:after{
+                display: inline-block;
+                width: 14px;
+                height: 12px;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                content: '';
+                background-image: url('../images/homePageGou.png');
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
+
+/*====================小屏幕适配===================*/
+@media screen and (max-width:1366px){
+    .list{
+        width: 130px !important; 
+        li{
+            p{
+                font-size: 12px;
+            }
+            span{
+                font-size: 20px !important; 
+            }
+        }
+    }
+    .station-item{
+        .content{
+            padding: 5px !important;
+        }
+        .technologyStateBtn,
+        .videoBtn{
+            font-size: 12px !important;
+        }
+    }
+    .first-item{
+        min-width: 420px !important;
+    }
+    .item-title{
+        font-size: 12px !important;
+        padding: 0 5px !important;
+    }
+    .station-title{
+        padding: 10px 20px !important;
+    }
+    .job-list,
+    .information-list{
+        font-size: 12px !important;
+        li{
+            padding: 0 5px !important;
+        }
+        span{
+            font-size: 12px !important;
+        }
+    }
+}

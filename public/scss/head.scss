@@ -1,0 +1,135 @@
+// 头部
+$head-color:#48cf82; //头部颜色
+$head-wrapper-color:#666; //提示框颜色
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.head {
+    width: 100%;
+    height: 50px;
+    color: white;
+    padding: 0 40px;
+    background-color: $head-color;
+    display: flex;
+    justify-content: space-between;
+    >p {
+        display: inline-block;
+        font-size: 26px;
+        line-height: 50px;
+        user-select: none;
+    }
+    div {
+        display: inline-block;
+    }
+    ul {
+        height: 50px;
+        vertical-align: bottom;
+    }
+    ul,
+    li {
+        display: inline-block;
+        list-style: none;
+    }
+    ul:first-child>li {
+        padding: 0 7.5px;
+        line-height: 50px;
+        span {
+            cursor: pointer;
+        }
+        &:nth-of-type(1) {
+            vertical-align: top;
+            margin-top: 7px;
+            .headImg {
+                display: block;
+                width: 36px;
+                height: 36px;
+                border-radius: 18px;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    ul:last-child>li {
+        vertical-align: top;
+        position: relative;
+        margin-top: 13px;
+        i {
+            width: 24px;
+            height: 24px;
+            display: block;
+            cursor: pointer;
+            background-image: url('../images/headIcon.png');
+            background-repeat: no-repeat;
+        }
+        i+div {
+            position: absolute;
+            background-color: $head-wrapper-color;
+            font-size: 12px;
+            text-align: center;
+        }
+    }
+    .headMessage {
+        position: relative;
+        margin-left: 40px;
+        a {
+            i {
+                background-position: 2px 0;
+            }
+        }
+        .point {
+            position: absolute;
+            display: block;
+            top: 0;
+            right: 3px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ff4747;
+        }
+        
+    }
+    .headExplain {
+        i {
+            background-position: -20px 0;
+        }
+        p {
+            padding: 0 15px;
+        }
+        P:nth-of-type(1) {
+            padding-top: 10px;
+        }
+        i+div {
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            top: 100%;
+            right: 50%;
+            margin-top: 10px;
+            margin-right: -97px;
+            display: none;
+            div {
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-bottom: 12px solid $head-wrapper-color;
+                position: absolute;
+                left: 50%;
+                margin-left: -2px;
+                top: -8px;
+            }
+        }
+        a {
+            display: block;
+            margin: 0 40px;
+        }
+    }
+    .headClose i {
+        background-position: -44px 0;
+    }
+}

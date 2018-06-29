@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>财务分析</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/money.css">
+</head>
+
+<body>
+    <div class="body-wrapper">
+        <div class="search-wrapper">
+            <select id="client" class="easyui-combotrees cbt">
+            </select>
+            <input type="text" placeholder="请选择时间" id="startTime1" class="chose-time" >
+            <input type="button" value="搜索" class="financialAnalysis">
+        </div>
+        <div class="echart-wrapper">
+            <div>
+                <p class="echart-title">车辆费用分析</p>
+                <div>
+                    <div id="echart1" class="echart"></div>
+                    <div class="detail">
+                        <span>2017年</span>
+                        <p>
+                            <span>400,0000</span>￥
+                        </p>
+                        <span>2018年</span>
+                        <p>
+                            <span>370,0000</span>￥
+                        </p>
+                        <span>比率</span>
+                        <p class="down">
+                            <i></i>
+                            <span>10</span>%
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="echart-title">电耗费用分析</p>
+                <div>
+                    <div id="echart2" class="echart"></div>
+                    <div class="detail">
+                        <span>2017年</span>
+                        <p>
+                            <span>400,0000</span>￥
+                        </p>
+                        <span>2018年</span>
+                        <p>
+                            <span>370,0000</span>￥
+                        </p>
+                        <span>比率</span>
+                        <p class="up">
+                            <i></i>
+                            <span>10</span>%
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="echart-title">药耗费用分析</p>
+                <div>
+                    <div id="echart3" class="echart"></div>
+                    <div class="detail">
+                        <span>2017年</span>
+                        <p>
+                            <span>400,0000</span>￥
+                        </p>
+                        <span>2018年</span>
+                        <p>
+                            <span>370,0000</span>￥
+                        </p>
+                        <span>比率</span>
+                        <p class="up">
+                            <i></i>
+                            <span>10</span>%
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <p class="echart-title">人工成本分析</p>
+                <div>
+                    <div id="echart4" class="echart"></div>
+                    <div class="detail">
+                        <span>2017年</span>
+                        <p>
+                            <span>400,0000</span>￥
+                        </p>
+                        <span>2018年</span>
+                        <p>
+                            <span>370,0000</span>￥
+                        </p>
+                        <span>比率</span>
+                        <p class="down">
+                            <i></i>
+                            <span>10</span>%
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/jquery-3.2.1.min.js"></script>
+        <script src="../js/jquery.easyui.min.js"></script>
+        <script src="../js/easyui-lang-zh_CN.js"></script>
+        <script src="../js/echarts.js"></script>
+        <script src="../js/laydate/laydate.js"></script>
+        <script src="../js/customPrompt.js"></script>
+        <script src="../js/common.js"></script>
+        <script src="../js/refresh.js"></script>
+        <script src="../js/money.js"></script>
+</body>
+
+</html>

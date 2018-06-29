@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>仓库管理/出入库</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/depotInto.css">
+</head>
+<body>
+
+<div class="body-wrapper">
+    <div id="tab" class="easyui-tabs">
+        <div title="入库">
+            <div class="search-wrapper">
+                <select>
+                    <option value="0">请选择厂站</option>
+                    <option value="1">1</option>
+                </select>
+                <div class="search-btn into-search">搜索</div>
+            </div>
+            <div class="scan">
+                <img src="../images/depot.png" alt="">
+                <div>
+                    <form class="scan-into-form" method="post">
+                        <p>请用扫码枪扫描该物质的二维码!或</p>
+                        <input type="text" class="easyui-validatebox" data-options="validType:'englishNumber',required:true" maxlength="30" placeholder="请手动输入二维码编码">
+                        <div class="scan-submit">提交</div>
+                    </form>
+                </div>
+            </div>
+            <div class="table-depotInto">
+                <table class="easyui-datagrid" id="depotInto">
+                    <tbody>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>设备</td>
+                        <td>潜污泵</td>
+                        <td>耐得</td>
+                        <td></td>
+                        <td>255466554</td>
+                        <td>N125</td>
+                        <td></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="into-submit">
+                生成入库单
+            </div>
+        </div>
+        <div title="出库">
+            <div class="search-wrapper">
+                <select>
+                    <option value="0">请选择厂站</option>
+                    <option value="1">1</option>
+                </select>
+                <div class="search-btn out-search">搜索</div>
+            </div>
+            <div class="table-depotOut">
+                <table class="easyui-datagrid" id="depotOut">
+                    <tbody>
+                    <!-- <tr>
+                        <td>运维工单</td>
+                        <td>1256445552</td>
+                        <td>张江龙</td>
+                        <td></td>
+                        <td>2017-12-54 12:54:10</td>
+                        <td></td>
+                        <td></td>
+                    </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="shade"></div>
+<!-- 删除框 -->
+<div class="infor-wrapper delete-wrapper">
+    <p>
+        <i></i>
+        是否确认删除?
+    </p>
+    <div>
+        <a class="delete-confirm">删除</a>
+        <a class="infor-cancel">取消</a>
+    </div>
+</div>
+<!--入库弹窗-->
+<div class="popup depotInto-wrapper">
+    <div class="title">
+        <span>入库</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <form class="depotInto-form" method="post">
+            <div class="content-item">
+                <label for="depot-type">*类型:</label>
+                <div>
+                    <span>
+                        <a class="radio-wrapper radio-checked">
+                        <i></i>
+                        <input type="radio" name="type" checked="checked">
+                        </a>设备
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="type">
+                        </a>部件
+                    </span>
+                    <span>
+                        <a class="radio-wrapper">
+                        <i></i>
+                        <input type="radio" name="type">
+                        </a>药剂
+                    </span>
+                </div>
+            </div>
+            <div class="content-item">
+                <label for="name">*模板名称:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择模板</option>
+                    <option value="1">模板1</option>
+                    <option value="2">模板2</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="brand">*品牌:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择品牌</option>
+                    <option value="1">模板1</option>
+                    <option value="2">模板2</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="name">*规格型号:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择规格型号</option>
+                    <option value="1">模板1</option>
+                    <option value="2">模板2</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="name">*供应商:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择供应商</option>
+                    <option value="1">模板1</option>
+                    <option value="2">模板2</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="submit depotInto-submit">添加</div>
+    </div>
+</div>
+<!--清单弹窗-->
+<div class="popup detail-wrapper">
+    <div class="title">
+        <span>清单</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <!--<div class="detail-add"><i></i>添加物资</div>-->
+        <div>
+            <table class="easyui-datagrid" id="detail-table">
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td>255466554</td>
+                    <td>潜污泵A</td>
+                    <td>耐得</td>
+                    <td>N125</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="submit detail-submit">提交</div>
+    </div>
+</div>
+<!--清单扫码弹窗-->
+<div class="popup scan-wrapper">
+    <div class="title">
+        <span>清单</span>
+        <a class="close-popup">
+            <i class="return-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+
+            <div class="scan">
+                <img src="../images/depot.png" alt="">
+                <div>
+                    <p>请用扫码枪扫描该物质的二维码!或</p>
+                    <input type="text" class="easyui-validatebox" data-options="validType:'englishNumber',required:true" maxlength="30" placeholder="请手动输入二维码编码">
+                </div>
+            </div>
+
+    </div>
+</div>
+<!--添加物资弹窗-->
+<div class="popup add-wrapper">
+    <div class="title">
+        <span>添加物资</span>
+        <a class="close-popup">
+            <i class="return-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <form class="add-form" method="post">
+            <div class="content-item">
+                <label for="station">*厂站:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择厂站</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*任务类型:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择任务类型</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*任务对象:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择任务对象</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*物资类型:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择物资类型</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*物资模板名称:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择物资模板名称</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="submit add-submit">添加</div>
+    </div>
+</div>
+<!--备货弹窗-->
+<div class="popup stocking-wrapper">
+    <div class="title">
+        <span>备货</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <div class="stocking-add"><i></i>添加物资</div>
+        <div>
+            <table class="easyui-datagrid" id="stocking-table">
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td>255466554</td>
+                    <td>潜污泵A</td>
+                    <td>耐得</td>
+                    <td>N125</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="submit stocking-submit">提交</div>
+    </div>
+</div>
+<!--备货添加物资弹窗-->
+<div class="popup stocking-add-wrapper">
+    <div class="title">
+        <span>添加物资</span>
+        <a class="close-popup">
+            <i class="return-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <form class="stocking-add-form" method="post">
+            <div class="content-item">
+                <label for="station">*厂站:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择厂站</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*任务类型:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择任务类型</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*任务对象:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择任务对象</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*物资类型:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择物资类型</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*物资模板名称:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择物资模板名称</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="submit stocking-add-submit">添加</div>
+    </div>
+</div>
+<!--备货扫码弹窗-->
+<div class="popup stocking-scan-wrapper">
+    <div class="title">
+        <span>备货</span>
+        <a class="close-popup">
+            <i class="return-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+            <div class="scan">
+                <img src="../images/depot.png" alt="">
+                <div>
+                    <p>请用扫码枪扫描该物质的二维码!或</p>
+                    <input type="text" class="easyui-validatebox" data-options="validType:'englishNumber',required:true" maxlength="30" placeholder="请手动输入二维码编码">
+                </div>
+            </div>
+    </div>
+</div>
+<!--补领弹窗-->
+<div class="popup replacement-wrapper">
+    <div class="title">
+        <span>补领</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <div class="replacement-add"><i></i>添加物资</div>
+        <div>
+            <table class="easyui-datagrid" id="replacement-table">
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td>255466554</td>
+                    <td>潜污泵A</td>
+                    <td>耐得</td>
+                    <td>N125</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>平窝乡污水处理厂</td>
+                    <td>维修</td>
+                    <td>潜污泵</td>
+                    <td>设备</td>
+                    <td>PCA</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="submit replacement-submit">提交</div>
+    </div>
+</div>
+<!--补领添加物资弹窗-->
+<div class="popup replacement-add-wrapper">
+    <div class="title">
+        <span>添加物资</span>
+        <a class="close-popup">
+            <i class="return-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <form class="replacement-add-form" method="post">
+            <div class="content-item">
+                <label for="station">*厂站:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择厂站</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*任务类型:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择任务类型</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*任务对象:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择任务对象</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*物资类型:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择物资类型</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+            <div class="content-item">
+                <label for="station">*物资模板名称:</label>
+                <select class="easyui-validatebox" data-options="validType:'selectValueRequired'">
+                    <option value="0">请选择物资模板名称</option>
+                    <option value="1">厂站1</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="footer">
+        <div class="submit replacement-add-submit">添加</div>
+    </div>
+</div>
+<!--补领扫码弹窗-->
+<div class="popup replacement-scan-wrapper">
+    <div class="title">
+        <span>补领</span>
+        <a class="close-popup">
+            <i class="return-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+            <div class="scan">
+                <img src="../images/depot.png" alt="">
+                <div>
+                    <p>请用扫码枪扫描该物质的二维码!或</p>
+                    <input type="text" class="easyui-validatebox" data-options="validType:'englishNumber',required:true" maxlength="30" placeholder="请手动输入二维码编码">
+                </div>
+            </div>
+    </div>
+</div>
+<!--出库单二维码-->
+<div class="popup outCode-wrapper">
+    <div class="title">
+        <span>出库单二维码</span>
+        <a class="close-popup">
+            <i class="close-icon"></i>
+        </a>
+    </div>
+    <div class="content">
+        <div>
+            <img src="../images/twoCode.png" alt="">
+        </div>
+        <p>PAD扫描领取！</p>
+    </div>
+</div>
+<!--出库成功弹窗-->
+<div class="popup depotOut-success">
+    <div class="content">
+        <i></i>
+        <span>提交成功！5s后自动关闭</span>
+    </div>
+    <div class="footer">
+        <div class="submit btn-look">查看出库信息</div>
+        <div class="submit btn-close">关闭</div>
+    </div>
+</div>
+
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/jquery.easyui.min.js"></script>
+<script src="../js/easyui-lang-zh_CN.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/customPrompt.js"></script>
+<script src="../js/depotInto.js"></script>
+<script src="../js/refresh.js"></script>
+</body>
+</html>

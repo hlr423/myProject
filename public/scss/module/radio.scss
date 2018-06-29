@@ -1,0 +1,24 @@
+/*单选样式*/
+.radio-wrapper{
+  position: relative;
+  i{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/chose.png');
+    background-position-x: 62px;
+  }
+  input[type=radio]{
+    cursor: pointer;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    opacity:0;
+    cursor: pointer;
+  }
+  &.radio-checked{
+    i{
+      background-position-x: 38px;
+    }
+  }
+}

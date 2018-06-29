@@ -1,0 +1,131 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/table.scss";
+@import "./module/footerPage.scss";
+@import "./module/popup.scss";
+
+@import "./module/searchWrapper.scss";
+@import "./module/select.scss";
+@import "./module/input.scss";
+a{
+  &.td-fault{
+    color: #ff6430;
+  }
+  &.td-normal{
+    color: #51c589;
+  }
+  &.td-scrap{
+    color: #999;
+  }
+  &.td-repair{
+    color: #ff9933;
+  }
+  &.td-detail{
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &.detail-picture{
+    display: inline-block;
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+      >div{
+        display: block;
+      }
+    }
+    i{
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+      background-image:url('../images/twoCodeIcon.png');
+      margin-right: 3px;
+      margin-bottom: 2px;
+    }
+    >div{
+      z-index: 999;
+      width: 160px;
+      height: 160px;
+      display: none;
+      position: absolute;
+      padding: 5px;
+      left: 50%;
+      top: 0;
+      margin-top: 38px;
+      margin-left: -80px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 40px #ccc;
+      &:before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 12px solid #fff;
+        position: absolute;
+        left: 50%;
+        top: -10px;
+        margin-left: -6px;
+      }
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.datagrid-btable{
+  td{
+    position: relative;
+  }
+  tr:nth-last-of-type(1),
+  tr:nth-last-of-type(2),
+  tr:nth-last-of-type(3){
+    .detail-picture{
+      >div{
+        top: auto;
+        margin-top: auto;
+        bottom:0;
+        margin-bottom: 44px;
+        &:before{
+          border-bottom: 0px solid #fff;
+          border-top: 12px solid #fff;
+          top: auto;
+          bottom:-10px;
+        }
+      }
+    }
+  }
+  tr:nth-of-type(1),
+  tr:nth-of-type(2),
+  tr:nth-of-type(3){
+    .detail-picture{
+      >div{
+        bottom: auto;
+        margin-bottom: auto;
+        top:0;
+        margin-top: 44px;
+        &:before{
+          border-top: 0px solid #fff;
+          border-bottom: 12px solid #fff;
+          bottom: auto;
+          top:-10px;
+        }
+      }
+    }
+  }
+}
+
+/*====================弹窗====================*/
+
+.detail-wrapper{
+  width: 700px;
+  .content{
+    height: 450px;
+  }
+}

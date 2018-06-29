@@ -1,0 +1,23 @@
+@import './module/global.scss';
+@import './module/input.scss';
+@import './module/select.scss';
+@import './module/combotree.scss';
+@import './module/button.scss';
+@import './module/searchWrapper.scss';
+@import './module/table.scss';
+@import './module/popup.scss';
+@import './module/prompt.scss';
+@import './module/footerPage.scss';
+@import './module/tableOperationBtn.scss';
+@import './module/inforWrapper.scss';
+
+.new-btn {
+    @extend %newAddBtn;
+}
+
+.table-edit {
+    @extend %table-edit;
+}
+.table-delete {
+    @extend %table-delete;
+}

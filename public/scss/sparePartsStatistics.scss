@@ -1,0 +1,189 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/select.scss";
+@import "./module/prompt.scss";
+@import "./module/inputFile.scss";
+@import "./module/popup.scss";
+@import "./module/input.scss";
+@import "./module/datePicker.scss";
+.body-wrapper {
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.chose-time{
+    @extend %chose-time;
+}
+//====================个人信息====================//
+.search-nav {
+    // height: 120px;
+    padding-bottom: 20px;
+    input::-webkit-input-placeholder{
+        text-align: center;
+    }
+    .input-search{
+        background-color: #f2f2f2;
+        border: none;
+        width: 140px;
+        border-radius: 30px;
+        margin-left: 10px;
+        
+    }
+    .title {
+        margin-left: 10px;
+        display: inline-block;
+        >select {
+            width: 120px;
+            &:not(:nth-of-type(1)) {
+                display: none;
+            }
+            &.data-show {
+                display: inline-block;
+            }
+        }
+        >input[type=text] {
+            width: 120px !important;
+            display: none;
+            vertical-align: top;
+            &.data-show {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.part-factory {
+    width: 7%;
+}
+
+//=================利用率统计=======================//
+.person-statistics {
+    display: flex;
+    justify-content: space-between;
+    .work-time {
+        margin-top: -2%;
+        >div:nth-of-type(1){
+            position: relative;
+            top:15%;
+            border-bottom: 1px solid white;
+            span{
+                display: block;
+                height:40px;
+                line-height: 40px;
+                padding-left: 10px;
+                font-size: 18px;
+            }
+        }
+        >div:nth-of-type(2) {
+            background-color: #f0f6fe;
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-around; //padding-left: 50px;
+            ul {
+                display: inline-block;
+                width: 190px;
+                margin-top: 10%;
+                // margin-left: 5%;
+                vertical-align: top;
+                li {
+                    list-style: none;
+                    p {
+                        width: 100px;
+                        vertical-align: middle;
+                    }
+                    a {
+                        font-size: 12px;
+                        bottom: 10px;
+                    }
+                    >span{
+                        font-size: 36px;
+                        vertical-align: middle;
+                    }
+                    &:nth-of-type(1) {
+                        span,
+                        a {
+                            color: #B6A2DE;
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        span,
+                        a {
+                            color: #35dadd;
+                        }
+                    }
+                }
+            }
+            #echart1 {
+                display: inline-block;
+                width: 300px;
+                height: 200px; //border: 1px solid red;
+            }
+            #echart2 {
+                display: inline-block;
+                width: 300px;
+                height: 200px; //border: 1px solid red;
+            }
+            #echart3 {
+                display: inline-block;
+                width: 500px;
+                height: 200px; //border: 1px solid red;
+            }
+        }
+    }
+    .work-time:nth-of-type(2){
+      
+        ul li:nth-child(1){
+        
+            span,a{
+                color: #35dadd!important;
+            }
+        }
+        ul li:nth-child(2){
+        
+            span,a{
+                color: #B6A2DE!important;
+            }
+        }
+    }
+}
+
+.title {
+    >select {
+        width: 120px;
+        &:not(:nth-of-type(1)) {
+            display: none;
+        }
+        &.data-show {
+            display: inline-block;
+        }
+    }
+    >input[type=text] {
+        width: 120px !important;
+        display: none;
+        vertical-align: top;
+        &.data-show {
+            display: inline-block;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-left: 10px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    background-color: #59afff;
+    border-radius: 20px;
+    vertical-align: top;
+    border: none;
+    outline: 0;
+    transition: all .5s;
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        background-color: #4da1f0;
+    }
+}

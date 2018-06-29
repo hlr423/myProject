@@ -1,0 +1,320 @@
+@import "./module/global.scss";
+@import "./module/prompt.scss";
+@import "./module/table.scss";
+@import "./module/popup.scss";
+@import "./module/footerPage.scss";
+
+@import "./module/inforWrapper.scss";
+@import "./module/input.scss";
+@import "./module/button.scss";
+@import "./module/searchWrapper.scss";
+@import "./module/tableOperationBtn.scss";
+@import "./module/inputFile.scss";
+@import "./module/combotree.scss";
+@import "./module/radio.scss";
+@import "./module/select";
+/*====================操作框====================*/
+.operation-wrapper{
+  .new-btn{
+    @extend %newAddBtn
+  }
+}
+
+/*====================整体table====================*/
+.table-operation{
+  .table-edit{
+    @extend %table-edit
+  }
+  .table-delete{
+    @extend  %table-delete
+  }
+}
+a{
+  &.td-equipment,
+  &.td-work,
+  &.td-part,
+  &.td-explain{
+    color: #59aFFf;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &.td-not,
+  &.td-finish{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    i{
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      background-image: url('../images/gou.png');
+      background-size: 100% 100%;
+    }
+  }
+  &.td-not{
+    i{
+      background-image: url('../images/cha.png');
+    }
+  }
+}
+
+/*====================新建弹窗====================*/
+.newAdd-wrapper{
+  .content{
+    >div{
+      display: inline-block;
+      text-align: center;
+      margin: 0 20px;
+      &:nth-of-type(2){
+        i{
+          background-image: url('../images/taskPart2.png');
+        }
+      }
+      >div{
+        border: 1px solid #dcdcdc;
+        width: 150px;
+        height: 180px;
+        margin-bottom: 20px;
+        &:hover{
+          border: 1px solid #51c589;
+          cursor: pointer;
+        }
+        i{
+          display: inline-block;
+          width: 42px;
+          height: 52px;
+          margin-top: 64px;
+          background-repeat: no-repeat;
+          background-image: url('../images/taskPart1.png');
+        }
+      }
+    }
+  }
+}
+
+/*====================新建设备任务配置+部件====================*/
+.edit-wrapper,
+.newPart-wrapper,
+.newEquipment-wrapper{
+  //width: 480px ;
+  .content{
+    max-height: 460px;
+  }
+  .footer{
+    .submit{
+      display: none;
+      &:nth-of-type(1){
+        background:none;
+        color: #59aFFf;
+        border: 1px solid #59afff;
+        margin-right: 50px;
+        &:hover{
+          background-color: #2fabed;
+          color: #fff;
+        }
+      }
+    }
+    .submit-show{
+      display: inline-block;
+    }
+  }
+  .content-title{
+    text-align: center;
+    >div{
+      display: inline-block;
+      text-align: center;
+      >span:nth-of-type(1){
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #fff;
+        border: 1px solid #dcdcdc;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        span{
+          display: inline-block;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          background-color: #eee;
+          color: #666;
+          line-height: 36px;
+          margin-top: 2px;
+          i{
+            display: inline-block;
+            width: 24px;
+            height: 18px;
+            vertical-align: middle;
+            background-image: url('../images/init.png');
+            background-repeat: no-repeat;
+          }
+        }
+        &.green{
+          border: 1px solid #48cf76;
+          span{
+            color: #fff;
+            background-color: #48cf76;
+          }
+        }
+      }
+    }
+    .line{
+      display: inline-block;
+      width: 30px;
+      height: 1px;
+      background-color: #dcdcdc;
+      margin: 0 5px;
+      margin-bottom: 44px;
+      &.line-green{
+        background-color: #48cf76;
+      }
+      &.line2{
+        width: 120px;
+      }
+    }
+  }
+  .content-step{
+    overflow: hidden;
+    &:not(:nth-of-type(1)){
+      height: 0;
+    }
+    // 设备模板+所需备件
+    &:nth-of-type(3),
+    &:nth-of-type(2){
+      select{
+        width: 220px;
+      }
+      .content-item{
+        label:nth-of-type(2){
+          margin-left: 28px;
+        }
+        p{
+          margin-bottom: 10px;
+        }
+      }
+      .table-div{
+        height: 230px;
+      }
+      .table-div-checked{
+        height: 230px;
+        display: none;
+      }
+      span{
+        &.allData,
+        &.checkedData{
+          color: #666;
+          &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+            color:#59aFFf;
+          }
+        }
+        &.data-checked{
+          color: #59afff;
+        }
+      }
+    }
+    &:nth-of-type(4){
+      #equipment-editor{
+        height: 350px;
+      }
+    }
+  }
+  .content-radio{
+    display: inline-block;
+    >span:nth-of-type(1){
+      margin-right:100px;
+    }
+  }
+
+}
+
+
+// 新建提交成功弹窗
+.newAdd-success{
+  //display: block;
+  text-align: center;
+  width: 400px;
+  .content{
+    height: 150px;
+    padding-top: 40px;
+    i{
+      display: block;
+      width: 50px;
+      height: 42px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      background-image: url('../images/success.png');
+      background-size: 100% 100%;
+    }
+    span{
+      font-size: 16px;
+    }
+  }
+  .footer{
+    .btn-close{
+      margin-right: 20px;
+      border: 1px solid #59aFFf;
+      background-color: #fff;
+      color: #59aFFf;
+    }
+  }
+}
+
+/*====================设备模板详情====================*/
+.equipment-detail-wrapper{
+  width: 900px;
+  .content{
+    height: 130px;
+  }
+}
+
+/*====================工种详情====================*/
+.work-detail-wrapper{
+  .content{
+    height: 230px;
+  }
+  .work-detail-table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    tr:not(:nth-of-type(1)){
+      padding: 5px;
+      background-color: #f2f2f2;
+      &:hover{
+        background-color: #f1faf6;
+      }
+    }
+    td{
+      height: 50px;
+      border: 1px solid #dcdcdc;
+    }
+  }
+}
+
+/*====================所需备件详情====================*/
+.part-detail-wrapper{
+  width: 600px;
+  .content{
+    height: 440px;
+    max-height: 440px;
+    p{
+      margin-bottom: 20px;
+    }
+    >div{
+      height: 380px;
+    }
+  }
+}
+
+/*====================操作说明详情====================*/
+.explain-detail-wrapper{
+  width: 900px;
+  .content{
+    height: 420px;
+  }
+}
+

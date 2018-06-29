@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+
+        height: 100%
+    }
+
+    .wrapper {
+
+        height: 100%
+    }
+
+    .content {
+
+        display: inline-block;
+        vertical-align: middle;
+
+    }
+
+    wrapper:before {
+
+        content: "";
+
+        display: inline-block;
+
+        height: 100%;
+
+        vertical-align: middle;
+
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+
+        <div class="content">some content</div>
+
+    </div>
+
+
+    <script>
+        class A {
+
+        }
+        class B extends A {
+
+        }
+        let a = new A();
+        let b = new B();
+
+        console.log(A.prototype === a.__proto__)
+        console.log(A.prototype === B.prototype)
+        console.log(A.prototype.constructor === A)
+        console.log(b.__proto__.__proto__ === A.prototype)
+        console.log(b.__proto__ === A.prototype.constructor)
+        console.log(a)
+        function aa() {
+            // console.log(foo);
+            // let foo = 2;
+            // let foo = 1;
+            // console.log(foo);
+        }
+        aa();
+        var audioElement = document.createElement('audio');  
+        audioElement.setAttribute('src', '../data/mp3.mp3');  
+        function PlayAudio()  
+        {  
+            audioElement.load;  
+            audioElement.play();  
+            
+        }  
+        function PauseAudio()  
+        {  
+            audioElement.pause();  
+        } 
+        PlayAudio()
+
+    </script>
+</body>
+
+</html>

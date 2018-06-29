@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>仓库管理/历史记录</title>
+    <link rel="stylesheet" href="../css/easyui.css">
+    <link rel="stylesheet" href="../css/depotHistory.css">
+</head>
+
+<body>
+
+    <div class="body-wrapper">
+        <div class="export">
+            <i></i>导出</div>
+        <div id="tab" class="easyui-tabs">
+            <div title="入库信息">
+                <div class="content-title">
+                    <div class="depot-data">
+                        <input type="text" class="into-data-start chose-time" placeholder="开始时间">
+                        <input type="text" class="into-data-end chose-time" placeholder="结束时间">
+                    </div>
+                    <div class="search-wrapper">
+                        <div class="search-btn">搜索</div>
+                    </div>
+                </div>
+                <div class="table-depotInto">
+                    <table class="easyui-datagrid" id="depotInto">
+                        <tbody>
+                            <tr>
+                                <td>2017112810</td>
+                                <td>2017-10-20 12:05:41</td>
+                                <td>张江龙</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div title="出库信息">
+                <div class="content-title">
+                    <div class="depot-data">
+                        <input type="text" class="out-data-start chose-time" placeholder="开始时间">
+                        <input type="text" class="out-data-end chose-time" placeholder="结束时间">
+                    </div>
+                    <div class="search-wrapper">
+                        <input type="text" placeholder="搜索出库单号" maxlength="50">
+                        <div class="search-btn">搜索</div>
+                    </div>
+                </div>
+                <div class="table-depotOut">
+                    <table class="easyui-datagrid" id="depotOut">
+                        <tbody>
+                            <tr>
+                                <td>2017111111</td>
+                                <td></td>
+                                <td>2017-12-54 12:54:10</td>
+                                <td>张江龙</td>
+                                <td>张江龙</td>
+                                <td>2017-12-54 12:54:10</td>
+                                <td>1257442288</td>
+                                <td></td>
+                                <td>2017-12-54 12:54:10</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div title="维修信息">
+                <div class="content-title">
+                    <select name="" id="">
+                        <option value="0">所有类型</option>
+                        <option value="1">类型1</option>
+                    </select>
+                    <div class="depot-data">
+                        <input type="text" class="repair-data-start chose-time" placeholder="开始时间">
+                        <input type="text" class="repair-data-end chose-time" placeholder="结束时间">
+                    </div>
+                    <div class="search-wrapper">
+                        <div class="search-btn">搜索</div>
+                    </div>
+                </div>
+                <div class="table-depotRepair">
+                    <table class="easyui-datagrid" id="depotRepair">
+                        <tbody>
+                            <tr>
+                                <td>www</td>
+                                <td>2017111111</td>
+                                <td></td>
+                                <td>2017-12-54 12:54:10</td>
+                                <td>张江龙</td>
+                                <td>22222</td>
+                                <td>张江龙</td>
+                                <td>2017-12-54 12:54:10</td>
+                                <td>1257442288</td>
+                                <td></td>
+                                <td>2017-12-54 12:54:10</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div title="盘点信息">
+                <div class="content-title">
+                    <div class="depot-data">
+                        <input type="text" class="inventory-data-start chose-time" placeholder="开始时间">
+                        <input type="text" class="inventory-data-end chose-time" placeholder="结束时间">
+                    </div>
+                    <div class="search-wrapper">
+                        <div class="search-btn">搜索</div>
+                    </div>
+                </div>
+                <div class="table-depotRepair">
+                    <table class="easyui-datagrid" id="depotInventory">
+                        <tbody>
+                            <tr>
+                                <td>2017-12-54 12:54:10</td>
+                                <td>张江龙</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div title="历史信息">
+                <div class="content-title">
+                    <select>
+                        <option value="0">请选择</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select>
+                        <option value="0">请选择</option>
+                        <option value="1">1</option>
+                    </select>
+                    <select>
+                        <option value="0">请选择</option>
+                        <option value="1">1</option>
+                    </select>
+                    <div class="search-wrapper">
+                        <div class="search-btn">搜索</div>
+                    </div>
+                </div>
+                <div class="time-chart">
+                    <div class="content">
+                        <div class="circle">使用中</div>
+                        <p>平窝乡污水处理厂</p>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">出库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">入库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">维修</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">出库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">入库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">维修</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">出库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">入库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">维修</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">出库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">入库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">维修</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">出库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">入库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">维修</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">出库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">入库</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                    <div class="content">
+                        <div class="circle">维修</div>
+                        <p>2017-12-11 12:21:08</p>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="table-depotHistory">
+                    <table class="easyui-datagrid" id="depotHistory">
+                        <tbody>
+                            <tr>
+                                <td>入库</td>
+                                <td>2017-12-54 12:54:10</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="shade"></div>
+    <!--入库详情弹窗-->
+    <div class="popup into-detail-wrapper">
+        <div class="title">
+            <span>入库详情</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form class="into-detail-form" method="post">
+                <table class="datagrid" id="into-detail-table">
+                    <tbody>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>设备</td>
+                            <td>模板名称</td>
+                            <td></td>
+                            <td>255466554</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!--出库详情弹窗-->
+    <div class="popup out-detail-wrapper">
+        <div class="title">
+            <span>出库详情</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form class="out-detail-form" method="post">
+                <table class="datagrid" id="out-detail-table">
+                    <tbody>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                        <tr>
+                            <td>平窝乡污水处理厂</td>
+                            <td>维修</td>
+                            <td>潜污泵</td>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>2445566334</td>
+                            <td>潜污泵A</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!--故障维修详情弹窗-->
+    <div class="popup repair-detail-wrapper">
+        <div class="title">
+            <span>出库详情</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form class="repair-detail-form" method="post">
+                <table class="datagrid" id="repair-detail-table">
+                    <tbody>
+                        <tr>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>235523454</td>
+                            <td>潜污泵</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td>耐得</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!--盘点详情弹窗-->
+    <div class="popup inventory-detail-wrapper">
+        <div class="title">
+            <span>盘点信息</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form class="inventory-detail-form" method="post">
+                <table class="datagrid" id="inventory-detail-table">
+                    <tbody>
+                        <tr>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>235523454</td>
+                            <td>潜污泵</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td>耐得</td>
+                            <td>备注信息,备注信息</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!--盘点丢失弹窗-->
+    <div class="popup inventory-lost-wrapper">
+        <div class="title">
+            <span>丢失</span>
+            <a class="close-popup">
+                <i class="close-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <form class="inventory-lost-form" method="post">
+                <table class="datagrid" id="inventory-lost-table">
+                    <tbody>
+                        <tr>
+                            <td>设备</td>
+                            <td>潜污泵</td>
+                            <td></td>
+                            <td>235523454</td>
+                            <td>潜污泵</td>
+                            <td>耐得</td>
+                            <td>N125</td>
+                            <td>耐得</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="submit inventory-lost-submit">提交</div>
+        </div>
+    </div>
+    <!--盘点丢失扫码弹窗-->
+    <div class="popup inventory-scan-wrapper">
+        <div class="title">
+            <span>补领</span>
+            <a class="close-popup">
+                <i class="return-icon"></i>
+            </a>
+        </div>
+        <div class="content">
+            <div class="scan">
+                <img src="../images/depot.png" alt="">
+                <div>
+                    <p>请用扫码枪扫描该物质的二维码!或</p>
+                    <input type="text" class="easyui-validatebox" data-options="validType:'englishNumber',required:true" maxlength="30" placeholder="请手动输入二维码编码">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--盘点丢失入库成功弹窗-->
+    <div class="popup success-wrapper lost-success-wrapper">
+        <div class="content content-success">
+            <i></i>
+            <span>提交成功！5s后自动关闭</span>
+        </div>
+        <div class="footer">
+            <div class="submit btn-look">查看盘点信息</div>
+            <div class="submit btn-return">返回丢失详情</div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery.easyui.min.js"></script>
+    <script src="../js/easyui-lang-zh_CN.js"></script>
+    <script src="../js/laydate/laydate.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/customPrompt.js"></script>
+    <script src="../js/depotHistory.js"></script>
+    <script src="../js/refresh.js"></script>
+</body>
+
+</html>
